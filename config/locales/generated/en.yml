@@ -10846,7 +10846,7 @@ en:
       labels: 
         email: Email
         name: Name
-    welcome_to_canvas: "Welcome to Canvas!"
+    welcome_to_canvas: "Welcome to Classroom!"
   retrieve_timeout: "could not retrieve configuration, the server response timed out"
   role_override: 
     permission: 
@@ -12596,7 +12596,7 @@ en:
                   those courses are available, you will see information about them here
                   and in the top navigation. In the meantime, feel free to sign up for
                   more courses or set up your profile.
-      welcome_to_happiness: "Welcome to Canvas!"
+      welcome_to_happiness: "Welcome to Classroom!"
   validate: 
     is_required: "This field is required"
   warnings: 

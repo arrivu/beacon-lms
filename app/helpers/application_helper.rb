@@ -430,8 +430,11 @@ module ApplicationHelper
           end
           hide = tab[:hidden] || tab[:hidden_unused]
           class_name = tab[:css_class].to_css_class
+          tab[:href] ="locked_by_admin" if (tab[:label] == "Sub-Accounts")
           class_name += ' active' if @active_tab == tab[:css_class]
+          unless tab[:href] == "locked_by_admin"
           html << "<li class='section #{"section-tab-hidden" if hide }'>" + link_to(tab[:label], path, :class => class_name) + "</li>" if tab[:href]
+          end
         end
         html << "</ul></nav>"
         html.join("")
@@ -856,6 +859,6 @@ module ApplicationHelper
     @agree_to_terms ||
     t("#user.registration.agree_to_terms",
       "You agree to the *terms of use*.",
-      :wrapper => link_to('\1', "http://www.instructure.com/terms-of-use", :target => "_new"))
+      :wrapper => link_to('\1', "http://www.beaconlearning.in/terms-of-use", :target => "_new"))
   end
 end

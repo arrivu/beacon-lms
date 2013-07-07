@@ -19,8 +19,8 @@ define [
     $node = $nodes[id] ?= $('<div />')
     $node.html templates[id](
       account: ENV.ACCOUNT.registration_settings
-      terms_url: "http://www.instructure.com/terms-of-use"
-      privacy_url: "http://www.instructure.com/privacy-policy"
+      terms_url: "http://www.beaconlearning.in/terms-of-use"
+      privacy_url: "http://www.beaconlearning.in/privacy-policy"
     )
     $node.find('.date-field').datetime_field()
 
