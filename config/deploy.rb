@@ -170,7 +170,7 @@ namespace :canvas do
 
 end 
 
-before(:deploy, "canvas:check_revision")
+#before(:deploy, "canvas:check_revision")
 before(:deploy, "deploy:web:disable") unless is_hotfix?
 before("deploy:create_symlink", "canvas:before_create_symlink")
 after("deploy:create_symlink", "canvas:after_create_symlink")
