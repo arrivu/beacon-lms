@@ -2,28 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/canvas/header_canvas_logo.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/canvas.png" afterPath="$PROJECT_DIR$/public/images/canvas.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_footer_links.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_footer_links.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_head.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_head.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/files_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/files_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas-lms.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373369197474" ignored="false" />
+    <file path="/Dummy.txt" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373426144110" ignored="false" />
     <file path="/outgoing_mail.yml" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373112805244" ignored="false" />
     <file path="/application_helper.rb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373113423854" ignored="false" />
     <file path="/a.dummy" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373121704194" ignored="false" />
     <file path="/pseudonym_registration.email.erb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373113574386" ignored="false" />
     <file path="/application.html.erb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373115056652" ignored="false" />
-    <file path="/_footer_links.html.erb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373362083831" ignored="false" />
+    <file path="/_footer_links.html.erb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373427821754" ignored="false" />
     <file path="/500.html" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373116169277" ignored="false" />
+    <file path="$PROJECT_DIR$/../../canvas-lms/app/helpers/application_helper.rb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373378887272" ignored="false" />
+    <file path="$PROJECT_DIR$/../../canvas-lms/config/routes.rb" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373378887272" ignored="false" />
+    <file path="$PROJECT_DIR$/../../canvas-lms/app/coffeescripts/bundles/add_course_or_user.coffee" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373378887272" ignored="false" />
+    <file path="/login.css" changelist="ff2940a6-bfcc-45d6-b082-56b4b31c68bb" time="1373384149585" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +39,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="35" selection-start="9850" selection-end="9850" vertical-scroll-proportion="1.2334495">
+            <state line="204" column="69" selection-start="8968" selection-end="8968" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="42" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_footer_links.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_footer_links.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_footer_links.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="43" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+            <state line="15" column="49" selection-start="226" selection-end="226" vertical-scroll-proportion="0.47468355">
               <folding />
             </state>
           </provider>
@@ -134,9 +139,10 @@
         <option value="$PROJECT_DIR$/app/messages/pseudonym_registration.email.html.erb" />
         <option value="$PROJECT_DIR$/public/500.html" />
         <option value="$PROJECT_DIR$/app/coffeescripts/registration/incompleteRegistrationWarning.coffee" />
-        <option value="$PROJECT_DIR$/app/views/shared/_footer_links.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/files_controller.rb" />
+        <option value="$PROJECT_DIR$/public/assets/login.css" />
+        <option value="$PROJECT_DIR$/app/views/shared/_footer_links.html.erb" />
       </list>
     </option>
   </component>
@@ -178,6 +184,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,8 +220,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,13 +235,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="86" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="962" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="951" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="962" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="87" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="82" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="82" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
   </component>
   <component name="RunManager" selected="Rails.Production: canvas-lms">
@@ -477,11 +483,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848485" sideWeight="0.6016129" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3983871" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25227273" sideWeight="0.88225806" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3983871" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66451615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.117741935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -554,16 +560,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/outgoing_mail.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="59" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8281" column="39" selection-start="398699" selection-end="398699" vertical-scroll-proportion="0.8295019" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_fixed_bottom.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.16607773" />
@@ -581,9 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/messages/pseudonym_registration.email.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="87" selection-start="718" selection-end="718" vertical-scroll-proportion="0.37102473">
-          <folding />
-        </state>
+        <state line="14" column="87" selection-start="718" selection-end="718" vertical-scroll-proportion="0.37102473" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/accounts/settings.html.erb">
@@ -623,25 +617,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer_links.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_foot.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="79" selection-start="583" selection-end="583" vertical-scroll-proportion="0.29151943">
-          <folding />
-        </state>
+        <state line="11" column="79" selection-start="583" selection-end="583" vertical-scroll-proportion="0.29151943" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/messages/pseudonym_registration.email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="956" selection-end="956" vertical-scroll-proportion="0.45053002">
-          <folding />
-        </state>
+        <state line="17" column="40" selection-start="956" selection-end="956" vertical-scroll-proportion="0.45053002" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/files_controller.rb">
@@ -653,7 +636,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="35" selection-start="9850" selection-end="9850" vertical-scroll-proportion="1.2334495">
+        <state line="204" column="69" selection-start="8968" selection-end="8968" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/canvas.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="42" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer_links.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="49" selection-start="226" selection-end="226" vertical-scroll-proportion="0.47468355">
           <folding />
         </state>
       </provider>
