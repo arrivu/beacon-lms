@@ -169,3 +169,5 @@ end
 Dir[File.join(File.dirname(__FILE__),'vendor/plugins/*/Gemfile')].each do |g|
   eval(File.read(g))
 end
+
+gem 'newrelic_rpm'
