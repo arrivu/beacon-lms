@@ -1,3 +1,19 @@
+<%= javascript_tag do %>
+function logout_online()
+{ myWindow =window.open("https://online.beaconlearning.in/sign_out","_self")
+ $.ajax({
+  url: '<%= destroy_user_session_path %>',
+      type: "GET",
+      crossDomain: true,
+      async:false,
+    success: function(){
+
+ }
+   });
+myWindow.close();
+
+}
+<% end %>
 <ul id="identity">
   <% if !@current_user %>
     <% if !@domain_root_account || @domain_root_account == Account.default %>
@@ -25,7 +41,6 @@
     <li id="current_context_code" style="display: none;"><%= @context.try_rescue(:asset_string) %></li>
     <li class="user_long_name" style="display: none;"><%= @current_user.name %></li>
     <li class="logout"><a href="#" onclick="openWin();">Logout</a></li>
-
   <% end %>
   <% if help_link %>
     <li id="identity-help-container"><%= help_link %></li>
