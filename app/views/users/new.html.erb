@@ -1,13 +1,13 @@
 <%
   js_bundle :registration
   jammit_css :registration
-  content_for :page_title, t('create_a_canvas_account', "Create a Canvas Account")
+  content_for :page_title, t('create_a_canvas_account', "Create a Greatlakes Account")
   content_for :head, include_stylesheets(:common, :media => "all")
 %>
 
 <div id="registration_header">
   <div class="registration-content">
-    <h1><a href="http://www.beaconlearning.in/">beaconlearning</a></h1>
+    <h1><a href="http://www.greatlakes.edu.in/gurgoan">Greatlakes</a></h1>
     <a id="registration_login" href="/login">Login</a>
   </div>
 </div>
@@ -26,7 +26,7 @@
 
 <div id="registration_footer">
   <div class="registration-content">
-    <div class="left">&copy; <%= Time.now.year %> <a href="http://www.beaconlearning.in">beaconlearning</a></div>
+    <div class="left">&copy; <%= Time.now.year %> <a href="http://www.greatlakes.edu.in/gurgaon/">Greatlakes</a></div>
     <div class="right">
       <a href="http://www.beaconlearning.in/terms-of-use">Terms of Use</a>
       <a href="http://www.beaconlearning.in/privacy-policy">Privacy Policy</a>
