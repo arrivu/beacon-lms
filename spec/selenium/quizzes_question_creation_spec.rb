@@ -5,8 +5,6 @@ describe "quizzes question creation" do
 
   before (:each) do
     course_with_teacher_logged_in
-    @course.root_account.settings = { :file_upload_quiz_questions => true}
-    @course.root_account.save!
     @last_quiz = start_quiz_question
   end
 
@@ -38,7 +36,7 @@ describe "quizzes question creation" do
     quiz = @last_quiz
     create_true_false_question
     quiz.reload
-    f("#question_#{quiz.quiz_questions[0].id}").should be_displayed
+    keep_trying_until { f("#question_#{quiz.quiz_questions[0].id}").should be_displayed }
   end
 
   it "should create a quiz question with a fill in the blank question" do
@@ -71,7 +69,7 @@ describe "quizzes question creation" do
     replace_content(answers[0].find_element(:css, '.short_answer input'), 'red')
     replace_content(answers[1].find_element(:css, '.short_answer input'), 'green')
     options[1].click
-    wait_for_animations
+    wait_for_ajaximations
     answers = question.find_elements(:css, ".form_answers > .answer")
 
     replace_content(answers[2].find_element(:css, '.short_answer input'), 'blue')
@@ -138,7 +136,7 @@ describe "quizzes question creation" do
     replace_content(answers[0].find_element(:css, '.select_answer input'), 'red')
     replace_content(answers[1].find_element(:css, '.select_answer input'), 'green')
     options[1].click
-    wait_for_animations
+    wait_for_ajaximations
     answers = question.find_elements(:css, ".form_answers > .answer")
 
     answers[2].find_element(:css, ".select_answer_link").click
@@ -148,7 +146,7 @@ describe "quizzes question creation" do
     submit_form(question)
     wait_for_ajax_requests
 
-    f('#show_question_details').click
+    driver.execute_script("$('#show_question_details').click();")  
     quiz.reload
     finished_question = f("#question_#{quiz.quiz_questions[0].id}")
     finished_question.should be_displayed
@@ -522,7 +520,7 @@ describe "quizzes question creation" do
   context "quiz attempts" do
 
     def fill_out_attempts_and_validate(attempts, alert_text, expected_attempt_text)
-      wait_for_animations
+      wait_for_ajaximations
       click_settings_tab
       f('#multiple_attempts_option').click
       f('#limit_attempts_option').click

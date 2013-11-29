@@ -83,7 +83,6 @@ define [
 
           tempModel.save null,
             multipart: fileElement 
-            onlyGivenParameters: true
             success: (model, xhr) => 
               return dObject.rejectWith(this, xhr.message) if xhr.message
               this.fetch success: => dObject.resolve() # sets the poll url
@@ -108,17 +107,17 @@ define [
     # @api private
 
     addDaySubsitutions: (json) => 
-      collection = this.get('daySubCollection')
+      collection = @daySubCollection
       json.date_shift_options ||= {}
       json.date_shift_options.day_substitutions = collection.toJSON() if collection
 
     # Since attribute are nested under 'date_shift_options' this method provides
-    # a simple consistant way to change dateship options on the model. Allows
+    # a simple consistant way to change dateshift options on the model. Allows
     # a silent options to be passed in.
     #
     # @api public
 
     setDateShiftOptions: ({value, property, silent}) -> 
       date_data = @get('date_shift_options') || {}
-      date_data[property] = value
+      date_data[property] = $.datetime.process(value)
       @set('date_shift_options', date_data, {silent: silent})

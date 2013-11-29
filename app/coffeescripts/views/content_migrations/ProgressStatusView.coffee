@@ -4,7 +4,15 @@ define [
 ], (Backbone, template) -> 
   class ProgressingStatusView extends Backbone.View
     template: template
-    initialize: -> @progress = @model.progressModel
+    initialize: ->
+      @progress = @model.progressModel
+
+    render: ->
+      if statusView = @model.collection?.view?.getStatusView(@model)
+        @$el.html(statusView)
+      else
+        super
+
     afterRender: -> 
       @model.on 'change:workflow_state', @render
       @progress.on 'change:workflow_state', @render
@@ -23,6 +31,7 @@ define [
 
     statusLabelClassMap:
       completed: 'label-success'
+      completed_with_issues: 'label-warning'
       failed: 'label-important'
       running: 'label-info'
 
@@ -32,7 +41,21 @@ define [
     # @returns statusLabel (type: string)
     # @api private
 
-    statusLabel: -> @statusLabelClassMap[@status()]
+    statusLabel: -> @statusLabelClassMap[@statusLabelKey()]
+
+    # Returns the key for the status label map.
+    #
+    # @returns key (for statusLabelClassMap)
+    # @api private
+
+    statusLabelKey: ->
+      count = @model.get('migration_issues_count')
+      status = @status()
+
+      if @status() == 'completed' and count
+        return 'completed_with_issues'
+      else
+        return @status()
 
     # Status of the current migration or migration progress. Checks the migration 
     # first. If the migration is completed or failed we don't need to check 

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 Instructure, Inc.
+# Copyright (C) 2011 - 2013 Instructure, Inc.
 #
 # This file is part of Canvas.
 #
@@ -23,6 +23,7 @@ class Group < ActiveRecord::Base
   include UserFollow::FollowedItem
 
   attr_accessible :name, :context, :max_membership, :group_category, :join_level, :default_view, :description, :is_public, :avatar_attachment, :storage_quota_mb
+  validates_presence_of :context_id, :context_type, :account_id, :root_account_id, :workflow_state
   validates_allowed_transitions :is_public, false => true
 
   has_many :group_memberships, :dependent => :destroy, :conditions => ['group_memberships.workflow_state != ?', 'deleted']
@@ -54,7 +55,6 @@ class Group < ActiveRecord::Base
   belongs_to :wiki
   has_many :web_conferences, :as => :context, :dependent => :destroy
   has_many :collaborations, :as => :context, :order => 'title, created_at', :dependent => :destroy
-  has_one :scribd_account, :as => :scribdable
   has_many :media_objects, :as => :context
   has_many :zip_file_imports, :as => :context
   has_many :collections, :as => :context
@@ -62,11 +62,20 @@ class Group < ActiveRecord::Base
   has_many :following_user_follows, :class_name => 'UserFollow', :as => :followed_item
   has_many :user_follows, :foreign_key => 'following_user_id'
 
-  before_save :ensure_defaults, :maintain_category_attribute
+  before_validation :ensure_defaults
+  before_save :maintain_category_attribute
   after_save :close_memberships_if_deleted
 
   include StickySisFields
   are_sis_sticky :name
+
+  validates_each :name do |record, attr, value|
+    if value.blank?
+      record.errors.add attr, t(:name_required, "Name is required")
+    elsif value.length > maximum_string_length
+      record.errors.add attr, t(:name_too_long, "Enter a shorter group name")
+    end
+  end
 
   alias_method :participating_users_association, :participating_users
 
@@ -152,11 +161,11 @@ class Group < ActiveRecord::Base
     Group.find(ids)
   end
 
-  def self.not_in_group_sql_fragment(groups)
-    "AND NOT EXISTS (SELECT * FROM group_memberships gm
-                      WHERE gm.user_id = u.id AND
+  def self.not_in_group_sql_fragment(group_ids, prepend_and = true)
+    "#{"AND" if prepend_and} NOT EXISTS (SELECT * FROM group_memberships gm
+                      WHERE gm.user_id = users.id AND
                       gm.workflow_state != 'deleted' AND
-                      gm.group_id IN (#{groups.map(&:id).join ','}))" unless groups.empty?
+                      gm.group_id IN (#{group_ids.map(&:to_i).join ','}))" unless group_ids.empty?
 
   end
 
@@ -193,7 +202,10 @@ class Group < ActiveRecord::Base
     group_memberships.update_all(:workflow_state => 'deleted')
   end
 
+  Bookmarker = BookmarkedCollection::SimpleBookmarker.new(Group, :name, :id)
+
   scope :active, where("groups.workflow_state<>'deleted'")
+  scope :by_name, lambda { order(Bookmarker.order_by) }
 
   def full_name
     res = before_label(self.name) + " "
@@ -383,6 +395,10 @@ class Group < ActiveRecord::Base
     can :leave
   end
 
+  def users_visible_to(user)
+    grants_rights?(user, :read) ? users : users.where("?", false)
+  end
+
   # Helper needed by several permissions, use grants_right?(user, :participate)
   def can_participate?(user)
     return false unless user.present? && self.context.present?
@@ -400,10 +416,6 @@ class Group < ActiveRecord::Base
   # member is good enough
   def user_can_manage_own_discussion_posts?(user)
     true
-  end
-
-  def file_structure_for(user)
-    User.file_structure_for(self, user)
   end
 
   def is_a_context?
@@ -427,7 +439,11 @@ class Group < ActiveRecord::Base
   end
 
   def quota
-    self.storage_quota || Setting.get_cached('group_default_quota', 50.megabytes.to_s).to_i
+    return self.storage_quota || self.account.default_group_storage_quota || self.class.default_storage_quota
+  end
+
+  def self.default_storage_quota
+    Setting.get('group_default_quota', 50.megabytes.to_s).to_i
   end
 
   def storage_quota_mb
@@ -551,21 +567,18 @@ class Group < ActiveRecord::Base
     [Shard.default]
   end
 
-  class Bookmarker
-    def self.bookmark_for(group)
-      group.id
-    end
+  # Public: Determine if the current context has draft_state enabled.
+  #
+  # Returns a boolean.
+  def draft_state_enabled?
+    # shouldn't matter, but most specs create anonymous (contextless) groups :(
+    return false if context.nil?
+    context.draft_state_enabled?
+  end
 
-    def self.validate(bookmark)
-      bookmark.is_a?(Fixnum)
-    end
-
-    def self.restrict_scope(scope, pager)
-      if bookmark = pager.current_bookmark
-        comparison = (pager.include_bookmark ? 'groups.id >= ?' : 'groups.id > ?')
-        scope = scope.where(comparison, bookmark)
-      end
-      scope.order("groups.id ASC")
-    end
+  def serialize_permissions(permissions_hash, user, session)
+    permissions_hash.merge(
+      create_discussion_topic: DiscussionTopic.context_allows_user_to_create?(self, user, session)
+    )
   end
 end

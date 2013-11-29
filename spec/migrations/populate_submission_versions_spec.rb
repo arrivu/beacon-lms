@@ -41,9 +41,25 @@ describe DataFixup::PopulateSubmissionVersions do
     course_with_student
     submission = @user.submissions.build(:assignment => @course.assignments.create!)
     submission.without_versioning{ submission.save! }
-    versions = n.times.map{ Version.create(:versionable => submission, :yaml => submission.attributes.to_yaml) }
+    submission.versions.exists?.should be_false
+    n.times { |x| Version.create(:versionable => submission, :yaml => submission.attributes.to_yaml) }
     lambda{
       DataFixup::PopulateSubmissionVersions.run
     }.should change(SubmissionVersion, :count).by(n)
+  end
+
+  it "should skip submission version rows without a corresponding submission object" do
+    course_with_student
+    submission = @user.submissions.build(:assignment => @course.assignments.create!)
+    submission.without_versioning{ submission.save! }
+    Version.create(:versionable => submission, :yaml => submission.attributes.to_yaml)
+
+    submission.reload
+    submission.versions.exists?.should be_true
+    submission.delete
+
+    lambda{
+      DataFixup::PopulateSubmissionVersions.run
+    }.should_not change(SubmissionVersion, :count)
   end
 end

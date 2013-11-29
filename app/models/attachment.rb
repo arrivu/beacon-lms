@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011-2012 Instructure, Inc.
+# Copyright (C) 2011-2013 Instructure, Inc.
 #
 # This file is part of Canvas.
 #
@@ -25,6 +25,7 @@ class Attachment < ActiveRecord::Base
   attr_accessible :context, :folder, :filename, :display_name, :user, :locked, :position, :lock_at, :unlock_at, :uploaded_data, :hidden
   include HasContentTags
   include ContextModuleItem
+  include SearchTermHelper
 
   attr_accessor :podcast_associated_asset, :submission_attachment
 
@@ -43,7 +44,6 @@ class Attachment < ActiveRecord::Base
   has_many :attachment_associations
   belongs_to :root_attachment, :class_name => 'Attachment'
   belongs_to :scribd_mime_type
-  belongs_to :scribd_account
   has_one :sis_batch
   has_one :thumbnail, :foreign_key => "parent_id", :conditions => {:thumbnail => "thumb"}
   has_many :thumbnails, :foreign_key => "parent_id"
@@ -54,7 +54,6 @@ class Attachment < ActiveRecord::Base
   before_save :set_need_notify
 
   before_validation :assert_attachment
-  before_destroy :delete_scribd_doc
   acts_as_list :scope => :folder
 
   def self.file_store_config
@@ -221,9 +220,7 @@ class Attachment < ActiveRecord::Base
     existing ||= self.cloned_item_id ? context.attachments.find_by_cloned_item_id(self.cloned_item_id) : nil
     dup ||= Attachment.new
     dup = existing if existing && options[:overwrite]
-    self.attributes.delete_if{|k,v| [:id, :root_attachment_id, :uuid, :folder_id, :user_id, :filename].include?(k.to_sym) }.each do |key, val|
-      dup.send("#{key}=", val)
-    end
+    dup.send(:attributes=, self.attributes.except(*%w[id root_attachment_id uuid folder_id user_id filename namespace]), false)
     dup.write_attribute(:filename, self.filename)
     # avoid cycles (a -> b -> a) and self-references (a -> a) in root_attachment_id pointers
     if dup.new_record? || ![self.id, self.root_attachment_id].include?(dup.id)
@@ -243,7 +240,7 @@ class Attachment < ActiveRecord::Base
     transitioned_to_this_state = self.id_was == nil || self.file_state_changed? && self.workflow_state_was =~ /^unattached/
     if in_the_right_state && transitioned_to_this_state &&
         self.content_type && self.content_type.match(/\A(video|audio)/)
-      delay = Setting.get_cached('attachment_build_media_object_delay_seconds', 10.to_s).to_i
+      delay = Setting.get('attachment_build_media_object_delay_seconds', 10.to_s).to_i
       MediaObject.send_later_enqueue_args(:add_media_files, { :run_at => delay.seconds.from_now, :priority => Delayed::LOWER_PRIORITY }, self, false)
     end
   end
@@ -301,7 +298,7 @@ class Attachment < ActiveRecord::Base
   end
 
   def assert_attachment
-    if !self.to_be_zipped? && !self.zipping? && !self.errored? && (!filename || !content_type || !downloadable?)
+    if !self.to_be_zipped? && !self.zipping? && !self.errored? && !self.deleted? && (!filename || !content_type || !downloadable?)
       self.errors.add_to_base(t('errors.not_found', "File data could not be found"))
       return false
     end
@@ -310,19 +307,64 @@ class Attachment < ActiveRecord::Base
   after_create :flag_as_recently_created
   attr_accessor :recently_created
 
-  validates_presence_of :context_id
-  validates_presence_of :context_type
+  validates_presence_of :context_id, :context_type, :workflow_state
 
   serialize :scribd_doc, Scribd::Document
 
-  def delete_scribd_doc
-    return true unless self.scribd_doc && ScribdAPI.enabled? && !self.root_attachment_id
-    ScribdAPI.instance.set_user(self.scribd_account)
-    self.scribd_doc.destroy
+  # related_attachments: our root attachment, anyone who shares our root attachment,
+  # and anyone who calls us a root attachment
+  def related_attachments
+    if root_attachment_id
+      Attachment.where("id=? OR root_attachment_id=? OR (root_attachment_id=? AND id<>?)",
+                       root_attachment_id, id, root_attachment_id, id)
+    else
+      Attachment.where(:root_attachment_id => id)
+    end
   end
-  protected :delete_scribd_doc
 
-  # This method retrieves a URL to the thumbnail of a document, in a given size, and for any page in that document. Note that docs.getSettings and docs.getList also retrieve thumbnail URLs in default size - this method is really for resizing those. IMPORTANT - it is possible that at some time in the future, Scribd will redesign its image system, invalidating these URLs. So if you cache them, please have an update strategy in place so that you can update them if neceessary.
+  # It seems like there are at least three possibilities here:
+  # 1. the root attachment's record has a scribd_doc; the child attachmenent's
+  #    doesn't, and uses the root's implicitly (iow, Attachment#scribd_doc
+  #    loads the parent's if the child doesn't have one).
+  #    -> I cannot find any examples of this; in my experience, the child's
+  #       record always has a scribd_doc explicitly set...
+  #    --> if we trusted this case never to happen, then we could add
+  #        "where scribd_doc is not null" to the condition below
+  # 2. the root attachment and the child attachment each have an explicit
+  #    scribd_doc, specifying the same doc_id
+  #    -> I see plenty of examples of this in the db, but I have
+  #       not seen it happen...
+  # 3. the root attachment and the child attachment each have an explicit
+  #    scribd_doc, specifying different doc_ids (i.e., not sharing)
+  #    -> This is what happens when I upload two copies of the same file.
+  def scribd_doc_shared?
+    return false unless scribd_doc
+    related_attachments.not_deleted.any? do |att|
+      att.scribd_doc && att.scribd_doc.doc_id == scribd_doc.doc_id
+    end
+  end
+
+  # disassociate the scribd_doc from this Attachment
+  # and also delete it from scribd if no other Attachments are using it
+  def delete_scribd_doc
+    return true unless ScribdAPI.enabled? && scribd_doc
+    shared = scribd_doc_shared?
+
+    scribd_doc = self.scribd_doc
+    ScribdAPI.instance.set_user(scribd_user)
+    self.scribd_doc = nil
+    self.workflow_state = 'deleted'  # not file_state :P
+    unless shared
+      return false unless scribd_doc.destroy
+    end
+    save
+  end
+
+  def scribd_user
+    self.scribd_doc.try(:owner) || "canvas-#{Rails.env}"
+  end
+
+  # This method retrieves a URL to the thumbnail of a document, in a given size, and for any page in that document. Note that docs.getSettings and docs.getList also retrieve thumbnail URLs in default size - this method is really for resizing those. IMPORTANT - it is possible that at some time in the future, Scribd will redesign its image system, invalidating these URLs. So if you cache them, please have an update strategy in place so that you can update them if necessary.
   #
   # Parameters
   # integer width  (optional) Width in px of the desired image. If not included, will use the default thumb size.
@@ -340,14 +382,14 @@ class Attachment < ActiveRecord::Base
       begin
       # if we aren't requesting special demensions, fetch and save it to the db.
       if options.empty?
-        ScribdAPI.instance.set_user(self.scribd_account)
+        ScribdAPI.instance.set_user(scribd_user)
         self.cached_scribd_thumbnail = self.scribd_doc.thumbnail(options)
         # just update the cached_scribd_thumbnail column of this attachment without running callbacks
         Attachment.where(:id => self).update_all(:cached_scribd_thumbnail => self.cached_scribd_thumbnail)
         self.cached_scribd_thumbnail
       else
         Rails.cache.fetch(['scribd_thumb', self, options].cache_key) do
-          ScribdAPI.instance.set_user(self.scribd_account)
+          ScribdAPI.instance.set_user(scribd_user)
           self.scribd_doc.thumbnail(options)
         end
       end
@@ -441,7 +483,7 @@ class Attachment < ActiveRecord::Base
     self.scribd_attempts ||= 0
     self.folder_id ||= Folder.root_folders(context).first.id rescue nil
     if self.root_attachment && self.new_record?
-      [:md5, :size, :content_type, :scribd_mime_type_id, :scribd_user, :submitted_to_scribd_at, :workflow_state, :scribd_doc].each do |key|
+      [:md5, :size, :content_type, :scribd_mime_type_id, :submitted_to_scribd_at, :workflow_state, :scribd_doc].each do |key|
         self.send("#{key.to_s}=", self.root_attachment.send(key))
       end
       self.write_attribute(:filename, self.root_attachment.filename)
@@ -450,11 +492,13 @@ class Attachment < ActiveRecord::Base
 
     if !self.scribd_mime_type_id && !['text/html', 'application/xhtml+xml', 'application/xml', 'text/xml'].include?(self.content_type)
       @@mime_ids ||= {}
-      @@mime_ids[self.content_type] ||= self.content_type && ScribdMimeType.find_by_name(self.content_type).try(:id)
-      self.scribd_mime_type_id = @@mime_ids[self.content_type]
+      self.scribd_mime_type_id = @@mime_ids.fetch(self.content_type) do
+        @@mime_ids[self.content_type] = self.content_type && ScribdMimeType.find_by_name(self.content_type).try(:id)
+      end
       if !self.scribd_mime_type_id
-        @@mime_ids[self.after_extension] ||= self.after_extension && ScribdMimeType.find_by_extension(self.after_extension).try(:id)
-        self.scribd_mime_type_id = @@mime_ids[self.after_extension]
+        self.scribd_mime_type_id = @@mime_ids.fetch(self.after_extension) do
+          @@mime_ids[self.after_extension] = self.after_extension && ScribdMimeType.find_by_extension(self.after_extension).try(:id)
+        end
       end
     end
 
@@ -472,15 +516,6 @@ class Attachment < ActiveRecord::Base
     end
 
     self.media_entry_id ||= 'maybe' if self.new_record? && self.content_type && self.content_type.match(/(video|audio)/)
-
-    # Raise an error if this is scribdable without a scribdable context?
-    if scribdable_context? and scribdable? and ScribdAPI.enabled?
-      unless context.scribd_account
-        ScribdAccount.create(:scribdable => context)
-        self.context.reload
-      end
-      self.scribd_account_id ||= context.scribd_account.id
-    end
   end
   protected :default_values
 
@@ -507,7 +542,8 @@ class Attachment < ActiveRecord::Base
     #
     # I've added the root_account_id accessor above, but I didn't verify there
     # isn't any code still accessing the namespace for the account id directly.
-    ns = Attachment.domain_namespace
+    ns = root_attachment.try(:namespace) if root_attachment_id
+    ns ||= Attachment.domain_namespace
     ns ||= self.context.root_account.file_namespace rescue nil
     ns ||= self.context.account.file_namespace rescue nil
     if Rails.env.development? && Attachment.local_storage?
@@ -549,10 +585,28 @@ class Attachment < ActiveRecord::Base
     self.size = details[:content_length]
 
     if existing_attachment = find_existing_attachment_for_md5
-      s3object.delete rescue nil
-      self.root_attachment = existing_attachment
-      write_attribute(:filename, nil)
-      clear_cached_urls
+      if existing_attachment.s3object.exists?
+        # deduplicate. the existing attachment's s3object should be the same as
+        # that just uploaded ('cuz md5 match). delete the new copy and just
+        # have this attachment inherit from the existing attachment.
+        s3object.delete rescue nil
+        self.root_attachment = existing_attachment
+        write_attribute(:filename, nil)
+        clear_cached_urls
+      else
+        # it looks like we had a duplicate, but the existing attachment doesn't
+        # actually have an s3object (probably from an earlier bug). update it
+        # and all its inheritors to inherit instead from this attachment.
+        existing_attachment.root_attachment = self
+        existing_attachment.write_attribute(:filename, nil)
+        existing_attachment.clear_cached_urls
+        existing_attachment.save!
+        Attachment.where(root_attachment_id: existing_attachment).update_all(
+          root_attachment_id: self,
+          filename: nil,
+          cached_scribd_thumbnail: nil,
+          updated_at: Time.zone.now)
+      end
     end
 
     save!
@@ -568,7 +622,6 @@ class Attachment < ActiveRecord::Base
     if Attachment.s3_storage?
       res = {
         :upload_url => "#{options[:ssl] ? "https" : "http"}://#{bucket.name}.#{bucket.config.s3_endpoint}/",
-        :remote_url => true,
         :file_param => 'file',
         :success_url => s3_success_url,
         :upload_params => {
@@ -578,7 +631,6 @@ class Attachment < ActiveRecord::Base
     elsif Attachment.local_storage?
       res = {
         :upload_url => local_upload_url,
-        :remote_url => false,
         :file_param => options[:file_param] || 'attachment[uploaded_data]', #uploadify ignores this and uses 'file',
         :upload_params => options[:upload_params] || {}
       }
@@ -662,7 +714,7 @@ class Attachment < ActiveRecord::Base
   end
 
   def self.minimum_size_for_quota
-    Setting.get_cached('attachment_minimum_size_for_quota', '512').to_i
+    Setting.get('attachment_minimum_size_for_quota', '512').to_i
   end
 
   def self.get_quota(context)
@@ -671,11 +723,11 @@ class Attachment < ActiveRecord::Base
     context = context.quota_context if context.respond_to?(:quota_context) && context.quota_context
     if context
       Shackles.activate(:slave) do
-        quota = Setting.get_cached('context_default_quota', 50.megabytes.to_s).to_i
+        quota = Setting.get('context_default_quota', 50.megabytes.to_s).to_i
         quota = context.quota if (context.respond_to?("quota") && context.quota)
         min = self.minimum_size_for_quota
         # translated to ruby this is [size, min].max || 0
-        quota_used = context.attachments.active.sum("COALESCE(CASE when size < #{min} THEN #{min} ELSE size END, 0)", :conditions => { :root_attachment_id => nil }).to_i
+        quota_used = context.attachments.active.where(root_attachment_id: nil).sum("COALESCE(CASE when size < #{min} THEN #{min} ELSE size END, 0)").to_i
       end
     end
     {:quota => quota, :quota_used => quota_used}
@@ -902,10 +954,12 @@ class Attachment < ActiveRecord::Base
         if record.context.is_a?(Course) && (record.folder.locked? || record.context.tab_hidden?(Course::TAB_FILES))
           # only notify course students if they are able to access it
           to_list = record.context.participating_admins - [record.user]
-        else
+        elsif record.context.respond_to?(:participants)
           to_list = record.context.participants - [record.user]
         end
         recipient_keys = (to_list || []).compact.map(&:asset_string)
+        next if recipient_keys.empty?
+
         asset_context = record.context
         data = { :count => count }
         DelayedNotification.send_later_if_production_enqueue_args(
@@ -1142,7 +1196,12 @@ class Attachment < ActiveRecord::Base
     can :download
   end
 
+  # checking if an attachment is locked is expensive and pointless for
+  # submission attachments
+  attr_writer :skip_submission_attachment_lock_checks
+
   def locked_for?(user, opts={})
+    return false if @skip_submission_attachment_lock_checks
     return false if opts[:check_policies] && self.grants_right?(user, nil, :update)
     return {:asset_string => self.asset_string, :manually_locked => true} if self.locked || (self.folder && self.folder.locked?)
     Rails.cache.fetch(locked_cache_key(user), :expires_in => 1.minute) do
@@ -1153,6 +1212,7 @@ class Attachment < ActiveRecord::Base
         locked = {:asset_string => self.asset_string, :lock_at => self.lock_at}
       elsif self.could_be_locked && item = locked_by_module_item?(user, opts[:deep_check_if_needed])
         locked = {:asset_string => self.asset_string, :context_module => item.context_module.attributes}
+        locked[:unlock_at] = locked[:context_module]["unlock_at"] if locked[:context_module]["unlock_at"]
       end
       locked
     end
@@ -1189,7 +1249,7 @@ class Attachment < ActiveRecord::Base
   end
 
   def self.filtering_scribd_submits?
-    Setting.get_cached("filter_scribd_submits", "false") == "true"
+    Setting.get("filter_scribd_submits", "false") == "true"
   end
 
   include Workflow
@@ -1220,6 +1280,7 @@ class Attachment < ActiveRecord::Base
     state :errored do
       event :recycle, :transitions_to => :pending_upload
     end
+    state :deleted
     state :to_be_zipped
     state :zipping
     state :zipped
@@ -1227,25 +1288,37 @@ class Attachment < ActiveRecord::Base
     state :unattached_temporary
   end
 
-  scope :to_be_zipped, where("attachments.workflow_state='to_be_zipped' AND attachments.scribd_attempts<10").order(:created_at)
-
-  scope :active, where("attachments.file_state<>'deleted'")
+  scope :visible, where(['attachments.file_state in (?, ?)', 'available', 'public'])
+  scope :not_deleted, where("attachments.file_state<>'deleted'")
 
   scope :not_hidden, where("attachments.file_state<>'hidden'")
   scope :not_locked, lambda {
     where("(attachments.locked IS NULL OR attachments.locked=?) AND ((attachments.lock_at IS NULL) OR
       (attachments.lock_at>? OR (attachments.unlock_at IS NOT NULL AND attachments.unlock_at<?)))", false, Time.now.utc, Time.now.utc)
   }
+  scope :by_content_types, lambda { |types|
+    clauses = []
+    types.each do |type|
+      if type.include? '/'
+        clauses << sanitize_sql_array(["(attachments.content_type=?)", type])
+      else
+        clauses << wildcard('attachments.content_type', type + '/', :type => :right)
+      end
+    end
+    condition_sql = clauses.join(' OR ')
+    where(condition_sql)
+  }
 
   alias_method :destroy!, :destroy
   # file_state is like workflow_state, which was already taken
   # possible values are: available, deleted
-  def destroy(delete_media_object = true)
+  def destroy
     return if self.new_record?
     self.file_state = 'deleted' #destroy
     self.deleted_at = Time.now
     ContentTag.delete_for(self)
-    MediaObject.where(:attachment_id => self).update_all(:workflow_state => 'deleted', :updated_at => Time.now.utc) if self.id && delete_media_object
+    MediaObject.update_all({:attachment_id => nil, :updated_at => Time.now.utc}, {:attachment_id => self.id})
+    send_later_if_production(:delete_scribd_doc) if scribd_doc
     save!
     # if the attachment being deleted belongs to a user and the uuid (hash of file) matches the avatar_image_url
     # then clear the avatar_image_url value.
@@ -1310,7 +1383,7 @@ class Attachment < ActiveRecord::Base
   def submit_to_scribd!
     # Newly created record that needs to be submitted to scribd
     if self.pending_upload? and self.scribdable? and self.filename and ScribdAPI.enabled?
-      ScribdAPI.instance.set_user(self.scribd_account)
+      ScribdAPI.instance.set_user(scribd_user)
       begin
         upload_path = if Attachment.local_storage?
                  self.full_filename
@@ -1360,7 +1433,7 @@ class Attachment < ActiveRecord::Base
 
   def resubmit_to_scribd!
     if self.scribd_doc && ScribdAPI.enabled?
-      ScribdAPI.instance.set_user(self.scribd_account)
+      ScribdAPI.instance.set_user(scribd_user)
       self.scribd_doc.destroy rescue nil
     end
     self.workflow_state = 'pending_upload'
@@ -1393,7 +1466,7 @@ class Attachment < ActiveRecord::Base
   def query_conversion_status!
     return unless ScribdAPI.enabled? && self.scribdable?
     if self.scribd_doc
-      ScribdAPI.set_user(self.scribd_account) rescue nil
+      ScribdAPI.set_user(scribd_user)
       res = ScribdAPI.get_status(self.scribd_doc) rescue 'ERROR'
       case res
       when 'DONE'
@@ -1411,7 +1484,7 @@ class Attachment < ActiveRecord::Base
   def download_url(format='original')
     return @download_url if @download_url
     return nil unless ScribdAPI.enabled?
-    ScribdAPI.set_user(self.scribd_account)
+    ScribdAPI.set_user(scribd_user)
     begin
       @download_url = self.scribd_doc.download_url(format)
     rescue Scribd::ResponseError => e
@@ -1504,7 +1577,6 @@ class Attachment < ActiveRecord::Base
   def self.serialization_methods; [:mime_class, :scribdable?, :currently_locked, :crocodoc_available?]; end
   cattr_accessor :skip_thumbnails
 
-
   scope :scribdable?, where("scribd_mime_type_id IS NOT NULL")
   scope :recyclable, where("attachments.scribd_attempts<? AND attachments.workflow_state='errored'", MAX_SCRIBD_ATTEMPTS)
   scope :needing_scribd_conversion_status, lambda { where("attachments.workflow_state='processing' AND attachments.updated_at<?", 30.minutes.ago).limit(50) }
@@ -1572,7 +1644,7 @@ class Attachment < ActiveRecord::Base
 
   # the list of allowed thumbnail sizes to be generated dynamically
   def self.dynamic_thumbnail_sizes
-    DYNAMIC_THUMBNAIL_SIZES + Setting.get_cached("attachment_thumbnail_sizes", "").split(",")
+    DYNAMIC_THUMBNAIL_SIZES + Setting.get("attachment_thumbnail_sizes", "").split(",")
   end
 
   def create_dynamic_thumbnail(geometry_string)
@@ -1629,5 +1701,29 @@ class Attachment < ActiveRecord::Base
 
   def record_inline_view
     update_attribute(:last_inline_view, Time.now)
+    check_rerender_scribd_doc unless self.scribd_doc
+  end
+
+  def scribd_doc_missing?
+    scribdable? && scribd_doc.nil? && !pending_upload? && !processing?
+  end
+
+  def scribd_render_url
+    if scribd_doc_missing?
+      "/#{context_url_prefix}/files/#{self.id}/scribd_render"
+    else
+      nil
+    end
+  end
+
+  def check_rerender_scribd_doc
+    if scribd_doc_missing?
+      self.scribd_attempts = 0
+      self.workflow_state = 'pending_upload'
+      self.save!
+      send_later :submit_to_scribd!
+      return true
+    end
+    false
   end
 end

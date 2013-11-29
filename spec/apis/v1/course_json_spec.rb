@@ -85,6 +85,10 @@ module Api
           course_json.methods_to_send.should include('public_syllabus')
         end
 
+        it 'includes the storage_quota_mb field' do
+          course_json.methods_to_send.should include('storage_quota_mb')
+        end
+
         it 'includes the hide_final_grades method if its in the includes array' do
           includes << :hide_final_grades
           course_json.methods_to_send.should include('hide_final_grades')
@@ -191,6 +195,21 @@ module Api
         it 'doesnt add the sis_course_id key at all if the rights are NOT present' do
           course_json.set_sis_course_id( hash, sis_course, user)
           hash.should == {}
+        end
+      end
+
+      describe '#permissions' do
+        let(:course) { stub(:public_description => 'an eloquent anecdote' ) }
+
+        it 'returns the permissions when its configured for inclusion' do
+          includes << :permissions
+          course_json.include_permissions.should be_true
+          course_json.permissions_to_include.should == [ :create_discussion_topic ]
+        end
+
+        it 'is nil when configured not to be included' do
+          includes.clear
+          course_json.permissions_to_include.should be_nil
         end
       end
     end

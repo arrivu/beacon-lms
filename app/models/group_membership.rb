@@ -29,12 +29,14 @@ class GroupMembership < ActiveRecord::Base
   before_save :auto_join
   before_save :capture_old_group_id
 
+  validates_presence_of :group_id, :user_id, :workflow_state
   before_validation :verify_section_homogeneity_if_necessary
   validate :validate_within_group_limit
 
   after_save :ensure_mutually_exclusive_membership
   after_save :touch_groups
   after_save :check_auto_follow_group
+  after_save :update_cached_due_dates
   after_destroy :touch_groups
   after_destroy :check_auto_follow_group
   
@@ -135,6 +137,12 @@ class GroupMembership < ActiveRecord::Base
     elsif self.destroyed? || (self.workflow_state_changed? && self.deleted?)
       user_follow = self.user.shard.activate { self.user.user_follows.where(:followed_item_id => self.group_id, :followed_item_type => 'Group').first }
       user_follow.try(:destroy)
+    end
+  end
+
+  def update_cached_due_dates
+    if workflow_state_changed? && group.group_category_id && group.context_type == 'Course'
+      DueDateCacher.recompute_course(group.context_id, Assignment.where(context_type: group.context_type, context_id: group.context_id, group_category_id: group.group_category_id).pluck(:id))
     end
   end
   

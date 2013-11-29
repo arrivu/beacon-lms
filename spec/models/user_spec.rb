@@ -500,7 +500,8 @@ describe User do
         @shard1.activate do
           alice = User.create!(:name => 'alice')
           bob = User.create!(:name => 'bob')
-          courseX = Course.new
+          account = Account.create!
+          courseX = account.courses.build
           courseX.workflow_state = 'available'
           courseX.save!
           bobs_enrollment = StudentEnrollment.create!(:course => courseX, :user => bob, :workflow_state => 'completed')
@@ -508,7 +509,8 @@ describe User do
         end
 
         @shard2.activate do
-          courseY = Course.new
+          account = Account.create!
+          courseY = account.courses.build
           courseY.workflow_state = 'available'
           courseY.save!
           alices_enrollment = StudentEnrollment.new(:course => courseY, :user => alice, :workflow_state => 'active')
@@ -523,7 +525,8 @@ describe User do
         alice = nil
         @shard1.activate do
           alice = User.create!(:name => 'alice')
-          courseX = Course.new
+          account = Account.create!
+          courseX = account.courses.build
           courseX.workflow_state = 'available'
           courseX.save!
           StudentEnrollment.create!(:course => courseX, :user => alice, :workflow_state => 'completed')
@@ -1239,6 +1242,51 @@ describe User do
     end
   end
 
+  describe "favorites" do
+    before :each do
+      @user = User.create!
+
+      @courses = []
+      (1..3).each do |x|
+        course = course_with_student(:course_name => "Course #{x}", :user => @user, :active_all => true).course
+        @courses << course
+        @user.favorites.build(context: course)
+      end
+
+      @user.save!
+    end
+
+    it "should default favorites to enrolled courses when favorite courses do not exist" do
+      @user.favorites.by("Course").destroy_all
+      @user.menu_courses.should == @courses
+    end
+
+    it "should only include favorite courses when set" do
+      course = @courses.shift
+      @user.favorites.where(context_type: "Course", context_id: course).first.destroy
+      @user.menu_courses.should == @courses
+    end
+
+    context "sharding" do
+      specs_require_sharding
+
+      before :each do
+        (4..6).each do |x|
+          course = course_with_student(:course_name => "Course #{x}", :user => @user, :active_all => true).course
+          @courses << course
+          @user.favorites.build(context: course)
+        end
+
+        @user.save!
+      end
+
+      it "should include cross shard favorite courses" do
+        @user.favorites.by("Course").where("id % 2 = 0").destroy_all
+        @user.menu_courses.size.should eql(@courses.length / 2)
+      end
+    end
+  end
+
   describe "cached_current_enrollments" do
     it "should include temporary invitations" do
       user_with_pseudonym(:active_all => 1)
@@ -1563,15 +1611,6 @@ describe User do
     end
 
     describe "upcoming_events" do
-      it "should include manageable appointment groups" do
-        course(:active_all => true)
-        @user = @course.instructors.first
-        ag = AppointmentGroup.create!(:title => 'test appointment', :contexts => [@course], :new_appointments => [[Time.now, Time.now + 1.hour]])
-        events = @user.upcoming_events
-        events.size.should eql 1
-        events.first.title.should eql 'test appointment'
-      end
-
       it "handles assignments where the applied due_at is nil" do
         course_with_teacher_logged_in(:active_all => true)
         assignment = @course.assignments.create!(:title => "Should not throw",
@@ -1749,6 +1788,23 @@ describe User do
       User.create!(:name => "John Johnson")
       User.create!(:name => "John John")
       User.select([:id, :sortable_name]).order_by_sortable_name(:direction => :descending).all.map(&:sortable_name).should == ["Johnson, John", "John, John"]
+    end
+
+    it "should sort by the current locale with pg_collkey if possible" do
+      pending "requires postgres" unless User.connection.adapter_name == 'PostgreSQL'
+      pending "requires pg_collkey on the server" if User.connection.select_value("SELECT COUNT(*) FROM pg_proc WHERE proname='collkey'").to_i == 0
+      begin
+        Bundler.require 'icu'
+      rescue LoadError
+        pending "requires icu locally"
+      end
+      I18n.locale = :es
+      User.sortable_name_order_by_clause.should match /es/
+      User.sortable_name_order_by_clause.should_not match /root/
+      # english has no specific sorting rules, so use root
+      I18n.locale = :en
+      User.sortable_name_order_by_clause.should_not match /es/
+      User.sortable_name_order_by_clause.should match /root/
     end
   end
 
@@ -2307,6 +2363,22 @@ describe User do
         @shard1.activate{ @user.stamp_logout_time! }
         @user.reload.last_logged_out.should_not be_nil
       end
+    end
+  end
+
+  describe "delete_enrollments" do
+    before do
+      course
+      2.times { @course.course_sections.create! }
+      2.times { @course.assignments.create! }
+    end
+
+    it "should batch DueDateCacher jobs" do
+      DueDateCacher.expects(:recompute).never
+      DueDateCacher.expects(:recompute_course).twice # sync_enrollments and destroy_enrollments
+      test_student = @course.student_view_student
+      test_student.destroy
+      test_student.reload.enrollments.each { |e| e.should be_deleted }
     end
   end
 end

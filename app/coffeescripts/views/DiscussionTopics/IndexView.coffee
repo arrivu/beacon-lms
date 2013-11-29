@@ -1,25 +1,25 @@
 define [
   'underscore'
   'Backbone'
-  'compiled/views/DiscussionTopics/DiscussionListView'
   'jst/DiscussionTopics/IndexView'
   'compiled/views/DiscussionTopics/DiscussionsSettingsView'
   'compiled/views/DiscussionTopics/UserSettingsView'
-], (_, {View}, DiscussionListView, template, DiscussionsSettingsView, UserSettingsView) ->
+], (_, {View}, template, DiscussionsSettingsView, UserSettingsView) ->
 
   class IndexView extends View
     template: template
 
     el: '#content'
 
-    @child 'openDiscussionView', '.open.discussion-list'
+    @child 'openDiscussionView',   '.open.discussion-list'
     @child 'lockedDiscussionView', '.locked.discussion-list'
+    @child 'pinnedDiscussionView', '.pinned.discussion-list'
 
     events:
-      'click .ig-header .element_toggler':    'toggleDiscussionList'
-      'click #edit_discussions_settings':     'toggleSettingsView'
-      'change #onlyUnread, #onlyGraded':      'filterResults'
-      'keyup #searchTerm':                    'filterResults'
+      'click .ig-header .element_toggler': 'toggleDiscussionList'
+      'click #edit_discussions_settings':  'toggleSettingsView'
+      'change #onlyUnread, #onlyGraded':   'filterResults'
+      'keyup #searchTerm':                 'filterResults'
 
     filters:
       onlyGraded:
@@ -40,7 +40,11 @@ define [
             model.summary().match(regex)
 
     collections: ->
-      [@options.openDiscussionView.collection, @options.lockedDiscussionView.collection]
+      [
+        @options.openDiscussionView.collection
+        @options.lockedDiscussionView.collection
+        @options.pinnedDiscussionView.collection
+      ]
 
     afterRender: ->
       @$('#discussionsFilter').buttonset()
@@ -70,7 +74,7 @@ define [
       @settingsView().toggle()
 
     toggleDiscussionList: (e) ->
-      $(e.target).find('i')
+      $(e.currentTarget).find('i')
         .toggleClass('icon-mini-arrow-down')
         .toggleClass('icon-mini-arrow-right')
 

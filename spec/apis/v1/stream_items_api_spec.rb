@@ -295,7 +295,8 @@ describe UsersController, :type => :integration do
     json = api_call(:get, "/api/v1/users/activity_stream.json",
                     { :controller => "users", :action => "activity_stream", :format => 'json' })
     @assignment.reload
-    assign_json = assignment_json(@assignment,@user,session,false)
+    assign_json = assignment_json(@assignment, @user, session,
+                                  include_discussion_topic: false)
     assign_json['title'] = @assignment.title
     json.should == [{
       'id' => StreamItem.last.id,
@@ -311,7 +312,7 @@ describe UsersController, :type => :integration do
       'score' => 12,
       'html_url' => "http://www.example.com/courses/#{@course.id}/assignments/#{@assignment.id}/submissions/#{@user.id}",
       'workflow_state' => 'graded',
-      'late' => nil,
+      'late' => false,
       'assignment' => assign_json,
       'assignment_id' => @assignment.id,
       'attempt' => nil,
@@ -365,6 +366,8 @@ describe UsersController, :type => :integration do
         'default_view' => 'feed',
         'workflow_state' => 'available',
         'public_syllabus' => false,
+        'storage_quota_mb' => @course.storage_quota_mb,
+        'apply_assignment_group_weights' => false
       },
 
       'user' => {
@@ -391,7 +394,8 @@ describe UsersController, :type => :integration do
     json = api_call(:get, "/api/v1/users/activity_stream.json",
                     { :controller => "users", :action => "activity_stream", :format => 'json' })
     @assignment.reload
-    assign_json = assignment_json(@assignment,@user,session,false)
+    assign_json = assignment_json(@assignment, @user, session,
+                                  include_discussion_topic: false)
     assign_json['title'] = @assignment.title
     json.should == [{
       'id' => StreamItem.last.id,
@@ -407,7 +411,7 @@ describe UsersController, :type => :integration do
       'score' => nil,
       'html_url' => "http://www.example.com/courses/#{@course.id}/assignments/#{@assignment.id}/submissions/#{@user.id}",
       'workflow_state' => 'unsubmitted',
-      'late' => nil,
+      'late' => false,
 
       'assignment' => assign_json,
       'assignment_id' => @assignment.id,
@@ -462,6 +466,8 @@ describe UsersController, :type => :integration do
         'default_view' => 'feed',
         'workflow_state' => 'available',
         'public_syllabus' => false,
+        'storage_quota_mb' => @course.storage_quota_mb,
+        'apply_assignment_group_weights' => false
       },
 
       'user' => {
@@ -634,5 +640,37 @@ describe UsersController, :type => :integration do
     json.first['discussion_topic_id'].should == @topic1.id
     response.headers['Link'].should be_present
   end
-end
 
+  context "stream items" do
+    it "should hide the specified stream_item" do
+      item = collection_item_model
+      item.discussion_topic.save!
+      item.discussion_topic.discussion_subentries.create!(:message => "test", :user => @user, :discussion_topic => item.discussion_topic)
+      @user.stream_item_instances.where(:hidden => false).count.should == 1
+
+      json = api_call(:delete, "/api/v1/users/self/activity_stream/#{StreamItem.last.id}",
+                      {:action => "ignore_stream_item", :controller => "users", :format => 'json', :id => StreamItem.last.id.to_param})
+
+      @user.stream_item_instances.where(:hidden => false).count.should == 0
+      @user.stream_item_instances.where(:hidden => true).count.should == 1
+      json.should == {'hidden' => true}
+    end
+
+    it "should hide all of the stream items" do
+      3.times do |n|
+        collection = @user.collections.create! :name => 'Test #{n}'
+        item = collection_item_model(:collection => collection)
+        item.discussion_topic.save!
+        item.discussion_topic.discussion_subentries.create!(:message => "test", :user => @user, :discussion_topic => item.discussion_topic)
+      end
+      @user.stream_item_instances.where(:hidden => false).count.should == 3
+
+      json = api_call(:delete, "/api/v1/users/self/activity_stream",
+                      {:action => "ignore_all_stream_items", :controller => "users", :format => 'json'})
+
+      @user.stream_item_instances.where(:hidden => false).count.should == 0
+      @user.stream_item_instances.where(:hidden => true).count.should == 3
+      json.should == {'hidden' => true}
+    end
+  end
+end

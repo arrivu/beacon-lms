@@ -44,9 +44,9 @@ describe "edititing grades" do
 
     #go back to gradebook1 and compare to make sure they match
     check_gradebook_1_totals({
-                                 @student_1.id => expected_edited_total,
-                                 @student_2.id => expected_edited_total
-                             })
+       @student_1.id => expected_edited_total,
+       @student_2.id => expected_edited_total
+     })
   end
 
   it "should update a graded quiz and have the points carry over to the quiz attempts page" do
@@ -278,7 +278,7 @@ describe "edititing grades" do
     wait_for_ajaximations
     edit_grade(f('#gradebook_grid [row="0"] .l0'), 0)
     keep_trying_until do
-      f('.ui-state-error').text.should match(/refresh/)
+      flash_message_present?(:error, /refresh/).should be_true
     end
   end
 end

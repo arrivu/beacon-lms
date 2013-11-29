@@ -58,14 +58,40 @@ describe "External Tools" do
       doc.at_css('form#tool_form input#ext_ims_lis_basic_outcome_url')['value'].should == blti_legacy_grade_passback_api_url(@tool)
     end
 
-    it "should not include outcome service params when viewing as teacher" do
+    it "should not include outcome service sourcedid when viewing as teacher" do
       @course.enroll_teacher(user(:active_all => true))
       user_session(@user)
       get "/courses/#{@course.id}/assignments/#{@assignment.id}"
       response.should be_success
       doc = Nokogiri::HTML.parse(response.body)
       doc.at_css('form#tool_form input#lis_result_sourcedid').should be_nil
-      doc.at_css('form#tool_form input#lis_outcome_service_url').should be_nil
+      doc.at_css('form#tool_form input#lis_outcome_service_url').should_not be_nil
+    end
+
+    it "should include time zone in LTI paramaters if included in custom fields" do
+      @tool.custom_fields = {
+        "custom_time_zone" => "$Person.address.timezone",
+      }
+      @tool.save!
+      student_in_course(:course => @course, :active_all => true)
+      user_session(@user)
+
+      account = @course.root_account
+      account.default_time_zone = 'Alaska'
+      account.save!
+
+      get "/courses/#{@course.id}/assignments/#{@assignment.id}"
+      response.should be_success
+      doc = Nokogiri::HTML.parse(response.body)
+      doc.at_css('form#tool_form input#custom_time_zone')['value'].should == "America/Juneau"
+
+      @user.time_zone = "Hawaii"
+      @user.save!
+
+      get "/courses/#{@course.id}/assignments/#{@assignment.id}"
+      response.should be_success
+      doc = Nokogiri::HTML.parse(response.body)
+      doc.at_css('form#tool_form input#custom_time_zone')['value'].should == "Pacific/Honolulu"
     end
 
     it "should redirect if the tool can't be configured" do

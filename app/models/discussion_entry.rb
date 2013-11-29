@@ -44,8 +44,8 @@ class DiscussionEntry < ActiveRecord::Base
   after_create :create_participants
   validates_length_of :message, :maximum => maximum_text_length, :allow_nil => true, :allow_blank => true
   validates_presence_of :discussion_topic_id
-  before_validation_on_create :set_depth
-  validate_on_create :validate_depth
+  before_validation(on: :create, &:set_depth)
+  validate :validate_depth, on: :create
 
   sanitize_field :message, Instructure::SanitizeField::SANITIZE
 
@@ -78,7 +78,7 @@ class DiscussionEntry < ActiveRecord::Base
 
   set_broadcast_policy do |p|
     p.dispatch :new_discussion_entry
-    p.to { posters - [user] }
+    p.to { subscribers - [user] }
     p.whenever { |record|
       record.just_created && record.active?
     }
@@ -107,7 +107,7 @@ class DiscussionEntry < ActiveRecord::Base
 
   # The maximum discussion entry threading depth that is allowed
   def self.max_depth
-    Setting.get_cached('discussion_entry_max_depth', '50').to_i
+    Setting.get('discussion_entry_max_depth', '50').to_i
   end
 
   def set_depth
@@ -152,6 +152,10 @@ class DiscussionEntry < ActiveRecord::Base
     self.discussion_topic.posters rescue [self.user]
   end
 
+  def subscribers
+    subscribed_users = self.discussion_topic.subscribers
+  end
+
   def plaintext_message=(val)
     self.message = format_message(val).first
   end
@@ -175,6 +179,7 @@ class DiscussionEntry < ActiveRecord::Base
     save!
     update_topic_submission
     decrement_unread_counts_for_this_entry
+    update_topic_subscription
   end
 
   def update_discussion
@@ -219,6 +224,13 @@ class DiscussionEntry < ActiveRecord::Base
         DiscussionTopicParticipant.where(:discussion_topic_id => self.discussion_topic_id, :user_id => users).
             update_all('unread_entry_count = unread_entry_count - 1')
       end
+    end
+  end
+
+  def update_topic_subscription
+    discussion_topic.user_ids_who_have_posted_and_admins(true) # pesky memoization
+    unless discussion_topic.user_can_see_posts?(user)
+      discussion_topic.unsubscribe(user)
     end
   end
 
@@ -316,26 +328,6 @@ class DiscussionEntry < ActiveRecord::Base
     end
   end
 
-  def clone_for(context, dup=nil, options={})
-    options[:migrate] = true if options[:migrate] == nil
-    dup ||= DiscussionEntry.new
-    self.attributes.delete_if{|k,v| [:id, :discussion_topic_id, :attachment_id].include?(k.to_sym) }.each do |key, val|
-      dup.send("#{key}=", val)
-    end
-    dup.parent_id = context.merge_mapped_id("discussion_entry_#{self.parent_id}")
-    dup.attachment_id = context.merge_mapped_id(self.attachment)
-    if !dup.attachment_id && self.attachment
-      attachment = self.attachment.clone_for(context)
-      attachment.folder_id = nil
-      attachment.save_without_broadcasting!
-      context.map_merge(self.attachment, attachment)
-      context.warn_merge_result(t :file_added_warning, "Added file \"%{file_path}\" which is needed for an entry in the topic \"%{discussion_topic_title}\"", :file_path => "%{attachment.folder.full_name}/#{attachment.display_name}", :discussion_topic_title => self.discussion_topic.title)
-      dup.attachment_id = attachment.id
-    end
-    dup.message = context.migrate_content_links(self.message, self.context) if options[:migrate]
-    dup
-  end
-
   def context
     self.discussion_topic.context
   end
@@ -377,8 +369,10 @@ class DiscussionEntry < ActiveRecord::Base
           new_count = self.discussion_topic.unread_count(self.user) - 1
           topic_participant = self.discussion_topic.discussion_topic_participants.create(:user => self.user,
                                                                                          :unread_entry_count => new_count,
-                                                                                         :workflow_state => "unread")
+                                                                                         :workflow_state => "unread",
+                                                                                         :subscribed => self.discussion_topic.subscribed?(self.user))
         end
+        self.discussion_topic.subscribe(self.user) unless self.discussion_topic.subscription_hold(self.user, nil, nil)
       end
     end
   end

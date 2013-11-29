@@ -72,15 +72,6 @@ Canvas::Plugin.register('kaltura', nil, {
   :settings_partial => 'plugins/kaltura_settings',
   :validator => 'KalturaValidator'
 })
-Canvas::Plugin.register('dim_dim', :web_conferencing, {
-  :name => lambda{ t :name, "DimDim" },
-  :description => lambda{ t :description, "DimDim web conferencing support" },
-  :website => 'http://www.dimdim.com',
-  :author => 'Instructure',
-  :author_website => 'http://www.instructure.com',
-  :version => '1.0.0',
-  :settings_partial => 'plugins/dim_dim_settings'
-})
 Canvas::Plugin.register('wimba', :web_conferencing, {
   :name => lambda{ t :name, "Wimba" },
   :description => lambda{ t :description, "Wimba web conferencing support" },
@@ -126,11 +117,13 @@ Canvas::Plugin.register('tinychat', nil, {
 require_dependency 'cc/importer/cc_worker'
 Canvas::Plugin.register 'canvas_cartridge_importer', :export_system, {
   :name => lambda{ I18n.t 'canvas_cartridge_name', 'Canvas Cartridge Importer' },
+  :display_name => lambda{ I18n.t 'canvas_cartridge_display', 'Canvas Common Cartridge' },
   :author => 'Instructure',
   :author_website => 'http://www.instructure.com',
   :description => lambda{ I18n.t :canvas_cartridge_description, 'This enables converting a canvas export to the intermediary json format to be imported' },
   :version => '1.0.0',
   :select_text => lambda{ I18n.t :canvas_cartridge_file_description, "Canvas Course Export Package" },
+  :sort_order => 1,
   :settings => {
     :worker => 'CCWorker',
     :migration_partial => 'canvas_config',
@@ -141,11 +134,13 @@ Canvas::Plugin.register 'canvas_cartridge_importer', :export_system, {
 require_dependency 'canvas/migration/worker/course_copy_worker'
 Canvas::Plugin.register 'course_copy_importer', :export_system, {
         :name => lambda { I18n.t :course_copy_name, 'Copy Canvas Course' },
+        :display_name => lambda { I18n.t :course_copy_display, 'Course Copy' },
         :author => 'Instructure',
         :author_website => 'http://www.instructure.com',
         :description => lambda { I18n.t :course_copy_description, 'Migration plugin for copying canvas courses' },
         :version => '1.0.0',
         :select_text => lambda { I18n.t :course_copy_file_description, "Copy a Canvas Course" },
+        :sort_order => 0,
         :settings => {
                 :worker => 'CourseCopyWorker',
                 :requires_file_upload => false,
@@ -157,11 +152,13 @@ Canvas::Plugin.register 'course_copy_importer', :export_system, {
 require_dependency 'canvas/migration/worker/zip_file_worker'
 Canvas::Plugin.register 'zip_file_importer', :export_system, {
         :name => lambda { I18n.t :zip_file_name, '.zip file' },
+        :display_name => lambda { I18n.t :zip_file_display, 'File Import' },
         :author => 'Instructure',
         :author_website => 'http://www.instructure.com',
         :description => lambda { I18n.t :zip_file_description, 'Migration plugin for unpacking plain .zip files into a course' },
         :version => '1.0.0',
         :select_text => lambda { I18n.t :zip_file_file_description, "Unzip .zip file into folder" },
+        :sort_order => 2,
         :settings => {
                 :worker => 'ZipFileWorker',
                 :requires_file_upload => true,
@@ -172,6 +169,7 @@ Canvas::Plugin.register 'zip_file_importer', :export_system, {
 }
 Canvas::Plugin.register 'common_cartridge_importer', :export_system, {
   :name => lambda{ I18n.t :common_cartridge_name, 'Common Cartridge Importer' },
+  :display_name => lambda{ I18n.t :common_cartridge_display, 'Common Cartridge' },
   :author => 'Instructure',
   :author_website => 'http://www.instructure.com',
   :description => lambda{ I18n.t :common_cartridge_description, 'This enables converting a Common Cartridge packages in the intermediary json format to be imported' },
@@ -279,3 +277,4 @@ Canvas::Plugin.register('app_center', nil, {
     },
     :validator => 'AppCenterValidator'
 })
+

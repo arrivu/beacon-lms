@@ -19,10 +19,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../sharding_spec_helper')
 
 describe AssignmentsController do
-  # it "should use AssignmentsController" do
-  #   controller.should be_an_instance_of(AssignmentsController)
-  # end
-
   def course_assignment(course = nil)
     course ||= @course
     @group = course.assignment_groups.create(:name => "some group")
@@ -39,7 +35,7 @@ describe AssignmentsController do
       get 'index'
       assert_status(404)
     end
-    
+
     it "should return unauthorized without a valid session" do
       course_with_student(:active_all => true)
       get 'index', :course_id => @course.id
@@ -243,6 +239,16 @@ describe AssignmentsController do
       course_with_student(:active_all => true)
       get 'new', :course_id => @course.id
       assert_unauthorized
+    end
+
+    it "should default to unpublished for draft state" do
+      course_with_student(:active_all => true)
+      @course.root_account.tap{ |a| a.settings[:enable_draft] = true }.save!
+      @course.require_assignment_group
+
+      get 'new', :course_id => @course.id
+
+      assigns[:assignment].workflow_state.should == 'unpublished'
     end
   end
   

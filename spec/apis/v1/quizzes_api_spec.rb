@@ -51,6 +51,18 @@ describe QuizzesApiController, :type => :integration do
       quiz_ids.should == quizzes.map(&:id)
     end
 
+    it "should search for quizzes by title" do
+      2.times{ |i| @course.quizzes.create! :title => "first_#{i}" }
+      ids = @course.quizzes.map(&:id)
+      2.times{ |i| @course.quizzes.create! :title => "second_#{i}" }
+
+      json = api_call(:get, "/api/v1/courses/#{@course.id}/quizzes?search_term=fir",
+                      :controller=>"quizzes_api", :action=>"index", :format=>"json", :course_id=>"#{@course.id}",
+                      :search_term => 'fir')
+
+      json.map{|h| h['id'] }.sort.should == ids.sort
+    end
+
     it "should return unauthorized if the quiz tab is disabled" do
       @course.tab_configuration = [ { :id => Course::TAB_QUIZZES, :hidden => true } ]
       student_in_course(:active_all => true, :course => @course)
@@ -64,7 +76,22 @@ describe QuizzesApiController, :type => :integration do
   end
 
   describe "GET /courses/:course_id/quizzes/:id (show)" do
-    before { teacher_in_course(:active_all => true) }
+    before { course_with_teacher_logged_in(:active_all => true, :course => @course) }
+
+    context "as a student" do
+
+      it "doesn't show access codes" do
+        course_with_student_logged_in(active_all: true)
+        quiz = @course.quizzes.create!(
+          title: "Access code Test",
+          access_code: "hello!"
+        )
+        json = api_call(:get, "/api/v1/courses/#{@course.id}/quizzes/#{quiz.id}",
+                        :controller=>"quizzes_api", :action=>"show", :format=>"json", :course_id=>"#{@course.id}", :id => "#{quiz.id}")
+
+        json.should_not have_key('access_code')
+      end
+    end
 
     context "valid quiz" do
       before do
@@ -90,6 +117,25 @@ describe QuizzesApiController, :type => :integration do
 
       it "includes published" do
         @json['published'].should == false
+      end
+
+      it "includes question count" do
+        @json['question_count'].should == 0
+      end
+    end
+
+    context "unpublished quiz" do
+      before do
+        @quiz = @course.quizzes.create! :title => 'title'
+        @quiz.quiz_questions.create!(:question_data => { :name => "test 1" })
+        @quiz.save!
+
+        @json = api_call(:get, "/api/v1/courses/#{@course.id}/quizzes/#{@quiz.id}",
+                        :controller=>"quizzes_api", :action=>"show", :format=>"json", :course_id=>"#{@course.id}", :id => "#{@quiz.id}")
+      end
+
+      it "includes unpublished questions in question count" do
+        @json['question_count'].should == 1
       end
     end
 
@@ -263,13 +309,17 @@ describe QuizzesApiController, :type => :integration do
       it "allows un/publishing an unpublished quiz" do
         api_update_quiz({},{})
         @quiz.reload.should_not be_published # in 'created' state by default
-        api_update_quiz({}, {published: false})
+        json = api_update_quiz({}, {published: false})
+        json['unpublishable'].should == true
         @quiz.reload.should be_unpublished
-        api_update_quiz({}, {published: true})
+        json = api_update_quiz({}, {published: true})
+        json['unpublishable'].should == true
         @quiz.reload.should be_published
         api_update_quiz({},{published: nil}) # nil shouldn't change published
         @quiz.reload.should be_published
         @quiz.any_instantiation.stubs(:has_student_submissions?).returns true
+        json = api_update_quiz({},{}) # nil shouldn't change published
+        json['unpublishable'].should == false
         json = api_update_quiz({}, {published: false}, {expected_status: 400})
         json['errors']['published'].should_not be_nil
         ActiveRecord::Base.reset_any_instantiation!

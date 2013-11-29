@@ -67,11 +67,11 @@ class Shard
   end
 
   def self.global_id_for(any_id)
-    any_id
+    any_id.is_a?(ActiveRecord::Base) ? any_id.global_id : any_id
   end
 
   def self.relative_id_for(any_id, target_shard = nil)
-    any_id
+    any_id.is_a?(ActiveRecord::Base) ? any_id.local_id : any_id
   end
 
   yaml_as "tag:instructure.com,2012:Shard"
@@ -90,7 +90,7 @@ class Shard
 end
 
 ActiveRecord::Base.class_eval do
-  if Rails.version < "3.0"
+  if CANVAS_RAILS2
     class << self
       VALID_FIND_OPTIONS << :shard
     end

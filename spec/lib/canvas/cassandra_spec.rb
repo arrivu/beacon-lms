@@ -22,7 +22,7 @@ describe "Canvas::Redis::Cassandra" do
   let(:db) do
     @cql_db = mock()
     CassandraCQL::Database.stubs(:new).returns(@cql_db)
-    Canvas::Cassandra::Database.new([], {}, {})
+    Canvas::Cassandra::Database.new("test", "test", [], {}, {})
   end
 
   describe "#batch" do
@@ -78,6 +78,27 @@ describe "Canvas::Redis::Cassandra" do
       db.expects(:execute).with("2")
       db.batch do
         db.update("2")
+      end
+    end
+
+    it "should batch counter calls separately for cql3" do
+      db.db.stubs(:use_cql3?).returns(true)
+      db.expects(:execute).with("BEGIN BATCH 1 2 APPLY BATCH").once
+      db.expects(:execute).with("BEGIN COUNTER BATCH 3 4 APPLY BATCH").once
+      db.batch do
+        db.update("1")
+        db.update("2")
+        db.update_counter("3")
+        db.update_counter("4")
+      end
+    end
+
+    it "should not batch counter calls separately for older cassandra" do
+      db.db.stubs(:use_cql3?).returns(false)
+      db.expects(:execute).with("BEGIN BATCH 1 2 APPLY BATCH").once
+      db.batch do
+        db.update("1")
+        db.update_counter("2")
       end
     end
   end

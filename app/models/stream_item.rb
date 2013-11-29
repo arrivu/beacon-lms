@@ -246,7 +246,7 @@ class StreamItem < ActiveRecord::Base
         }
       end
 
-      StreamItemInstance.connection.bulk_insert('stream_item_instances', inserts)
+      StreamItemInstance.bulk_insert(inserts)
 
       #reset caches manually because the observer wont trigger off of the above mass inserts
       user_ids_subset.each do |user_id|
@@ -273,7 +273,7 @@ class StreamItem < ActiveRecord::Base
     # the teacher's comment even if it is farther down.
 
     # touch all the users to invalidate the cache
-    if Rails.version < '3.0'
+    if CANVAS_RAILS2
       User.update_all({:updated_at => Time.now.utc}, {:id => user_ids})
     else
       User.where(:id => user_ids).update_all(:updated_at => Time.now.utc)
@@ -332,23 +332,27 @@ class StreamItem < ActiveRecord::Base
     user_ids = Set.new
     count = 0
 
-    query = { :conditions => ['updated_at < ?', before_date], :include => [:context] }
-    if touch_users
-      query[:include] << 'stream_item_instances'
-    end
+    scope = where("updated_at<?", before_date).
+        includes(:context).
+        limit(1000)
+    scope = scope.includes(:stream_item_instances) if touch_users
 
-    self.find_each(query) do |item|
-      count += 1
-      if touch_users
-        user_ids.add(item.stream_item_instances.map { |i| i.user_id })
+    while true
+      batch = scope.all
+      batch.each do |item|
+        count += 1
+        if touch_users
+          user_ids.add(item.stream_item_instances.map(&:user_id))
+        end
+        # this will destroy the associated stream_item_instances as well
+        item.destroy
       end
-      # this will destroy the associated stream_item_instances as well
-      item.destroy
+      break if batch.empty?
     end
 
     unless user_ids.empty?
       # touch all the users to invalidate the cache
-      if Rails.version < '3.0'
+      if CANVAS_RAILS2
         User.update_all({:updated_at => Time.now.utc}, {:id => user_ids.to_a})
       else
         User.where(:id => user_ids.to_a).update_all(:updated_at => Time.now.utc)

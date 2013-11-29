@@ -16,6 +16,7 @@ describe "quizzes" do
         @quiz.save!
       end
 
+      # This feature doesn't exist for draft state yet
       describe "on main page" do
         def validate_description_text(does_contain_text, text)
           description = f('.description')
@@ -56,7 +57,7 @@ describe "quizzes" do
         def validate_resume_button_text(text)
           f('#not_right_side .take_quiz_button').text.should == text
         end
-        
+
         before do
           @resume_text = 'Resume Quiz'
         end
@@ -78,6 +79,22 @@ describe "quizzes" do
           update_quiz_lock(Time.now - 5.minutes, nil)
           get "/courses/#{@course.id}/quizzes/#{@quiz.id}"
           f('#not_right_side .take_quiz_button').should_not be_present
+        end
+
+        it "should not see the publish button" do
+          get "/courses/#{@course.id}/quizzes/#{@quiz.id}"
+          f('#quiz-publish-link').should_not be_present
+        end
+
+        it "should not see unpublished warning" do
+          # set to unpublished state
+          @quiz.last_edited_at = Time.now
+          @quiz.published_at   = 1.hour.ago
+          @quiz.save!
+
+          get "/courses/#{@course.id}/quizzes/#{@quiz.id}"
+
+          f(".unpublished_warning").should_not be_present
         end
       end
     end
@@ -118,6 +135,54 @@ describe "quizzes" do
         # we should be back at the quiz show page
         driver.find_element(:link_text, 'Resume Quiz').should be_present
       end
+    end
+  end
+
+  context "who closes the session without submitting" do
+    it "should automatically grade the submission when it becomes overdue" do
+      job_tag = 'QuizSubmission#grade_if_untaken'
+
+      course_with_student_logged_in
+
+      quiz = quiz_model({
+        :course => @course,
+        :time_limit => 5
+      })
+
+      quiz.quiz_questions.create!(:question_data => {
+          :name => 'test 3',
+          :question_type => 'multiple_choice_question',
+          :answers => {'answer_0' => {'answer_text' => '0'}, 'answer_1' => {'answer_text' => '1'}}})
+      quiz.generate_quiz_data
+      quiz.save
+
+      Delayed::Job.find_by_tag(job_tag).should == nil
+
+      get "/courses/#{@course.id}/quizzes/#{@quiz.id}/take?user_id=#{@user.id}"
+      expect_new_page_load { driver.find_element(:link_text, 'Take the Quiz').click }
+
+      answer_id = quiz.stored_questions[0][:answers][0][:id]
+
+      fj("input[type=radio][value=#{answer_id}]").click
+
+      wait_for_js
+
+      driver.execute_script("window.close()")
+
+      quiz_sub = @quiz.quiz_submissions.find_by_user_id(@user.id)
+      quiz_sub.should be_present
+      quiz_sub.workflow_state.should == "untaken"
+
+      job = Delayed::Job.find_by_tag(job_tag)
+      job.should be_present
+
+      # okay, we will manually "run" the job because we can't afford to wait
+      # for it to be picked up by DJ in a spec:
+      auto_grader = YAML.parse(job.handler).transform
+      auto_grader.perform
+
+      quiz_sub.reload
+      quiz_sub.workflow_state.should == "complete"
     end
   end
 end

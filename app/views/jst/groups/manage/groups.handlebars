@@ -1,0 +1,11 @@
+{{#ifAny collection.length collection.fetchingPage}}
+  <ul class="collectionViewItems unstyled groups-list"></ul>
+  <div class="paginatedLoadingIndicator"></div>
+{{else}}
+  <p>
+    {{#t "no_groups"}}No groups.{{/t}}
+  </p>
+{{/ifAny}}
+<p class="no-results hidden">
+  {{#t "no_matching_groups"}}No matching groups.{{/t}}
+</p>

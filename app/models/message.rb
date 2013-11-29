@@ -312,6 +312,8 @@ class Message < ActiveRecord::Base
   #
   # Returns an HTML template (or nil).
   def apply_html_template(_binding)
+    orig_i18n_scope = @i18n_scope
+    @i18n_scope = "#{@i18n_scope}.html"
     return nil unless template = load_html_template
 
     # Add the attribute 'inner_html' with the value of inner_html into the _binding
@@ -321,6 +323,8 @@ class Message < ActiveRecord::Base
 
     layout_path = Canvas::MessageHelper.find_message_path('_layout.email.html.erb')
     RailsXss::Erubis.new(File.read(layout_path)).result(_binding)
+  ensure
+    @i18n_scope = orig_i18n_scope
   end
 
   def load_html_template
@@ -459,7 +463,7 @@ class Message < ActiveRecord::Base
     end
 
     # not sure what this is even doing?
-    message_types.to_a.sort_by { |m| m[0] == 'Other' ? 'ZZZZ' : m[0] }
+    message_types.to_a.sort_by { |m| m[0] == 'Other' ? SortLast : m[0] }
   end
 
   # Public: Format and return the body for this message.
@@ -599,7 +603,7 @@ class Message < ActiveRecord::Base
     logger.info "Delivering mail: #{self.inspect}"
 
     begin
-      res = Mailer.deliver_message(self)
+      res = Mailer.message(self).deliver
     rescue Net::SMTPServerBusy => e
       @exception = e
       logger.error "Exception: #{e.class}: #{e.message}\n\t#{e.backtrace.join("\n\t")}"

@@ -34,7 +34,8 @@ module CC::Importer::Canvas
         rubric[:hide_score_total] = get_bool_val(r_node, 'hide_score_total')
         rubric[:free_form_criterion_comments] = get_bool_val(r_node, 'free_form_criterion_comments')
         rubric[:points_possible] = get_float_val(r_node, 'points_possible')
-        
+        rubric[:external_identifier] = get_node_val(r_node, 'external_identifier')
+
         rubric[:data] = []
         r_node.css('criterion').each do |c_node|
           crit = {}
@@ -43,6 +44,7 @@ module CC::Importer::Canvas
           crit[:long_description] = get_val_if_child(c_node, 'long_description')
           crit[:points] = get_float_val(c_node, 'points')
           crit[:mastery_points] = get_float_val(c_node, 'mastery_points')
+          crit[:ignore_for_scoring] = get_bool_val(c_node, 'ignore_for_scoring')
           crit[:learning_outcome_migration_id] = get_node_val(c_node, 'learning_outcome_identifierref')
           crit[:title] = get_node_val(c_node, 'description')
           crit[:ratings] = []
