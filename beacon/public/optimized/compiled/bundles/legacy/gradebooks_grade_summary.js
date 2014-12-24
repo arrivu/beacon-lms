@@ -1,0 +1,1 @@
+(function(){require(["jquery"],function(n){return n(document).ready(function(){return n("#course_url").change(function(){return location.href!==n(this).val()?location.href=n(this).val():void 0})})})}).call(this);

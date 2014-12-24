@@ -1,0 +1,1 @@
+(function(){define(["jquery","jqueryui/autocomplete"],function(t){var e;return e=function(){return t("input[data-behaviors~=autocomplete]").each(function(){var e,n;return e=t(this),n=e.data("autocomplete-options"),e.autocomplete(n)})},t(document).ready(function(){return e()}),e})}).call(this);

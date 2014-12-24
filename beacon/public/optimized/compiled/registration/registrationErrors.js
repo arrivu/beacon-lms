@@ -1,0 +1,1 @@
+(function(){define(["compiled/models/User","compiled/models/Pseudonym","compiled/object/flatten"],function(e,r,o){var n;return n=function(n,s){return null==s&&(s=ENV.PASSWORD_POLICY),o({user:e.prototype.normalizeErrors(n.user),pseudonym:r.prototype.normalizeErrors(n.pseudonym,s),observee:r.prototype.normalizeErrors(n.observee,s)},{arrays:!1})}})}).call(this);

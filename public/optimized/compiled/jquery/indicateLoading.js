@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(n){return n.fn.indicateLoading=function(e,i){return null==i&&(i=e,e="center"),this.each(function(){var t;return t=n(this).addClass("loading "+e),n.when(i).done(function(){return t.removeClass("loading "+e)})})}})}).call(this);

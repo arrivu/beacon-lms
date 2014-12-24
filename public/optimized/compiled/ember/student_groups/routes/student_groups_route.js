@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(t){var n;return n=t.Route.extend({actions:{_destroyModal:function(){return this.disconnectOutlet({outlet:"modal",parentView:"application"})},newGroup:function(){return this.render("new_group",{into:"application",outlet:"modal",theParent:this.controller})}}})})}).call(this);

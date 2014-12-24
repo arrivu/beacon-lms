@@ -1,0 +1,1 @@
+(function(){define(["ember","../register","../templates/components/c-icon"],function(n,e){return e("component","c-icon",n.Component.extend({tagName:"i",classNameBindings:["iconClass"],iconClass:function(){return"icon-"+this.get("type")}.property("type")}))})}).call(this);

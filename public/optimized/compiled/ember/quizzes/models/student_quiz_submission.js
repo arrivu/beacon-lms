@@ -1,0 +1,1 @@
+(function(){define(["./quiz_submission","ember-data"],function(i,n){var e,s,t;return t=n.belongsTo,s=n.attr,e=i.extend({quiz:t("quiz",{async:!1,inverse:"studentQuizSubmissions"})})})}).call(this);

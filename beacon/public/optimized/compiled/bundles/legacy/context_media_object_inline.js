@@ -1,0 +1,1 @@
+(function(){require(["jquery","media_comments"],function(e){return e(document).ready(function(){return e("#media_comment").mediaComment("show_inline",ENV.MEDIA_OBJECT_ID,ENV.MEDIA_OBJECT_TYPE)})})}).call(this);

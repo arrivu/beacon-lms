@@ -1,0 +1,1 @@
+(function(){define(["ember","i18n!create_item_base"],function(e){var t,n;return n=e.computed.alias,t=e.Controller.extend({setSelected:function(){return this.set("model.selected",[])}.on("init")})})}).call(this);

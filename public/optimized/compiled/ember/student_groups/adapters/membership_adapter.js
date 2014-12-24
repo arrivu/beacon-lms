@@ -1,0 +1,1 @@
+(function(){define(["ember","ember-data","ic-ajax"],function(e,r){var t;return t=r.RESTAdapter.extend({namespace:"api/v1",urlFor:function(e){return"/"+this.namespace+"/groups/"+e.get("group_id")+"/memberships"},createRecord:function(e,r,t){return this.ajax(this.urlFor(t),"POST",{data:{user_id:t.get("user_id")}})}})})}).call(this);

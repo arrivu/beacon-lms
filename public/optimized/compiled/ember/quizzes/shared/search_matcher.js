@@ -1,0 +1,1 @@
+(function(){define([],function(){return function(n,e,t){var r,i,o,f,l;if(null==t&&(t=!0),!n)return!0;for(t&&(n=n.toLowerCase(),e=e.toLowerCase()),i=0,r=e.split(" "),f=0,l=r.length;l>f;f++)o=r[f],-1!==n.indexOf(o)&&i++;return i===r.length}})}).call(this);

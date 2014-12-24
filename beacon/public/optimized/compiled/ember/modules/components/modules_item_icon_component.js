@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(n){var e,i;return i={Assignment:"assignment",Discussion:"discussion",ExternalTool:"link",ExternalUrl:"link",File:"download",Page:"document",Quiz:"quiz"},e=n.Component.extend({tagName:"i",classNameBindings:["iconClass"],type:"Page",iconClass:function(){return"icon-"+(i[this.get("type")]||"page")}.property("type")})})}).call(this);

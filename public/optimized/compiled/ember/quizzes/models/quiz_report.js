@@ -1,0 +1,1 @@
+(function(){define(["ember-data","../mixins/queriable_model"],function(e,r){var t;return t=e.attr,e.Model.extend(r,{quiz:e.belongsTo("quiz",{async:!1}),anonymous:t(),includesAllVersions:t(),reportType:t(),createdAt:t("date"),updatedAt:t("date"),file:t(),progress:t(),progressUrl:t(),url:t()})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["../questions_view"],function(n){return n})}).call(this);

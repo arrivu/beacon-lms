@@ -1,0 +1,1 @@
+(function(){define(["ember","../start_app","../shared_ajax_fixtures","../environment_setup","../test_redirection","../test_title"],function(t,e,n){return module("Quiz Moderate: Integration",{setup:function(){var t;return t=e(),n.create()},teardown:function(){return t.run(App,"destroy")}})})}).call(this);

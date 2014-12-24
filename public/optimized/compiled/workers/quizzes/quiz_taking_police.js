@@ -1,0 +1,1 @@
+(function(){var e;e=null,self.addEventListener("message",function(t){var a;switch(a=t.data||{},a.code){case"startStopwatch":return e=setInterval(function(){return self.postMessage("stopwatchTick")},a.frequency||1e3);case"stop":return clearInterval(e)}},!1)}).call(this);

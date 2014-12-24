@@ -1,0 +1,1 @@
+(function(){require(["jquery","wiki","vendor/jquery.pageless"],function(i,e){return e.init(),i(document).ready(function(){return ENV.WIKI_PAGE_EDITING?i("#wiki_show_view_secondary .edit_link:first").click():void 0})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(t){return t.fn.toggleAccessibly=function(t){return t?(this.show(),this.attr("aria-expanded","true")):(this.hide(),this.attr("aria-expanded","false")),this}})}).call(this);

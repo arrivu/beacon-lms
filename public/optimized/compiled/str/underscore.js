@@ -1,0 +1,1 @@
+(function(){define(function(){var e;return e=function(e){return"string"!=typeof e||""===e?e:e.replace(/([A-Z])/g,"_$1").replace(/^_/,"").toLowerCase()}})}).call(this);

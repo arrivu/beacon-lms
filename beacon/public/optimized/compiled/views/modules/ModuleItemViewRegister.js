@@ -1,0 +1,1 @@
+(function(){define([],function(){var n;return n=function(){function n(){}return n.views={},n.register=function(n){var i,e;return i=null!=n?n.key:void 0,e=null!=n?n.view:void 0,this.views[i]=e},n}()})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["ember","underscore","../shared/query_parameters"],function(e,r,t){var n;return n=r.extend,e.Mixin.create({reload:function(e){var r,a,i,s,u=this;return i=this.get("url"),a=t.extractParameters(i),r=t.extractUrl(i),s=n({},a,e),this.set("url",t.composeUrl(r,s)),this._super()["finally"](function(){return u.set("url",i)})}})})}).call(this);

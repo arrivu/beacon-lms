@@ -1,0 +1,1 @@
+(function(){define(["ember","./jsonapi_adapter"],function(e,t){var n,r;return n=e.get,r=e.set,t.extend({buildURL:function(e,t){var n;return n=this.container.lookup("store:main"),n.getById("quizReport",t).get("url")}})})}).call(this);

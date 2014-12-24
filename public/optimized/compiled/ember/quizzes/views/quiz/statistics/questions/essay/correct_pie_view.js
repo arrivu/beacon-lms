@@ -1,0 +1,1 @@
+(function(){define(["../multiple_choice/correct_pie_view"],function(e){return e})}).call(this);

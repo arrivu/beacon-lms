@@ -1,0 +1,1 @@
+(function(){define(["./jsonapi_adapter","../shared/environment"],function(s,n){return s.extend({buildURL:function(s,e){var i,t,u;return i=this.get("host"),t=this.get("namespace"),u=[],i&&u.push(i),t&&u.push(t),u.push("quizzes"),u.push(n.get("quizId")),u.push("submissions"),e&&u.push(e),u=u.join("/"),i||(u="/"+u),u}})})}).call(this);

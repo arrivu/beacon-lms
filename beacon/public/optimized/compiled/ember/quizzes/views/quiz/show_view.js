@@ -1,0 +1,1 @@
+(function(){define(["ember","../../mixins/views/submission_arrows_view"],function(i,e){return i.View.extend(e)})}).call(this);

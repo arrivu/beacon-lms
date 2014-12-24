@@ -1,0 +1,61 @@
+78b6170c61dcca17ad3cb05383aaf3c4dd60f748		branch '1-0-stable' of https://github.com/eac/mocha
+ea67b1c89ab7d2284b8a619663e81cc379b706b0		branch 'activesupport-integration-testing' of https://github.com/eac/mocha
+c72d5a7a211a34d04cb3132ed678cd63cdac7fd6		branch 'consider-stubs-on-superclasses-if-none-exist-on-primary-receiver' of https://github.com/eac/mocha
+bb8813fbb4cc589d7c58073d93983722d61b6919		branch 'eac/alias_method_fix' of https://github.com/eac/mocha
+3471145c13b74895b3e31520fe5653ca86958a70		branch 'macruby' of https://github.com/eac/mocha
+88b276de4d9434bb5c83cad69a680a8e4762de07		branch 'master' of https://github.com/eac/mocha
+080b5aeaa32fe3a35bc406d132b6683873a077eb		branch 'patch-release-v0.12.10' of https://github.com/eac/mocha
+bbf8b13806731bc34e00e6c2d73f9003a45efae5		branch 'patch-release-v0.12.4' of https://github.com/eac/mocha
+f88a78050af1f1ad98c917cb26ed3539e59fe7e0		branch 'patch-release-v0.12.5' of https://github.com/eac/mocha
+e18a0c99d83ffdffa1db0012b48214ec1466c519		branch 'patch-release-v0.12.6' of https://github.com/eac/mocha
+18e2c3cb1ba729a334ddff23cff2f09e16de42b8		branch 'patch-release-v0.12.7' of https://github.com/eac/mocha
+e021207426e4cf36e3c29e394896677e82f1c7c5		branch 'patch-release-v0.12.8' of https://github.com/eac/mocha
+970eaa814bf59797a408bc9b2356c5cf79ba51de		branch 'patch-release-v0.12.9' of https://github.com/eac/mocha
+497f5de009332c1a930d20f11871e83e27b7bad9		branch 'sequence-experiment-1' of https://github.com/eac/mocha
+bd9e1c823c9efbe22c5dba561d5984fcbf4c9ae9		branch 'spike-check-invocation-of-stubbed-method-against-original-method-signature' of https://github.com/eac/mocha
+d0569869da15fa9d3d86b18047630452a21906df		branch 'stub-serialization' of https://github.com/eac/mocha
+d20094777a55569acb496e1163b2da503dac27f6		branch 'stub-via-prepending' of https://github.com/eac/mocha
+04b02f0f900f6882bb4e856d762e6675d2d323a9	not-for-merge	tag 'rel-0_4_0' of https://github.com/eac/mocha
+905761a694be46fb1b2273da5a2f9b274eafdfbb	not-for-merge	tag 'rel-0_5_0' of https://github.com/eac/mocha
+f53e904cb477a8cceab459970502de027dfa8090	not-for-merge	tag 'rel-0_5_1' of https://github.com/eac/mocha
+42e586753376b77f6a33a6c08dd346dc8c75352c	not-for-merge	tag 'rel-0_5_2' of https://github.com/eac/mocha
+4aa1435e0ae38ffe9d15972ed11f055fc466c2d2	not-for-merge	tag 'rel-0_5_3' of https://github.com/eac/mocha
+0825c4862d41814845e3920f33f6f5adc9400579	not-for-merge	tag 'rel-0_5_4' of https://github.com/eac/mocha
+e543a88ee31b05a8bb236e9e7387a2e55fa29579	not-for-merge	tag 'rel-0_5_5' of https://github.com/eac/mocha
+6c0513ffac3ca6be0c66fc0f8bbb49b2c6b4064b	not-for-merge	tag 'rel-0_9_0' of https://github.com/eac/mocha
+aecd4fe81d44868c6ceaa7695b9a5b91cf899856	not-for-merge	tag 'rel-0_9_1' of https://github.com/eac/mocha
+31182ea8b38b79aa50702aa839f6a29ebcf7d684	not-for-merge	tag 'rel-0_9_10' of https://github.com/eac/mocha
+aae7fdfdff52bb759cca74a2459ce105bba6ff10	not-for-merge	tag 'rel-0_9_11' of https://github.com/eac/mocha
+8bb523e8467626c23b271eb529c33fb118e368fe	not-for-merge	tag 'rel-0_9_12' of https://github.com/eac/mocha
+36ec8d49d93e31adc34101f526159a31da241a73	not-for-merge	tag 'rel-0_9_9' of https://github.com/eac/mocha
+9966390930e958151213b849e1a849d3a86cc475	not-for-merge	tag 'v0.10.0' of https://github.com/eac/mocha
+b745cd6d99bb65576a524f13179de611eb76bee6	not-for-merge	tag 'v0.10.1' of https://github.com/eac/mocha
+3f385b78cadb6b4a0ae0f73be30cc6a1a6f6f058	not-for-merge	tag 'v0.10.2' of https://github.com/eac/mocha
+866b3b68e84527d3343772c0c0b8275080104619	not-for-merge	tag 'v0.10.3' of https://github.com/eac/mocha
+72aa73f38627bf1b9abb93b2dc9d901d8908996c	not-for-merge	tag 'v0.10.4' of https://github.com/eac/mocha
+939c4bc0042875e5e4cfd0e60337bcb365930bea	not-for-merge	tag 'v0.10.5' of https://github.com/eac/mocha
+0347dd3f6aab94ee592a4f2f7be5bf9b12e35396	not-for-merge	tag 'v0.11.0' of https://github.com/eac/mocha
+6219ce4cafdef8b2b32857dcda0194a4f0de5541	not-for-merge	tag 'v0.11.1' of https://github.com/eac/mocha
+69ecb1be42a940a8b5f6729aeb232a2a7a1ff70f	not-for-merge	tag 'v0.11.2' of https://github.com/eac/mocha
+5ee330aa2fa16faccf9e9ea53e8612eb42a0b959	not-for-merge	tag 'v0.11.3' of https://github.com/eac/mocha
+e2e8f60aeb4bae6a7364bde9495d94cbf779ab1d	not-for-merge	tag 'v0.11.4' of https://github.com/eac/mocha
+af41061bf0eb55894ac68267d7ebd58ed5748a23	not-for-merge	tag 'v0.12.0' of https://github.com/eac/mocha
+58ec6525320008fc87722434851fb0575f6ffc4f	not-for-merge	tag 'v0.12.1' of https://github.com/eac/mocha
+080b5aeaa32fe3a35bc406d132b6683873a077eb	not-for-merge	tag 'v0.12.10' of https://github.com/eac/mocha
+b97ffae86e074bc2479f11a3cac93206ef5ba22b	not-for-merge	tag 'v0.12.2' of https://github.com/eac/mocha
+1a136a7e0b1fc882d82c4e97baa71f960e2d12ca	not-for-merge	tag 'v0.12.3' of https://github.com/eac/mocha
+a958fba89de0dad4ba4f903a3544672023d879c7	not-for-merge	tag 'v0.12.4' of https://github.com/eac/mocha
+f88a78050af1f1ad98c917cb26ed3539e59fe7e0	not-for-merge	tag 'v0.12.5' of https://github.com/eac/mocha
+13d77916564063650086a06af261979a0721e63f	not-for-merge	tag 'v0.12.6' of https://github.com/eac/mocha
+420cc42a8a104e7b4b87a4c8732a817938b7da30	not-for-merge	tag 'v0.12.7' of https://github.com/eac/mocha
+e021207426e4cf36e3c29e394896677e82f1c7c5	not-for-merge	tag 'v0.12.8' of https://github.com/eac/mocha
+970eaa814bf59797a408bc9b2356c5cf79ba51de	not-for-merge	tag 'v0.12.9' of https://github.com/eac/mocha
+907095878a64778083013806d3cb3ed330406405	not-for-merge	tag 'v0.13.0' of https://github.com/eac/mocha
+c204c361bb753da8ed85301a52a41283ecdeac5e	not-for-merge	tag 'v0.13.1' of https://github.com/eac/mocha
+5c1b3d08fa8239377bfed273a2f8458882437b9c	not-for-merge	tag 'v0.13.2' of https://github.com/eac/mocha
+cd0959777da231cf50b88691cdf6e9eb16bbcf7c	not-for-merge	tag 'v0.13.3' of https://github.com/eac/mocha
+7fca2a793b1430c1df8e8b04272a4dedfbd03215	not-for-merge	tag 'v0.14.0' of https://github.com/eac/mocha
+adeebe56a6b42bdb6dc18a81523e71459d8c955f	not-for-merge	tag 'v0.14.0.alpha' of https://github.com/eac/mocha
+b23ff4c62d0d8254e76d55262726cba7a634c95f	not-for-merge	tag 'v1.0.0' of https://github.com/eac/mocha
+4e3bf1fdfaa72b44bb3a6871d97f7ea9d9539501	not-for-merge	tag 'v1.0.0.alpha' of https://github.com/eac/mocha
+65250d5c6d1962f3e979b9799dc1963beec2e773	not-for-merge	tag 'v1.1.0' of https://github.com/eac/mocha

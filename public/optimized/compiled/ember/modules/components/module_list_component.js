@@ -1,0 +1,1 @@
+(function(){define(["ember","ic-lazy-list","../models/module"],function(e,n,r){var o;return o=n.IcLazyListComponent.extend({href:"/api/v1/courses/"+ENV.course_id+"/modules?include[]=items",normalize:function(e){var n,o,i,t,s;for(o=e.response,s=[],i=0,t=o.length;t>i;i++)n=o[i],s.push(r.createRecord(n));return s}})})}).call(this);

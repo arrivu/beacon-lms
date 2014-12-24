@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="current" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Quiz Statistics API</h1>
+  
+  
+    <h3 class='beta'>BETA: This API resource is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing quiz submission statistics. The statistics provided by this
+interface are an aggregate of what is known as Student and Item Analysis for a
+quiz.</p>
+
+<p>These statistics are extracted (and composed) from <em>graded</em> (manually or, when
+viable, automatically) submissions for a quiz and provide an insight into how
+the participant students had responded to each question, as well as insights
+into the reception of each question answer individually.</p>
+
+<p>Some of these statistics are exclusive to Multiple Choice and True/False types
+of questions, others to other question types. See
+Quiz Statistics for a reference of these statistics.</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatistics">A QuizStatistics object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The ID of the quiz statistics report.
+  &quot;id&quot;: 1,
+  
+  //The ID of the Quiz the statistics report is for. 
+  //NOTE: AVAILABLE ONLY IN NON-JSON-API REQUESTS.
+  &quot;quiz_id&quot;: 2,
+  
+  //Whether there are any students that have made mutliple submissions for this
+  //quiz.
+  &quot;multiple_attempts_exist&quot;: &quot;true&quot;,
+  
+  //In the presence of multiple attempts, this field describes whether the
+  //statistics describe all the submission attempts and not only the latest ones.
+  &quot;includes_all_versions&quot;: &quot;true&quot;,
+  
+  //The time at which the statistics were generated, which is usually after the
+  //occurrence of a quiz event, like a student submitting it.
+  &quot;generated_at&quot;: &quot;2013-01-23T23:59:00-07:00&quot;,
+  
+  //The API HTTP/HTTPS URL to this quiz statistics.
+  &quot;url&quot;: &quot;http://canvas.example.edu/api/v1/courses/1/quizzes/2/statistics&quot;,
+  
+  //The HTTP/HTTPS URL to the page where the statistics can be seen visually.
+  &quot;html_url&quot;: &quot;http://canvas.example.edu/courses/1/quizzes/2/statistics&quot;,
+  
+  //Question-specific statistics for each question and its answers.
+  &quot;question_statistics&quot;: &quot;&quot;,
+  
+  //Question-specific statistics for each question and its answers.
+  &quot;submission_statistics&quot;: &quot;&quot;,
+  
+  //JSON-API construct that contains links to media related to this quiz statistics
+  //object. 
+  //NOTE: AVAILABLE ONLY IN JSON-API REQUESTS.
+  &quot;links&quot;: &quot;&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatisticsLinks">A QuizStatisticsLinks object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //HTTP/HTTPS API URL to the quiz this statistics describe.
+  &quot;quiz&quot;: &quot;http://canvas.example.edu/api/v1/courses/1/quizzes/2&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatisticsQuestionStatistics">A QuizStatisticsQuestionStatistics object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //Number of students who have answered this question.
+  &quot;responses&quot;: 3,
+  
+  //The unique set of answers (or their IDs) that were supplied (or chosen) by
+  //students.
+  &quot;response_values&quot;: &quot;[&quot;2040&quot;, &quot;3866&quot;, &quot;3866&quot;]&quot;,
+  
+  //Statistics related to each individual pre-defined answer.
+  &quot;answers&quot;: &quot;&quot;,
+  
+  //IDs of the students who have answered this question.
+  &quot;user_ids&quot;: &quot;[4, 6, 2]&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatisticsAnswerStatistics">A QuizStatisticsAnswerStatistics object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //ID of the answer.
+  &quot;id&quot;: 3866,
+  
+  //The text attached to the answer.
+  &quot;text&quot;: &quot;Blue.&quot;,
+  
+  //An integer to determine correctness of the answer. Incorrect answers should be
+  //0, correct answers should be non-negative.
+  &quot;weight&quot;: 100,
+  
+  //Number of students who have chosen this answer.
+  &quot;responses&quot;: 2,
+  
+  //IDs of the students who have chosen this answer.
+  &quot;user_ids&quot;: &quot;[6, 2]&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatisticsAnswerPointBiserial">A QuizStatisticsAnswerPointBiserial object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //ID of the answer the point biserial is for.
+  &quot;answer_id&quot;: 3866,
+  
+  //The point biserial value for this answer. Value ranges between -1 and 1.
+  &quot;point_biserial&quot;: -0.802955068546966,
+  
+  //Convenience attribute that denotes whether this is the correct answer as opposed
+  //to being a distractor. This is mutually exclusive with the `distractor` value
+  &quot;correct&quot;: &quot;true&quot;,
+  
+  //Convenience attribute that denotes whether this is a distractor answer and not
+  //the correct one. This is mutually exclusive with the `correct` value
+  &quot;distractor&quot;: &quot;false&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="QuizStatisticsSubmissionStatistics">A QuizStatisticsSubmissionStatistics object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The number of students who have taken the quiz.
+  &quot;unique_count&quot;: 3,
+  
+  //The mean of the student submission scores.
+  &quot;score_average&quot;: 4.33333333333333,
+  
+  //The highest submission score.
+  &quot;score_high&quot;: 6,
+  
+  //The lowest submission score.
+  &quot;score_low&quot;: 3,
+  
+  //Standard deviation of the submission scores.
+  &quot;score_stdev&quot;: 1.24721912892465,
+  
+  //A percentile distribution of the student scores, each key is the percentile
+  //(ranges between 0 and 100%) while the value is the number of students who
+  //received that score.
+  &quot;scores&quot;: &quot;{&quot;50&quot;=&gt;1, &quot;34&quot;=&gt;5, &quot;100&quot;=&gt;1}&quot;,
+  
+  //The mean of the number of questions answered correctly by each student.
+  &quot;correct_count_average&quot;: 3.66666666666667,
+  
+  //The mean of the number of questions answered incorrectly by each student.
+  &quot;incorrect_count_average&quot;: 5,
+  
+  //The average time spent by students while taking the quiz.
+  &quot;duration_average&quot;: 42.333333333,
+  
+  //IDs of the students that have taken the quiz.
+  &quot;user_ids&quot;: &quot;[4, 6, 2]&quot;,
+  
+  //Guests (anonymous users who have not signed in) who have taken this quiz. Each
+  //entry in this array is an array of two elements: a temporary user code (a
+  //string) and a string identifying the guest's number. NOTE: This only applies to
+  //quizzes of the type Ungraded Survey where anonymous submissions are permitted.
+  &quot;logged_out_users&quot;: &quot;[[&quot;tmp_3cff672c9168698019fb2c9c89e91adf&quot;, &quot;Logged Out User 1&quot;]]&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.quizzes/quiz_statistics.index' data-subtopic='Quiz Statistics'>
+    <a name='method.quizzes/quiz_statistics.index' href='#method.quizzes/quiz_statistics.index'>
+      Fetching the latest quiz statistics
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/quizzes/quiz_statistics_controller.rb">Quizzes::QuizStatisticsController#index</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/quizzes/:quiz_id/statistics
+  </h3>
+
+
+<p>This endpoint provides statistics for all quiz versions, or for a specific
+quiz version, in which case the output is guaranteed to represent the
+<em>latest</em> and most current version of the quiz.</p>
+
+<p><strong>200 OK</strong> response code is returned if the request was
+successful.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>all_versions</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether the statistics report should include all submissions attempts.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">{
+  &quot;quiz_statistics&quot;: [ QuizStatistics ]
+}</pre>
+    
+  </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+<div class="appendix">
+  <h2>Appendixes</h2>
+
+  
+    <div class="appendix_entry">
+      <h3 id="Question+Specific+Statistics-appendix">Appendix: Question Specific Statistics</h3>
+
+<p><p>Based on the question type it represents, the <code>question_statistics</code> document
+may include extra metrics. You can find these metrics below.</p>
+
+<p><a class="bookmark" id="multiple-choice-question-stats"></a></p>
+
+<h4>Multiple Choice</h4>
+
+<pre class="code javascript"><code>{
+  // Number of students who have picked any choice.
+  &quot;responses&quot;: 4,
+
+  &quot;answers&quot;: [
+    {
+      // Unique ID of this answer.
+      &quot;id&quot;: &quot;3866&quot;,
+
+       // The readable answer text.
+      &quot;text&quot;: &quot;Red&quot;,
+
+       // Number of students who picked this answer.
+      &quot;responses&quot;: 3,
+
+       // Whether this answer is a correct one.
+      &quot;correct&quot;: true
+    },
+
+    // An incorrect choice:
+    {
+      &quot;id&quot;: &quot;2040&quot;,
+      &quot;text&quot;: &quot;Green&quot;,
+      &quot;correct&quot;: false,
+      &quot;responses&quot;: 1
+    },
+
+    // The &quot;No Answer&quot; - students who didn't make any choice:
+    {
+      &quot;id&quot;: &quot;none&quot;,
+      &quot;text&quot;: &quot;No Answer&quot;,
+      &quot;responses&quot;: 2,
+      &quot;correct&quot;: false
+    }
+  ],
+
+  // Number of students who have answered this question.
+  &quot;answered_student_count&quot;: 0,
+
+  // Number of students who rank in the top bracket (the top 27%)
+  // among the submitters which have also answered this question.
+  &quot;top_student_count&quot;: 0,
+
+  // Number of students who rank in the middle bracket (the middle 46%)
+  // among the submitters which have also answered this question.
+  &quot;middle_student_count&quot;: 0,
+
+  // Number of students who rank in the bottom bracket (the bottom 27%)
+  // among the submitters which have also answered this question
+  &quot;bottom_student_count&quot;: 0,
+
+  // Number of students who have answered this question correctly.
+  &quot;correct_student_count&quot;: 0,
+
+  // Number of students who have answered this question incorrectly.
+  &quot;incorrect_student_count&quot;: 0,
+
+  // Ratio of students who have answered this question correctly.
+  &quot;correct_student_ratio&quot;: 0,
+
+  // Ratio of students who have answered this question incorrectly.
+  &quot;incorrect_student_ratio&quot;: 0,
+
+  // Number of students who rank in the top bracket (the top 27%) among
+  // the submitters which have also provided a correct answer to this question.
+  &quot;correct_top_student_count&quot;: 0,
+
+  // Number of students who rank in the middle bracket (the middle 46%) among
+  // the submitters which have also provided a correct answer to this question.
+  &quot;correct_middle_student_count&quot;: 0,
+
+  // Number of students who rank in the bottom bracket (the bottom 27%) among
+  // the submitters which have also provided a correct answer to this question.
+  &quot;correct_bottom_student_count&quot;: 0,
+
+  // Variance of *all* the scores.
+  &quot;variance&quot;: 0,
+
+  // Standard deviation of *all* the scores.
+  &quot;stdev&quot;: 0,
+
+  // Denotes the ratio of students who have answered this question correctly,
+  // which should give an indication of how difficult the question is.
+  &quot;difficulty_index&quot;: 0,
+
+  // The reliability, or internal consistency, coefficient of all the scores
+  // as measured by the Cronbach's alpha algorithm. Value ranges between 0 and
+  // 1.
+  //
+  // Note: This metric becomes available only in quizzes with more than fifteen
+  // submissions.
+  &quot;alpha&quot;: null,
+
+  // A point biserial correlation coefficient for each of the question's
+  // answers. This metric helps measure the efficiency of an individual
+  // question: the calculation looks at the difference between high-scorers
+  // who chose this answer and low-scorers who also chose this answer.
+  //
+  // See the reference above for a description of each field.
+  &quot;point_biserials&quot;: [
+    {
+      &quot;answer_id&quot;: 3866,
+      &quot;point_biserial&quot;: null,
+      &quot;correct&quot;: true,
+      &quot;distractor&quot;: false
+    },
+    {
+      &quot;answer_id&quot;: 2040,
+      &quot;point_biserial&quot;: null,
+      &quot;correct&quot;: false,
+      &quot;distractor&quot;: true
+    },
+    {
+      &quot;answer_id&quot;: 7387,
+      &quot;point_biserial&quot;: null,
+      &quot;correct&quot;: false,
+      &quot;distractor&quot;: true
+    },
+    {
+      &quot;answer_id&quot;: 4082,
+      &quot;point_biserial&quot;: null,
+      &quot;correct&quot;: false,
+      &quot;distractor&quot;: true
+    }
+  ]
+}
+</code></pre>
+
+<p><a class="bookmark" id="fimb-question-stats"></a></p>
+
+<h4>Fill in Multiple Blanks</h4>
+
+<pre class="code javascript"><code>{
+  // Number of students who have filled at least one blank.
+  &quot;responses&quot;: 2,
+
+  // Number of students who have filled every blank.
+  &quot;answered&quot;: 2,
+
+  // Number of students who filled all blanks correctly.
+  &quot;correct&quot;: 1,
+
+  // Number of students who filled one or more blanks correctly.
+  &quot;partially_correct&quot;: 0,
+
+  // Number of students who didn't fill any blank correctly.
+  &quot;incorrect&quot;: 1,
+
+  // Each entry in the answer set represents a blank and responses to
+  // its pre-defined answers:
+  &quot;answer_sets&quot;: [
+    {
+      &quot;id&quot;: &quot;70dda5dfb8053dc6d1c492574bce9bfd&quot;, // md5sum of the blank
+      &quot;text&quot;: &quot;color&quot;, // the blank_id
+      &quot;answers&quot;: [
+        // Students who filled in this blank with this correct answer:
+        {
+          &quot;id&quot;: &quot;9711&quot;,
+          &quot;text&quot;: &quot;Red&quot;,
+          &quot;responses&quot;: 3,
+          &quot;correct&quot;: true
+        },
+        // Students who filled in this blank with this other correct answer:
+        {
+          &quot;id&quot;: &quot;2700&quot;,
+          &quot;text&quot;: &quot;Blue&quot;,
+          &quot;responses&quot;: 0,
+          &quot;correct&quot;: true
+        },
+        // Students who filled in this blank with something else:
+        {
+          &quot;id&quot;: &quot;other&quot;,
+          &quot;text&quot;: &quot;Other&quot;,
+          &quot;responses&quot;: 1,
+          &quot;correct&quot;: false
+        },
+        // Students who left this blank empty:
+        {
+          &quot;id&quot;: &quot;none&quot;,
+          &quot;text&quot;: &quot;No Answer&quot;,
+          &quot;responses&quot;: 1,
+          &quot;correct&quot;: false
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<h4>Multiple Answers</h4>
+
+<pre class="code javascript"><code>{
+  // Number of students who have picked any choice.
+  &quot;responses&quot;: 3,
+
+  // Number of students who have picked all the right choices.
+  &quot;correct&quot;: 1,
+
+  // Number of students who have picked at least one of the right choices,
+  // but may have also picked a wrong one.
+  &quot;partially_correct&quot;: 2,
+
+  &quot;answers&quot;: [
+    {
+      // Unique ID of this answer choice.
+      &quot;id&quot;: &quot;5514&quot;,
+
+      // Displayable choice text.
+      &quot;text&quot;: &quot;A&quot;,
+
+      // Number of students who picked this choice.
+      &quot;responses&quot;: 3,
+
+      // Whether this choice is part of the answer.
+      &quot;correct&quot;: true
+    },
+    // Here's the second part of the correct answer:
+    {
+      &quot;id&quot;: &quot;4261&quot;,
+      &quot;text&quot;: &quot;B&quot;,
+      &quot;responses&quot;: 1,
+      &quot;correct&quot;: true
+    },
+
+    // And here's a distractor:
+    {
+      &quot;id&quot;: &quot;3322&quot;,
+      &quot;text&quot;: &quot;C&quot;,
+      &quot;responses&quot;: 2,
+      &quot;correct&quot;: false
+    },
+
+    // &quot;Missing&quot; answers:
+    //
+    // This is an auto-generated answer to account for all students who
+    // left this question unanswered.
+    {
+      &quot;id&quot;: &quot;none&quot;,
+      &quot;text&quot;: &quot;No Answer&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<h4>Multiple Dropdowns</h4>
+
+<p>Multiple Dropdown question statistics look just like the statistics for <a href="#fimb-question-stats">Fill In Multiple Blanks</a>.</p>
+
+<p><a class="bookmark" id="essay-question-stats"></a></p>
+
+<h4>Essay</h4>
+
+<pre class="code javascript"><code>{
+   // The number of students whose responses were graded by the teacher so
+   // far.
+   &quot;graded&quot;: 5,
+
+   // The number of students who got graded with a full score.
+   &quot;full_credit&quot;: 4,
+
+   // Number of students who wrote any kind of answer.
+   &quot;resposes&quot;: 5,
+
+   // A set of maps of scores and the number of students who received
+   // each score.
+   &quot;point_distribution&quot;: [
+     { &quot;score&quot;: 0, &quot;count&quot;: 1 },
+     { &quot;score&quot;: 1, &quot;count&quot;: 1 },
+     { &quot;score&quot;: 3, &quot;count&quot;: 3 }
+   ]
+}
+</code></pre>
+
+<h4>Matching</h4>
+
+<pre class="code javascript"><code>{
+  // Number of students who have matched at least one answer.
+  &quot;responses&quot;: 2,
+
+  // Number of students who have matched all answers.
+  &quot;answered&quot;: 2,
+
+  // Number of students who have matched all answers correctly with their
+  // right-hand sides.
+  &quot;correct&quot;: 1,
+
+  // Number of students who have matched one or more answers correctly
+  // with their right-hand sides.
+  &quot;partially_correct&quot;: 0,
+
+  // Number of students who have not matched any answer with their correct
+  // right-hand side.
+  &quot;incorrect&quot;: 1,
+
+  // Each entry in the answer set represents the left-hand side of the match
+  // along with all the possible matches on the right-side
+  &quot;answer_sets&quot;: [
+    {
+      // id of the answer
+      &quot;id&quot;: &quot;1&quot;,
+      // the left-hand side of the match
+      &quot;text&quot;: &quot;What does the color red look like?&quot;,
+      // the available matches
+      &quot;answers&quot;: [
+        // Students who chose this match for this answer set:
+        {
+          // match_id
+          &quot;id&quot;: &quot;9711&quot;,
+          // right-hand side of the match
+          &quot;text&quot;: &quot;Red&quot;,
+          &quot;responses&quot;: 3,
+          &quot;correct&quot;: true
+        },
+        // Students who chose an incorrect match:
+        {
+          &quot;id&quot;: &quot;2700&quot;,
+          &quot;text&quot;: &quot;Blue&quot;,
+          &quot;responses&quot;: 0,
+          &quot;correct&quot;: false
+        },
+        // Students who did not make any match:
+        {
+          &quot;id&quot;: &quot;none&quot;,
+          &quot;text&quot;: &quot;No Answer&quot;,
+          &quot;responses&quot;: 1,
+          &quot;correct&quot;: false
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<h4>File Upload</h4>
+
+<p>File Upload question statistics look just like the statistics for <a href="#essay-question-stats">Essays</a>.</p>
+
+<h4>Formula</h4>
+
+<p>Formula question statistics look just like the statistics for <a href="#essay-question-stats">Essays</a>.</p>
+
+<h4>Numerical</h4>
+
+<pre class="code javascript"><code>{
+  // Number of students who have provided any kind of answer.
+  &quot;responses&quot;: 2,
+
+  // Number of students who have provided a correct answer.
+  &quot;correct&quot;: 1,
+
+  // Number of students who have provided a correct answer and received full
+  // credit or higher.
+  &quot;full_credit&quot;: 2,
+
+  // Number of students who have provided an answer which was not correct.
+  &quot;incorrect&quot;: 1,
+
+  &quot;answers&quot;: [
+    {
+      // Unique ID of this answer.
+      &quot;id&quot;: &quot;9711&quot;,
+
+      // This metric contains a formatted version of the correct answer
+      // ready for display.
+      &quot;text&quot;: &quot;15.00&quot;,
+
+      // Number of students who provided this answer.
+      &quot;responses&quot;: 3,
+
+      // Whether this answer is a correct one.
+      &quot;correct&quot;: true,
+
+      // Lower and upper boundaries of the answer range. This is consistent
+      // regardless of the answer type (e.g., exact vs range).
+      //
+      // In the case of exact answers, the range will be the exact value
+      // minus plus the defined margin.
+      &quot;value&quot;: [ 13.5, 16.5 ],
+
+      // Margin of error tolerance. This is always zero for range answers.
+      &quot;margin&quot;: 1.5
+    },
+
+    // &quot;Other&quot; answers:
+    //
+    // This is an auto-generated answer that will be present if any student
+    // provides a number for an answer that is incorrect (doesn't map to
+    // any of the pre-defined answers.)
+    {
+      &quot;id&quot;: &quot;other&quot;,
+      &quot;text&quot;: &quot;Other&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: false
+    },
+
+    // &quot;Missing&quot; answers:
+    //
+    // This is an auto-generated answer to account for all students who
+    // left this question unanswered.
+    {
+      &quot;id&quot;: &quot;none&quot;,
+      &quot;text&quot;: &quot;No Answer&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<h3>Short Answer (aka Fill in The Blank)</h3>
+
+<pre class="code javascript"><code>{
+  // Number of students who have written anything.
+  &quot;responses&quot;: 2,
+
+  // Number of students who have written a correct answer.
+  &quot;correct&quot;: 2,
+
+  &quot;answers&quot;: [
+    {
+      // Unique ID of this answer.
+      &quot;id&quot;: &quot;4684&quot;,
+
+       // The readable answer text.
+      &quot;text&quot;: &quot;Something&quot;,
+
+       // Number of students who picked this answer.
+      &quot;responses&quot;: 3,
+
+       // Whether this answer is a correct one.
+      &quot;correct&quot;: true
+    },
+
+    // Another correct answer:
+    {
+      &quot;id&quot;: &quot;1797&quot;,
+      &quot;text&quot;: &quot;Very cool.&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: true
+    },
+
+    // &quot;Other&quot; answers:
+    //
+    // This is an auto-generated answer that will be present if any student
+    // does write an answer, but is incorrect.
+    {
+      &quot;id&quot;: &quot;other&quot;,
+      &quot;text&quot;: &quot;Other&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: false
+    },
+
+    // &quot;Missing&quot; answers:
+    //
+    // This is an auto-generated answer to account for all students who
+    // left this question unanswered.
+    {
+      &quot;id&quot;: &quot;none&quot;,
+      &quot;text&quot;: &quot;No Answer&quot;,
+      &quot;responses&quot;: 0,
+      &quot;correct&quot;: false
+    }
+  ]
+}
+</code></pre>
+
+<h4>True/False</h4>
+
+<p>True/False question statistics look just like the statistics for <a href="#multiple-choice-question-stats">Multiple-Choice</a>.</p>
+</p>
+
+
+
+
+    </div>
+  
+  
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:49 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

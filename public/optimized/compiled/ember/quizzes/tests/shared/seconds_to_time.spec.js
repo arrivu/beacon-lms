@@ -1,0 +1,1 @@
+(function(){define(["../../shared/seconds_to_time"],function(t){return module("seconds_to_time"),test("pads durations with leading zeros",function(){return equal(t(42),"00:42"),equal(t(63),"01:03")}),test("includes hours in output",function(){return equal(t(3721),"01:02:01")})})}).call(this);

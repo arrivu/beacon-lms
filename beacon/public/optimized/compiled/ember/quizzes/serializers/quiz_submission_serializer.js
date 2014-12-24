@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(i){return i.ActiveModelSerializer.extend({extractArray:function(i,e,n,t,r){return n.quiz_submissions||(n.quiz_submissions=[]),this._super(i,e,n,t,r)}})})}).call(this);

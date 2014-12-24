@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(t){return function(){return t(".vdd_tooltip_link").tooltip({position:{my:"center bottom",at:"center top-10",collision:"fit fit"},tooltipClass:"center bottom vertical",content:function(){return t(t(this).data("tooltipSelector")).html()}})}})}).call(this);

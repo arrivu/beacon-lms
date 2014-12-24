@@ -1,0 +1,1 @@
+(function(){define(["ember","./dialog_mixin","i18n!message_dialog_component"],function(n,t,e){var c;return c=n.Component.extend(t,{"accept-text":e.t("ok","Ok"),closeAndCancel:function(){return this.accept()},accept:function(){return this._close(),this.get("on-accept")&&this.sendAction("on-accept"),!1}})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["i18n!student_groups","ember","ic-ajax"],function(t,e){var i;return i=e.ObjectController.extend({idString:function(){return"invitees_"+this.get("id")}.property("id"),isCurrentUser:function(){return ENV.current_user_id===this.get("id")}.property("id"),invite:!1})})}).call(this);

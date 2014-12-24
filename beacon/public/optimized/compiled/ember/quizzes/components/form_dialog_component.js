@@ -1,0 +1,1 @@
+(function(){define(["ember","./dialog_mixin","../templates/components/form-dialog"],function(n,e){var o;return o=n.Component.extend(e)})}).call(this);

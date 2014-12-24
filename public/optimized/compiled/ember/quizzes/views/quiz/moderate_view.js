@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){return e.View.extend({allowReloading:function(){return this.controller.set("okayToReload",!0)}.on("didInsertElement"),denyReloading:function(){return this.controller.set("okayToReload",!1)}.on("willDestroyElement")})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(e){var n;return n=e.attr,e.Model.extend({groupWeight:n(),name:n(),links:n(),position:n()})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["jquery","vendor/jquery.cookie"],function(n){var t;return t=function(){return n.cookie("_csrf_token")},n(document).on("submit","form",function(){return n(this).find("input[name='authenticity_token']").val(t())}),t})}).call(this);

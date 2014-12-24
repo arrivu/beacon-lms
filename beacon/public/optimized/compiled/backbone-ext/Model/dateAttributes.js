@@ -1,0 +1,1 @@
+(function(){define(["vendor/backbone","underscore"],function(e,t){var r;return r=e.Model.prototype.parse,e.Model.prototype.parse=function(){var e;return e=r.apply(this,arguments),t.each(this.dateAttributes,function(t){return e[t]?e[t]=Date.parse(e[t]):void 0}),e},e.Model})}).call(this);

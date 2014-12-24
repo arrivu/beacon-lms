@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){return e.Handlebars.helper("polyRender",function(n,r,s){var t,l,h;return l=[],t=3===arguments.length,t||(s=r),h=s.hash.prefix||"",l.push(h+n),s.types[0]="",t&&(s.contexts[1]={model:r},l.push("model")),l.push(s),e.Handlebars.helpers.render.apply(this,l)})})}).call(this);

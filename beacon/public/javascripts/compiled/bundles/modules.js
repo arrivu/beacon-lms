@@ -1,0 +1,1 @@
+require(['compiled/ember/modules/main'], function(App) { window.App = App.create(); });

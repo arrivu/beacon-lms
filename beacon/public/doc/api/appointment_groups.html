@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="current" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Appointment Groups API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for creating, accessing and updating appointment groups. Appointment groups
+provide a way of creating a bundle of time slots that users can sign up for
+(e.g. &quot;Office Hours&quot; or &quot;Meet with professor about Final Project&quot;). Both time
+slots and reservations of time slots are stored as Calendar Events.</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Appointment">An Appointment object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The appointment identifier.
+  &quot;id&quot;: 987,
+  
+  //Start time for the appointment
+  &quot;start_at&quot;: &quot;2012-07-20T15:00:00-06:00&quot;,
+  
+  //End time for the appointment
+  &quot;end_at&quot;: &quot;2012-07-20T15:00:00-06:00&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="AppointmentGroup">An AppointmentGroup object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The ID of the appointment group
+  &quot;id&quot;: 543,
+  
+  //The title of the appointment group
+  &quot;title&quot;: &quot;Final Presentation&quot;,
+  
+  //The start of the first time slot in the appointment group
+  &quot;start_at&quot;: &quot;2012-07-20T15:00:00-06:00&quot;,
+  
+  //The end of the last time slot in the appointment group
+  &quot;end_at&quot;: &quot;2012-07-20T17:00:00-06:00&quot;,
+  
+  //The text description of the appointment group
+  &quot;description&quot;: &quot;Es muy importante&quot;,
+  
+  //The location name of the appointment group
+  &quot;location_name&quot;: &quot;El Tigre Chino's office&quot;,
+  
+  //The address of the appointment group's location
+  &quot;location_address&quot;: &quot;Room 234&quot;,
+  
+  //The number of participant who have reserved slots (see include[] argument)
+  &quot;participant_count&quot;: 2,
+  
+  //The start and end times of slots reserved by the current user as well as the id
+  //of the calendar event for the reservation (see include[] argument)
+  &quot;reserved_times&quot;: &quot;[{&quot;id&quot;=&gt;987, &quot;start_at&quot;=&gt;&quot;2012-07-20T15:00:00-06:00&quot;, &quot;end_at&quot;=&gt;&quot;2012-07-20T15:00:00-06:00&quot;}]&quot;,
+  
+  //The context codes (i.e. courses) this appointment group belongs to. Only people
+  //in these courses will be eligible to sign up.
+  &quot;context_codes&quot;: &quot;[course_123]&quot;,
+  
+  //The sub-context codes (i.e. course sections and group categories) this
+  //appointment group is restricted to
+  &quot;sub_context_codes&quot;: &quot;[course_section_234]&quot;,
+  
+  //Current state of the appointment group ('pending', 'active' or 'deleted').
+  //'pending' indicates that it has not been published yet and is invisible to
+  //participants.
+  &quot;workflow_state&quot;: &quot;active&quot;,
+  
+  //Boolean indicating whether the current user needs to sign up for this
+  //appointment group (i.e. it's reservable and the min_appointments_per_participant
+  //limit has not been met by this user).
+  &quot;requiring_action&quot;: &quot;true&quot;,
+  
+  //Number of time slots in this appointment group
+  &quot;appointments_count&quot;: 2,
+  
+  //Calendar Events representing the time slots (see include[] argument) Refer to
+  //the Calendar Events API for more information
+  &quot;appointments&quot;: &quot;[]&quot;,
+  
+  //Newly created time slots (same format as appointments above). Only returned in
+  //Create/Update responses where new time slots have been added
+  &quot;new_appointments&quot;: &quot;[]&quot;,
+  
+  //Maximum number of time slots a user may register for, or null if no limit
+  &quot;max_appointments_per_participant&quot;: 1,
+  
+  //Minimum number of time slots a user must register for. If not set, users do not
+  //need to sign up for any time slots
+  &quot;min_appointments_per_participant&quot;: 1,
+  
+  //Maximum number of participants that may register for each time slot, or null if
+  //no limit
+  &quot;participants_per_appointment&quot;: 1,
+  
+  //'private' means participants cannot see who has signed up for a particular time
+  //slot, 'protected' means that they can
+  &quot;participant_visibility&quot;: &quot;private&quot;,
+  
+  //Indicates how participants sign up for the appointment group, either as
+  //individuals ('User') or in student groups ('Group'). Related to
+  //sub_context_codes (i.e. 'Group' signups always have a single group category)
+  &quot;participant_type&quot;: &quot;User&quot;,
+  
+  //URL for this appointment group (to update, delete, etc.)
+  &quot;url&quot;: &quot;https://example.com/api/v1/appointment_groups/543&quot;,
+  
+  //URL for a user to view this appointment group
+  &quot;html_url&quot;: &quot;http://example.com/appointment_groups/1&quot;,
+  
+  //When the appointment group was created
+  &quot;created_at&quot;: &quot;2012-07-13T10:55:20-06:00&quot;,
+  
+  //When the appointment group was last updated
+  &quot;updated_at&quot;: &quot;2012-07-13T10:55:20-06:00&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.appointment_groups.index' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.index' href='#method.appointment_groups.index'>
+      List appointment groups
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#index</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/appointment_groups
+  </h3>
+
+
+<p>Retrieve the list of appointment groups that can be reserved or managed by
+the current user.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>scope</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "reservable"|"manageable"
+<dd>
+<p>Defaults to "reservable"</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>context_codes[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Array of context codes used to limit returned results.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include_past_appointments</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Defaults to false. If true, includes past appointment groups</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"appointments"|"child_events"|"participant_count"|"reserved_times"
+<dd>
+<p>Array of additional information to include.</p>
+<dl class="rdoc-list note-list"><dt>"appointments"
+<dd>
+<p>calendar event time slots for this appointment group</p>
+</dd><dt>"child_events"
+<dd>
+<p>reservations of those time slots</p>
+</dd><dt>"participant_count"
+<dd>
+<p>number of reservations</p>
+</dd><dt>"reserved_times"
+<dd>
+<p>the event id, start time and end time of reservations the current user has
+made)</p>
+</dd></dl>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.create' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.create' href='#method.appointment_groups.create'>
+      Create an appointment group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#create</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/appointment_groups
+  </h3>
+
+
+<p>Create and return a new appointment group. If new_appointments are
+specified, the response will return a new_appointments array (same format
+as appointments array, see "List appointment groups" action)</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[context_codes][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String
+<dd>
+<p>Array of context codes (courses, e.g. course_1) this group should be linked
+to (1 or more). Users in the course(s) with appropriate permissions will be
+able to sign up for this appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[sub_context_codes][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Array of sub context codes (course sections or a single group category)
+this group should be linked to. Used to limit the appointment group to
+particular sections. If a group category is specified, students will sign
+up in groups and the participant_type will be "Group" instead of "User".</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[title]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String
+<dd>
+<p>Short title for the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Longer text description of the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[location_name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Location name of the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[location_address]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Location address.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[publish]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Indicates whether this appointment group should be published (i.e. made
+available for signup). Once published, an appointment group cannot be
+unpublished. Defaults to false.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[participants_per_appointment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Maximum number of participants that may register for each time slot.
+Defaults to null (no limit).</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[min_appointments_per_participant]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Minimum number of time slots a user must register for. If not set, users do
+not need to sign up for any time slots.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[max_appointments_per_participant]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Maximum number of time slots a user may register for.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[new_appointments][X][]</span>
+      
+      
+        <div class='inline'>
+<p>Nested array of start time/end time pairs indicating time slots for this
+appointment group. Refer to the example request.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[participant_visibility]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"private"|"protected"
+<dd></dd></dl>
+<dl class="rdoc-list note-list"><dt>"private"
+<dd>
+<p>participants cannot see who has signed up for a particular time slot</p>
+</dd><dt>"protected"
+<dd>
+<p>participants can see who has signed up.  Defaults to "private".</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/appointment_groups.json' \
+     -X POST \ 
+     -F 'appointment_group[context_codes][]=course_123' \ 
+     -F 'appointment_group[sub_context_codes][]=course_section_234' \ 
+     -F 'appointment_group[title]=Final Presentation' \ 
+     -F 'appointment_group[participants_per_appointment]=1' \
+     -F 'appointment_group[min_appointments_per_participant]=1' \
+     -F 'appointment_group[max_appointments_per_participant]=1' \
+     -F 'appointment_group[new_appointments][0][]=2012-07-19T21:00:00Z' \ 
+     -F 'appointment_group[new_appointments][0][]=2012-07-19T22:00:00Z' \ 
+     -F 'appointment_group[new_appointments][1][]=2012-07-19T22:00:00Z' \ 
+     -F 'appointment_group[new_appointments][1][]=2012-07-19T23:00:00Z' \ 
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.show' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.show' href='#method.appointment_groups.show'>
+      Get a single appointment group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#show</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/appointment_groups/:id
+  </h3>
+
+
+<p>Returns information for a single appointment group</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"child_events"|"appointments"
+<dd>
+<p>Array of additional information to include. Ssee include[] argument of
+"List appointment groups" action.</p>
+<dl class="rdoc-list note-list"><dt>"child_events"
+<dd>
+<p>reservations of time slots time slots</p>
+</dd><dt>"appointments"
+<dd>
+<p>will always be returned</p>
+</dd></dl>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.update' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.update' href='#method.appointment_groups.update'>
+      Update an appointment group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#update</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/appointment_groups/:id
+  </h3>
+
+
+<p>Update and return an appointment group. If new_appointments are specified,
+the response will return a new_appointments array (same format as
+appointments array, see "List appointment groups" action).</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[context_codes][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String
+<dd>
+<p>Array of context codes (courses, e.g. course_1) this group should be linked
+to (1 or more). Users in the course(s) with appropriate permissions will be
+able to sign up for this appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[sub_context_codes][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Array of sub context codes (course sections or a single group category)
+this group should be linked to. Used to limit the appointment group to
+particular sections. If a group category is specified, students will sign
+up in groups and the participant_type will be "Group" instead of "User".</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[title]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Short title for the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Longer text description of the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[location_name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Location name of the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[location_address]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Location address.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[publish]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Indicates whether this appointment group should be published (i.e. made
+available for signup). Once published, an appointment group cannot be
+unpublished. Defaults to false.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[participants_per_appointment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Maximum number of participants that may register for each time slot.
+Defaults to null (no limit).</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[min_appointments_per_participant]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Minimum number of time slots a user must register for. If not set, users do
+not need to sign up for any time slots.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[max_appointments_per_participant]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Maximum number of time slots a user may register for.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[new_appointments][X][]</span>
+      
+      
+        <div class='inline'>
+<p>Nested array of start time/end time pairs indicating time slots for this
+appointment group. Refer to the example request.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>appointment_group[participant_visibility]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"private"|"protected"
+<dd></dd></dl>
+<dl class="rdoc-list note-list"><dt>"private"
+<dd>
+<p>participants cannot see who has signed up for a particular time slot</p>
+</dd><dt>"protected"
+<dd>
+<p>participants can see who has signed up. Defaults to "private".</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/appointment_groups/543.json' \
+     -X PUT \ 
+     -F 'appointment_group[publish]=1' \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.destroy' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.destroy' href='#method.appointment_groups.destroy'>
+      Delete an appointment group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#destroy</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/appointment_groups/:id
+  </h3>
+
+
+<p>Delete an appointment group (and associated time slots and reservations) 
+and return the deleted group</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>cancel_reason</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Reason for deleting/canceling the appointment group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/appointment_groups/543.json' \
+     -X DELETE \ 
+     -F 'cancel_reason=El Tigre Chino got fired' \ 
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.users' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.users' href='#method.appointment_groups.users'>
+      List user participants
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#users</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/appointment_groups/:id/users
+  </h3>
+
+
+<p>List users that are (or may be) participating in this appointment group.
+Refer to the Users API for the response fields. Returns no results for
+appointment groups with the "Group" participant_type.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>registration_status</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"all"|"registered"|"registered"
+<dd>
+<p>Limits results to the a given participation status, defaults to "all"</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.appointment_groups.groups' data-subtopic='Appointment Groups'>
+    <a name='method.appointment_groups.groups' href='#method.appointment_groups.groups'>
+      List student group participants
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/appointment_groups_controller.rb">AppointmentGroupsController#groups</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/appointment_groups/:id/groups
+  </h3>
+
+
+<p>List student groups that are (or may be) participating in this appointment
+group. Refer to the Groups API for the response fields. Returns no results
+for appointment groups with the "User" participant_type.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>registration_status</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"all"|"registered"|"registered"
+<dd>
+<p>Limits results to the a given participation status, defaults to "all"</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:39 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1 @@
+(function(){define(["ember","ember-data"],function(e,r){var t;return t=r.Model.extend({user_id:r.attr("number"),group_id:r.attr("number")})})}).call(this);

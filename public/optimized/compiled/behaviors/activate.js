@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(e){return e(document).on("keydown","[role=button], [role=checkbox]",function(o){return 13===o.keyCode?e(o.target).trigger("keyclick"):void 0}),e(document).on("keyup","[role=button], [role=checkbox]",function(o){return 32===o.keyCode?e(o.target).trigger("keyclick"):void 0})})}).call(this);

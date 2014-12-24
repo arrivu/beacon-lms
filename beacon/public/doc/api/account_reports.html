@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="current" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Account Reports API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing account reports.</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Report">A Report object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The unique identifier for the report.
+  &quot;id&quot;: 1,
+  
+  //The type of report.
+  &quot;report&quot;: &quot;sis_export_csv&quot;,
+  
+  //The url to the report download.
+  &quot;file_url&quot;: &quot;https://example.com/some/path&quot;,
+  
+  //The status of the report
+  &quot;status&quot;: &quot;complete&quot;,
+  
+  //The report parameters
+  &quot;parameters&quot;: &quot;&quot;,
+  
+  //The progress of the report
+  &quot;progress&quot;: &quot;100&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="ReportParameters">A ReportParameters object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The canvas id of the term to get grades from
+  &quot;enrollment_term_id&quot;: 2,
+  
+  //Include deleted objects
+  &quot;include_deleted&quot;: &quot;false&quot;,
+  
+  //The course to report on
+  &quot;course_id&quot;: 2,
+  
+  //The sort order for the csv, Options: 'users', 'courses', 'outcomes'.
+  &quot;order&quot;: &quot;users&quot;,
+  
+  //Get the data for users
+  &quot;users&quot;: &quot;false&quot;,
+  
+  //Get the data for accounts
+  &quot;accounts&quot;: &quot;false&quot;,
+  
+  //Get the data for terms
+  &quot;terms&quot;: &quot;false&quot;,
+  
+  //Get the data for courses
+  &quot;courses&quot;: &quot;false&quot;,
+  
+  //Get the data for sections
+  &quot;sections&quot;: &quot;false&quot;,
+  
+  //Get the data for enrollments
+  &quot;enrollments&quot;: &quot;false&quot;,
+  
+  //Get the data for groups
+  &quot;groups&quot;: &quot;false&quot;,
+  
+  //Get the data for cross-listed courses
+  &quot;xlist&quot;: &quot;false&quot;,
+  
+  &quot;sis_terms_csv&quot;: 1,
+  
+  &quot;sis_accounts_csv&quot;: 1,
+  
+  //Include enrollment state. Defaults to false
+  &quot;include_enrollment_state&quot;: &quot;false&quot;,
+  
+  //Include enrollment state. Defaults to 'all' Options: ['active'| 'invited'|
+  //'creation_pending'| 'deleted'| 'rejected'| 'completed'| 'inactive'| 'all']
+  &quot;enrollment_state[]&quot;: &quot;['all']&quot;,
+  
+  //The beginning date for submissions. Max time range is 2 weeks.
+  &quot;start_at&quot;: &quot;2012-07-13T10:55:20-06:00&quot;,
+  
+  //The end date for submissions. Max time range is 2 weeks.
+  &quot;end_at&quot;: &quot;2012-07-13T10:55:20-06:00&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.account_reports.available_reports' data-subtopic='Account Reports'>
+    <a name='method.account_reports.available_reports' href='#method.account_reports.available_reports'>
+      List Available Reports
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb">AccountReportsController#available_reports</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/reports
+  </h3>
+
+
+<p>Returns the list of reports for the current context.</p>
+
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>name</span>
+      
+      
+        <div class='inline'>
+<p>The name of the report.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>parameters</span>
+      
+      
+        <div class='inline'>
+<p>The parameters will vary for each report</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -H 'Authorization: Bearer &lt;token&gt;' \ 
+     https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/reports/</pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">[
+  {
+    &quot;report&quot;:&quot;student_assignment_outcome_map_csv&quot;,
+    &quot;title&quot;:&quot;Student Competency&quot;,
+    &quot;parameters&quot;:null
+  },
+  {
+    &quot;report&quot;:&quot;grade_export_csv&quot;,
+    &quot;title&quot;:&quot;Grade Export&quot;,
+    &quot;parameters&quot;:{
+      &quot;term&quot;:{
+        &quot;description&quot;:&quot;The canvas id of the term to get grades from&quot;,
+        &quot;required&quot;:true
+      }
+    }
+  }
+]</pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.account_reports.create' data-subtopic='Account Reports'>
+    <a name='method.account_reports.create' href='#method.account_reports.create'>
+      Start a Report
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb">AccountReportsController#create</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/reports/:report
+  </h3>
+
+
+<p>Generates a report instance for the account.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>[parameters]</span>
+      
+      
+        <div class='inline'>
+<p>The parameters will vary for each report</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='account_reports.html#Report'>Report</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.account_reports.index' data-subtopic='Account Reports'>
+    <a name='method.account_reports.index' href='#method.account_reports.index'>
+      Index of Reports
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb">AccountReportsController#index</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/reports/:report
+  </h3>
+
+
+<p>Shows all reports that have been run for the account of a specific type.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -H 'Authorization: Bearer &lt;token&gt;' \ 
+     https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/reports/&lt;report_type&gt;</pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='account_reports.html#Report'>Reports</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.account_reports.show' data-subtopic='Account Reports'>
+    <a name='method.account_reports.show' href='#method.account_reports.show'>
+      Status of a Report
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb">AccountReportsController#show</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/reports/:report/:id
+  </h3>
+
+
+<p>Returns the status of a report.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>report_id</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, Integer
+<dd>
+<p>The report id.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -H 'Authorization: Bearer &lt;token&gt;' \ 
+     https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/reports/&lt;report_type&gt;/&lt;report_id&gt;</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='account_reports.html#Report'>Report</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.account_reports.destroy' data-subtopic='Account Reports'>
+    <a name='method.account_reports.destroy' href='#method.account_reports.destroy'>
+      Delete a Report
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/account_reports_controller.rb">AccountReportsController#destroy</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/accounts/:account_id/reports/:report/:id
+  </h3>
+
+
+<p>Deletes a generated report instance.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -H 'Authorization: Bearer &lt;token&gt;' \ 
+     -X DELETE \ 
+     https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/reports/&lt;report_type&gt;/&lt;id&gt;</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='account_reports.html#Report'>Report</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:38 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

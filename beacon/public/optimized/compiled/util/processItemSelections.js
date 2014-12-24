@@ -1,0 +1,1 @@
+(function(){var t={}.hasOwnProperty;define(function(){var n;return n=function(n){var o,r,c,i,a,e;i={items_to_copy:[]},a=/copy\[([^\]]*)\]$/;for(r in n)t.call(n,r)&&(e=n[r],c=r.match(a),c?(o=c[1],"1"===e?i.items_to_copy.push(o):"0"!==e&&(i[r]=e)):i[r]=e);return i}})}).call(this);

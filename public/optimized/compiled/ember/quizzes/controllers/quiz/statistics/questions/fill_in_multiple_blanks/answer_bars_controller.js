@@ -1,0 +1,1 @@
+(function(){define(["../multiple_choice/answer_bars_controller"],function(n){return n})}).call(this);

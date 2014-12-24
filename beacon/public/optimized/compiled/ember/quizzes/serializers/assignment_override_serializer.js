@@ -1,0 +1,1 @@
+(function(){define(["./application_serializer"],function(i){var n;return n=i.extend()})}).call(this);

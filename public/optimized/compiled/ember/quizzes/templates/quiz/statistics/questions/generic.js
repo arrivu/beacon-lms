@@ -1,0 +1,1 @@
+define(["ember","compiled/ember/shared/helpers/common"],function(e){e.TEMPLATES["quiz/statistics/questions/generic"]=e.Handlebars.template(function(s,i,t,n,r){this.compilerInfo=[4,">= 1.0.0"],t=this.merge(t,e.Handlebars.helpers),r=r||{},r.buffer.push("<p>Question Statistics Placeholder</p>")})});

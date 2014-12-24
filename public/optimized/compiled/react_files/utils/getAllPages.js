@@ -1,0 +1,1 @@
+(function(){define([],function(){var n;return n=function(e,t){var i;if(!e.loadedAll)return i=e.fetch({page:"next"}),i.then(t),i.pipe(function(){return n(e,t)})}})}).call(this);

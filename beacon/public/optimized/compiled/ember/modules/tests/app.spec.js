@@ -1,0 +1,1 @@
+(function(){define(["./start_app","ember","ic-ajax","./environment_setup"],function(n,t){var e;return e=null,module("Ember sanity test",{setup:function(){return e=n()},teardown:function(){return t.run(e,"destroy")}}),test("Ember is up and running",function(){return ok(!0)})})}).call(this);

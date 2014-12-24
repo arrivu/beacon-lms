@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(e){var t;return t=e.ActiveModelSerializer.extend({extractSingle:function(e,t,r,i,n){var a;return a={},a[t.typeKey.pluralize()]=r,this._super(e,t,a,i,n)}})})}).call(this);

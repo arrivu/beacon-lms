@@ -1,0 +1,1 @@
+(function(){define(["../questions_view"],function(t){return t.extend({classNames:["question-statistics","stretched-answer-distribution"]})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){require(["jquery"],function(n){return n(document).ready(function(){return n(".select_action").change(function(){return n(".sub_setting").hide().filter("."+n(this).val()).show()}).change()})})}).call(this);

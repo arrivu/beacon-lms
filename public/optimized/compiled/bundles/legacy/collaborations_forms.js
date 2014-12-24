@@ -1,0 +1,1 @@
+(function(){require(["INST"],function(o){return o.collaboration_types=ENV.collaboration_types})}).call(this);

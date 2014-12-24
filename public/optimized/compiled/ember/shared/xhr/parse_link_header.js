@@ -1,0 +1,1 @@
+(function(){define(function(){var e,n;return n=/<(http.*?)>; rel="([a-z]*)",/g,e=function(e){var r,t,i;if(i={},r=e.getResponseHeader("Link"),!r)return i;for(;t=n.exec(r);)i[t[2]]=t[1];return i}})}).call(this);

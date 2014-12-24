@@ -1,0 +1,1 @@
+(function(){define(["ember","../register"],function(e,t){return t("component","c-file-input",e.TextField.extend({type:"file",setFiles:function(e){return this.set("files",[].slice.call(e.target.files,0))}.on("change")}))})}).call(this);

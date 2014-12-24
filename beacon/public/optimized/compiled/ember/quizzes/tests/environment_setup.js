@@ -1,0 +1,1 @@
+(function(){define(["../shared/environment"],function(e){return window.ENV={context_asset_string:"course_1",PERMISSIONS:{manage:!1,update:!1},FLAGS:{differentiated_assignments:!0}},e.setEnv(ENV),{setUserPermissions:function(n,t){var s;return s=e.get("env").context_asset_string,e.setEnv({context_asset_string:s,PERMISSIONS:{manage:n,update:t}}),e}}})}).call(this);

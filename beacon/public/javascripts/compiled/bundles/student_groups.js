@@ -1,0 +1,1 @@
+require(['compiled/ember/student_groups/main'], function(App) { window.App = App.create(); });

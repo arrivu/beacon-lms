@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(n){var e,t;return e=n("#identity .unread-messages-count"),t=function(){return document.hidden===!1?n.get("/api/v1/conversations/unread_count").done(function(n){return e.text(n.unread_count),e.toggle(n.unread_count>0)}):void 0},setInterval(t,3e4),t})}).call(this);

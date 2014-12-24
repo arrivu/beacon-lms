@@ -1,0 +1,1 @@
+(function(){define(["./base_controller","i18n!create_module_item_quiz","../../models/item"],function(e,t,r){var a;return a=e.extend({text:{headerName:t.t("header_name","Header Name")},createItem:function(){var e,t;return e=this.get("model"),t=r.createRecord({module_id:this.get("moduleController.model.id"),title:e.title,type:"SubHeader"}),t.save(),t}})})}).call(this);

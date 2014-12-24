@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(n){return n(document).ready(function(){var e,s,a,d,u;if(ENV.badge_counts){d=ENV.badge_counts,u=[];for(s in d)a=d[s],a>0?("submissions"===s&&(s="grades"),e=n("<b/>").append(a).addClass("nav-badge"),u.push(n("#section-tabs ."+s).append(e))):u.push(void 0);return u}})})}).call(this);

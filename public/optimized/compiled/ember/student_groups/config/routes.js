@@ -1,0 +1,1 @@
+(function(){define(function(){var n;return n=function(){return this.resource("student_groups",{path:"/"})}})}).call(this);

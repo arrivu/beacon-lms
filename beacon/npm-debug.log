@@ -1,0 +1,1689 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'update' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose request where is /requirejs
+6 verbose request registry https://registry.npmjs.org/
+7 verbose request id ea3c12185c378a90
+8 verbose url raw /requirejs
+9 verbose url resolving [ 'https://registry.npmjs.org/', './requirejs' ]
+10 verbose url resolved https://registry.npmjs.org/requirejs
+11 verbose request where is https://registry.npmjs.org/requirejs
+12 info trying registry request attempt 1 at 11:02:01
+13 http GET https://registry.npmjs.org/requirejs
+14 verbose request where is /uglify-js
+15 verbose request registry https://registry.npmjs.org/
+16 verbose url raw /uglify-js
+17 verbose url resolving [ 'https://registry.npmjs.org/', './uglify-js' ]
+18 verbose url resolved https://registry.npmjs.org/uglify-js
+19 verbose request where is https://registry.npmjs.org/uglify-js
+20 info trying registry request attempt 1 at 11:02:01
+21 http GET https://registry.npmjs.org/uglify-js
+22 verbose request where is /glob
+23 verbose request registry https://registry.npmjs.org/
+24 verbose url raw /glob
+25 verbose url resolving [ 'https://registry.npmjs.org/', './glob' ]
+26 verbose url resolved https://registry.npmjs.org/glob
+27 verbose request where is https://registry.npmjs.org/glob
+28 info trying registry request attempt 1 at 11:02:01
+29 http GET https://registry.npmjs.org/glob
+30 verbose request where is /compute-cluster
+31 verbose request registry https://registry.npmjs.org/
+32 verbose url raw /compute-cluster
+33 verbose url resolving [ 'https://registry.npmjs.org/', './compute-cluster' ]
+34 verbose url resolved https://registry.npmjs.org/compute-cluster
+35 verbose request where is https://registry.npmjs.org/compute-cluster
+36 info trying registry request attempt 1 at 11:02:01
+37 http GET https://registry.npmjs.org/compute-cluster
+38 verbose request where is /autoprefixer
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /autoprefixer
+41 verbose url resolving [ 'https://registry.npmjs.org/', './autoprefixer' ]
+42 verbose url resolved https://registry.npmjs.org/autoprefixer
+43 verbose request where is https://registry.npmjs.org/autoprefixer
+44 info trying registry request attempt 1 at 11:02:01
+45 http GET https://registry.npmjs.org/autoprefixer
+46 verbose request where is /js-yaml
+47 verbose request registry https://registry.npmjs.org/
+48 verbose url raw /js-yaml
+49 verbose url resolving [ 'https://registry.npmjs.org/', './js-yaml' ]
+50 verbose url resolved https://registry.npmjs.org/js-yaml
+51 verbose request where is https://registry.npmjs.org/js-yaml
+52 info trying registry request attempt 1 at 11:02:01
+53 http GET https://registry.npmjs.org/js-yaml
+54 verbose request where is /lodash
+55 verbose request registry https://registry.npmjs.org/
+56 verbose url raw /lodash
+57 verbose url resolving [ 'https://registry.npmjs.org/', './lodash' ]
+58 verbose url resolved https://registry.npmjs.org/lodash
+59 verbose request where is https://registry.npmjs.org/lodash
+60 info trying registry request attempt 1 at 11:02:01
+61 http GET https://registry.npmjs.org/lodash
+62 verbose request where is /mkdirp
+63 verbose request registry https://registry.npmjs.org/
+64 verbose url raw /mkdirp
+65 verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp' ]
+66 verbose url resolved https://registry.npmjs.org/mkdirp
+67 verbose request where is https://registry.npmjs.org/mkdirp
+68 info trying registry request attempt 1 at 11:02:01
+69 http GET https://registry.npmjs.org/mkdirp
+70 verbose request where is /node-sass
+71 verbose request registry https://registry.npmjs.org/
+72 verbose url raw /node-sass
+73 verbose url resolving [ 'https://registry.npmjs.org/', './node-sass' ]
+74 verbose url resolved https://registry.npmjs.org/node-sass
+75 verbose request where is https://registry.npmjs.org/node-sass
+76 info trying registry request attempt 1 at 11:02:01
+77 http GET https://registry.npmjs.org/node-sass
+78 verbose request where is /loom
+79 verbose request registry https://registry.npmjs.org/
+80 verbose url raw /loom
+81 verbose url resolving [ 'https://registry.npmjs.org/', './loom' ]
+82 verbose url resolved https://registry.npmjs.org/loom
+83 verbose request where is https://registry.npmjs.org/loom
+84 info trying registry request attempt 1 at 11:02:01
+85 http GET https://registry.npmjs.org/loom
+86 verbose request where is /fleck
+87 verbose request registry https://registry.npmjs.org/
+88 verbose url raw /fleck
+89 verbose url resolving [ 'https://registry.npmjs.org/', './fleck' ]
+90 verbose url resolved https://registry.npmjs.org/fleck
+91 verbose request where is https://registry.npmjs.org/fleck
+92 info trying registry request attempt 1 at 11:02:01
+93 http GET https://registry.npmjs.org/fleck
+94 verbose request where is /testem
+95 verbose request registry https://registry.npmjs.org/
+96 verbose url raw /testem
+97 verbose url resolving [ 'https://registry.npmjs.org/', './testem' ]
+98 verbose url resolved https://registry.npmjs.org/testem
+99 verbose request where is https://registry.npmjs.org/testem
+100 info trying registry request attempt 1 at 11:02:01
+101 http GET https://registry.npmjs.org/testem
+102 verbose request where is /karma-qunit
+103 verbose request registry https://registry.npmjs.org/
+104 verbose url raw /karma-qunit
+105 verbose url resolving [ 'https://registry.npmjs.org/', './karma-qunit' ]
+106 verbose url resolved https://registry.npmjs.org/karma-qunit
+107 verbose request where is https://registry.npmjs.org/karma-qunit
+108 info trying registry request attempt 1 at 11:02:01
+109 http GET https://registry.npmjs.org/karma-qunit
+110 verbose request where is /karma
+111 verbose request registry https://registry.npmjs.org/
+112 verbose url raw /karma
+113 verbose url resolving [ 'https://registry.npmjs.org/', './karma' ]
+114 verbose url resolved https://registry.npmjs.org/karma
+115 verbose request where is https://registry.npmjs.org/karma
+116 info trying registry request attempt 1 at 11:02:01
+117 http GET https://registry.npmjs.org/karma
+118 verbose request where is /karma-safari-launcher
+119 verbose request registry https://registry.npmjs.org/
+120 verbose url raw /karma-safari-launcher
+121 verbose url resolving [ 'https://registry.npmjs.org/', './karma-safari-launcher' ]
+122 verbose url resolved https://registry.npmjs.org/karma-safari-launcher
+123 verbose request where is https://registry.npmjs.org/karma-safari-launcher
+124 info trying registry request attempt 1 at 11:02:01
+125 http GET https://registry.npmjs.org/karma-safari-launcher
+126 verbose request where is /karma-opera-launcher
+127 verbose request registry https://registry.npmjs.org/
+128 verbose url raw /karma-opera-launcher
+129 verbose url resolving [ 'https://registry.npmjs.org/', './karma-opera-launcher' ]
+130 verbose url resolved https://registry.npmjs.org/karma-opera-launcher
+131 verbose request where is https://registry.npmjs.org/karma-opera-launcher
+132 info trying registry request attempt 1 at 11:02:01
+133 http GET https://registry.npmjs.org/karma-opera-launcher
+134 verbose request where is /karma-coverage
+135 verbose request registry https://registry.npmjs.org/
+136 verbose url raw /karma-coverage
+137 verbose url resolving [ 'https://registry.npmjs.org/', './karma-coverage' ]
+138 verbose url resolved https://registry.npmjs.org/karma-coverage
+139 verbose request where is https://registry.npmjs.org/karma-coverage
+140 info trying registry request attempt 1 at 11:02:01
+141 http GET https://registry.npmjs.org/karma-coverage
+142 verbose request where is /karma-ie-launcher
+143 verbose request registry https://registry.npmjs.org/
+144 verbose url raw /karma-ie-launcher
+145 verbose url resolving [ 'https://registry.npmjs.org/', './karma-ie-launcher' ]
+146 verbose url resolved https://registry.npmjs.org/karma-ie-launcher
+147 verbose request where is https://registry.npmjs.org/karma-ie-launcher
+148 info trying registry request attempt 1 at 11:02:01
+149 http GET https://registry.npmjs.org/karma-ie-launcher
+150 verbose request where is /karma-osx-reporter
+151 verbose request registry https://registry.npmjs.org/
+152 verbose url raw /karma-osx-reporter
+153 verbose url resolving [ 'https://registry.npmjs.org/', './karma-osx-reporter' ]
+154 verbose url resolved https://registry.npmjs.org/karma-osx-reporter
+155 verbose request where is https://registry.npmjs.org/karma-osx-reporter
+156 info trying registry request attempt 1 at 11:02:01
+157 http GET https://registry.npmjs.org/karma-osx-reporter
+158 verbose request where is /karma-firework-reporter
+159 verbose request registry https://registry.npmjs.org/
+160 verbose url raw /karma-firework-reporter
+161 verbose url resolving [ 'https://registry.npmjs.org/', './karma-firework-reporter' ]
+162 verbose url resolved https://registry.npmjs.org/karma-firework-reporter
+163 verbose request where is https://registry.npmjs.org/karma-firework-reporter
+164 info trying registry request attempt 1 at 11:02:01
+165 http GET https://registry.npmjs.org/karma-firework-reporter
+166 verbose request where is /karma-coffee-preprocessor
+167 verbose request registry https://registry.npmjs.org/
+168 verbose url raw /karma-coffee-preprocessor
+169 verbose url resolving [ 'https://registry.npmjs.org/', './karma-coffee-preprocessor' ]
+170 verbose url resolved https://registry.npmjs.org/karma-coffee-preprocessor
+171 verbose request where is https://registry.npmjs.org/karma-coffee-preprocessor
+172 info trying registry request attempt 1 at 11:02:01
+173 http GET https://registry.npmjs.org/karma-coffee-preprocessor
+174 http 200 https://registry.npmjs.org/glob
+175 silly registry.get cb [ 200,
+175 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+175 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+175 silly registry.get     etag: '"DG2PHFB3FZXOOFMHXGNYOC9T9"',
+175 silly registry.get     'content-type': 'application/json',
+175 silly registry.get     'cache-control': 'max-age=60',
+175 silly registry.get     'content-length': '73904',
+175 silly registry.get     'accept-ranges': 'bytes',
+175 silly registry.get     via: '1.1 varnish',
+175 silly registry.get     age: '22',
+175 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+175 silly registry.get     'x-cache': 'HIT',
+175 silly registry.get     'x-cache-hits': '3',
+175 silly registry.get     'x-timer': 'S1417584721.479596,VS0,VE0',
+175 silly registry.get     vary: 'Accept',
+175 silly registry.get     'keep-alive': 'timeout=10, max=50',
+175 silly registry.get     connection: 'Keep-Alive' } ]
+176 http 200 https://registry.npmjs.org/uglify-js
+177 silly registry.get cb [ 200,
+177 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+177 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+177 silly registry.get     etag: '"6N3URD04DFAJDTZ6VVE2PLPCU"',
+177 silly registry.get     'content-type': 'application/json',
+177 silly registry.get     'cache-control': 'max-age=60',
+177 silly registry.get     'content-length': '82115',
+177 silly registry.get     'accept-ranges': 'bytes',
+177 silly registry.get     via: '1.1 varnish',
+177 silly registry.get     age: '22',
+177 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+177 silly registry.get     'x-cache': 'HIT',
+177 silly registry.get     'x-cache-hits': '5',
+177 silly registry.get     'x-timer': 'S1417584721.479814,VS0,VE0',
+177 silly registry.get     vary: 'Accept',
+177 silly registry.get     'keep-alive': 'timeout=10, max=50',
+177 silly registry.get     connection: 'Keep-Alive' } ]
+178 http 200 https://registry.npmjs.org/js-yaml
+179 silly registry.get cb [ 200,
+179 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+179 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+179 silly registry.get     etag: '"AV7SA1BADTM0KUR9BNY8FRX9F"',
+179 silly registry.get     'content-type': 'application/json',
+179 silly registry.get     'cache-control': 'max-age=60',
+179 silly registry.get     'content-length': '51309',
+179 silly registry.get     'accept-ranges': 'bytes',
+179 silly registry.get     via: '1.1 varnish',
+179 silly registry.get     age: '37',
+179 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+179 silly registry.get     'x-cache': 'HIT',
+179 silly registry.get     'x-cache-hits': '3',
+179 silly registry.get     'x-timer': 'S1417584721.500533,VS0,VE0',
+179 silly registry.get     vary: 'Accept',
+179 silly registry.get     'keep-alive': 'timeout=10, max=49',
+179 silly registry.get     connection: 'Keep-Alive' } ]
+180 http 200 https://registry.npmjs.org/lodash
+181 silly registry.get cb [ 200,
+181 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+181 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+181 silly registry.get     etag: '"DBL6LRFOGFY2R7KSS08MKOMHD"',
+181 silly registry.get     'content-type': 'application/json',
+181 silly registry.get     'cache-control': 'max-age=60',
+181 silly registry.get     'content-length': '74213',
+181 silly registry.get     'accept-ranges': 'bytes',
+181 silly registry.get     via: '1.1 varnish',
+181 silly registry.get     age: '5',
+181 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+181 silly registry.get     'x-cache': 'HIT',
+181 silly registry.get     'x-cache-hits': '2',
+181 silly registry.get     'x-timer': 'S1417584721.503782,VS0,VE0',
+181 silly registry.get     vary: 'Accept',
+181 silly registry.get     'keep-alive': 'timeout=10, max=49',
+181 silly registry.get     connection: 'Keep-Alive' } ]
+182 http 200 https://registry.npmjs.org/mkdirp
+183 silly registry.get cb [ 200,
+183 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+183 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+183 silly registry.get     etag: '"7FO8OVWPUQMRGI9KTI3CVPT7H"',
+183 silly registry.get     'content-type': 'application/json',
+183 silly registry.get     'cache-control': 'max-age=60',
+183 silly registry.get     'content-length': '21690',
+183 silly registry.get     'accept-ranges': 'bytes',
+183 silly registry.get     via: '1.1 varnish',
+183 silly registry.get     age: '24',
+183 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+183 silly registry.get     'x-cache': 'HIT',
+183 silly registry.get     'x-cache-hits': '4',
+183 silly registry.get     'x-timer': 'S1417584721.523630,VS0,VE0',
+183 silly registry.get     vary: 'Accept',
+183 silly registry.get     'keep-alive': 'timeout=10, max=48',
+183 silly registry.get     connection: 'Keep-Alive' } ]
+184 verbose request where is /async
+185 verbose request registry https://registry.npmjs.org/
+186 verbose url raw /async
+187 verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+188 verbose url resolved https://registry.npmjs.org/async
+189 verbose request where is https://registry.npmjs.org/async
+190 info trying registry request attempt 1 at 11:02:01
+191 http GET https://registry.npmjs.org/async
+192 verbose request where is /source-map
+193 verbose request registry https://registry.npmjs.org/
+194 verbose url raw /source-map
+195 verbose url resolving [ 'https://registry.npmjs.org/', './source-map' ]
+196 verbose url resolved https://registry.npmjs.org/source-map
+197 verbose request where is https://registry.npmjs.org/source-map
+198 info trying registry request attempt 1 at 11:02:01
+199 http GET https://registry.npmjs.org/source-map
+200 verbose request where is /optimist
+201 verbose request registry https://registry.npmjs.org/
+202 verbose url raw /optimist
+203 verbose url resolving [ 'https://registry.npmjs.org/', './optimist' ]
+204 verbose url resolved https://registry.npmjs.org/optimist
+205 verbose request where is https://registry.npmjs.org/optimist
+206 info trying registry request attempt 1 at 11:02:01
+207 http GET https://registry.npmjs.org/optimist
+208 verbose request where is /uglify-to-browserify
+209 verbose request registry https://registry.npmjs.org/
+210 verbose url raw /uglify-to-browserify
+211 verbose url resolving [ 'https://registry.npmjs.org/', './uglify-to-browserify' ]
+212 verbose url resolved https://registry.npmjs.org/uglify-to-browserify
+213 verbose request where is https://registry.npmjs.org/uglify-to-browserify
+214 info trying registry request attempt 1 at 11:02:01
+215 http GET https://registry.npmjs.org/uglify-to-browserify
+216 verbose request where is /argparse
+217 verbose request registry https://registry.npmjs.org/
+218 verbose url raw /argparse
+219 verbose url resolving [ 'https://registry.npmjs.org/', './argparse' ]
+220 verbose url resolved https://registry.npmjs.org/argparse
+221 verbose request where is https://registry.npmjs.org/argparse
+222 info trying registry request attempt 1 at 11:02:01
+223 http GET https://registry.npmjs.org/argparse
+224 verbose request where is /esprima
+225 verbose request registry https://registry.npmjs.org/
+226 verbose url raw /esprima
+227 verbose url resolving [ 'https://registry.npmjs.org/', './esprima' ]
+228 verbose url resolved https://registry.npmjs.org/esprima
+229 verbose request where is https://registry.npmjs.org/esprima
+230 info trying registry request attempt 1 at 11:02:01
+231 http GET https://registry.npmjs.org/esprima
+232 verbose request where is /minimist
+233 verbose request registry https://registry.npmjs.org/
+234 verbose url raw /minimist
+235 verbose url resolving [ 'https://registry.npmjs.org/', './minimist' ]
+236 verbose url resolved https://registry.npmjs.org/minimist
+237 verbose request where is https://registry.npmjs.org/minimist
+238 info trying registry request attempt 1 at 11:02:01
+239 http GET https://registry.npmjs.org/minimist
+240 http 200 https://registry.npmjs.org/requirejs
+241 silly registry.get cb [ 200,
+241 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+241 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+241 silly registry.get     etag: '"BRAKXAXZ2JCATDQ72BV2I844N"',
+241 silly registry.get     'content-type': 'application/json',
+241 silly registry.get     'cache-control': 'max-age=60',
+241 silly registry.get     'content-length': '35896',
+241 silly registry.get     'accept-ranges': 'bytes',
+241 silly registry.get     via: '1.1 varnish',
+241 silly registry.get     age: '0',
+241 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+241 silly registry.get     'x-cache': 'HIT',
+241 silly registry.get     'x-cache-hits': '1',
+241 silly registry.get     'x-timer': 'S1417584721.485718,VS0,VE125',
+241 silly registry.get     vary: 'Accept',
+241 silly registry.get     'keep-alive': 'timeout=10, max=50',
+241 silly registry.get     connection: 'Keep-Alive' } ]
+242 http 200 https://registry.npmjs.org/node-sass
+243 silly registry.get cb [ 200,
+243 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+243 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+243 silly registry.get     etag: '"7KTS1H2QA9XHO450Y3T6OC0JZ"',
+243 silly registry.get     'content-type': 'application/json',
+243 silly registry.get     'cache-control': 'max-age=60',
+243 silly registry.get     'content-length': '95769',
+243 silly registry.get     'accept-ranges': 'bytes',
+243 silly registry.get     via: '1.1 varnish',
+243 silly registry.get     age: '0',
+243 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+243 silly registry.get     'x-cache': 'HIT',
+243 silly registry.get     'x-cache-hits': '1',
+243 silly registry.get     'x-timer': 'S1417584721.528363,VS0,VE121',
+243 silly registry.get     vary: 'Accept',
+243 silly registry.get     'keep-alive': 'timeout=10, max=48',
+243 silly registry.get     connection: 'Keep-Alive' } ]
+244 http 200 https://registry.npmjs.org/compute-cluster
+245 silly registry.get cb [ 200,
+245 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:01 GMT',
+245 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+245 silly registry.get     etag: '"BY4XGYWG7BYZ3ZTSU8QHUMRZL"',
+245 silly registry.get     'content-type': 'application/json',
+245 silly registry.get     'cache-control': 'max-age=60',
+245 silly registry.get     'content-length': '13886',
+245 silly registry.get     'accept-ranges': 'bytes',
+245 silly registry.get     via: '1.1 varnish',
+245 silly registry.get     age: '0',
+245 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+245 silly registry.get     'x-cache': 'MISS',
+245 silly registry.get     'x-cache-hits': '0',
+245 silly registry.get     'x-timer': 'S1417584721.487043,VS0,VE364',
+245 silly registry.get     vary: 'Accept',
+245 silly registry.get     'keep-alive': 'timeout=10, max=50',
+245 silly registry.get     connection: 'Keep-Alive' } ]
+246 verbose request where is /vows
+247 verbose request registry https://registry.npmjs.org/
+248 verbose url raw /vows
+249 verbose url resolving [ 'https://registry.npmjs.org/', './vows' ]
+250 verbose url resolved https://registry.npmjs.org/vows
+251 verbose request where is https://registry.npmjs.org/vows
+252 info trying registry request attempt 1 at 11:02:01
+253 http GET https://registry.npmjs.org/vows
+254 http 200 https://registry.npmjs.org/karma-qunit
+255 silly registry.get cb [ 200,
+255 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+255 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+255 silly registry.get     etag: '"3VAV1NDB81X4GLH19LAX381H6"',
+255 silly registry.get     'content-type': 'application/json',
+255 silly registry.get     'cache-control': 'max-age=60',
+255 silly registry.get     'content-length': '11508',
+255 silly registry.get     'accept-ranges': 'bytes',
+255 silly registry.get     via: '1.1 varnish',
+255 silly registry.get     age: '0',
+255 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+255 silly registry.get     'x-cache': 'MISS',
+255 silly registry.get     'x-cache-hits': '0',
+255 silly registry.get     'x-timer': 'S1417584721.861684,VS0,VE198',
+255 silly registry.get     vary: 'Accept',
+255 silly registry.get     'keep-alive': 'timeout=10, max=49',
+255 silly registry.get     connection: 'Keep-Alive' } ]
+256 http 200 https://registry.npmjs.org/karma
+257 silly registry.get cb [ 200,
+257 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+257 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+257 silly registry.get     etag: '"6I9SFHAON89KCEHD8T70G5MUB"',
+257 silly registry.get     'content-type': 'application/json',
+257 silly registry.get     'cache-control': 'max-age=60',
+257 silly registry.get     'content-length': '595384',
+257 silly registry.get     'accept-ranges': 'bytes',
+257 silly registry.get     via: '1.1 varnish',
+257 silly registry.get     age: '9',
+257 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+257 silly registry.get     'x-cache': 'HIT',
+257 silly registry.get     'x-cache-hits': '1',
+257 silly registry.get     'x-timer': 'S1417584722.067200,VS0,VE2',
+257 silly registry.get     vary: 'Accept',
+257 silly registry.get     'keep-alive': 'timeout=10, max=48',
+257 silly registry.get     connection: 'Keep-Alive' } ]
+258 http 200 https://registry.npmjs.org/autoprefixer
+259 silly registry.get cb [ 200,
+259 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+259 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+259 silly registry.get     etag: '"BKUTMY8W6ETUALHKEE9AV51PC"',
+259 silly registry.get     'content-type': 'application/json',
+259 silly registry.get     'cache-control': 'max-age=60',
+259 silly registry.get     'content-length': '120200',
+259 silly registry.get     'accept-ranges': 'bytes',
+259 silly registry.get     via: '1.1 varnish',
+259 silly registry.get     age: '0',
+259 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+259 silly registry.get     'x-cache': 'HIT',
+259 silly registry.get     'x-cache-hits': '1',
+259 silly registry.get     'x-timer': 'S1417584721.482725,VS0,VE697',
+259 silly registry.get     vary: 'Accept',
+259 silly registry.get     'keep-alive': 'timeout=10, max=50',
+259 silly registry.get     connection: 'Keep-Alive' } ]
+260 http 200 https://registry.npmjs.org/karma-safari-launcher
+261 silly registry.get cb [ 200,
+261 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+261 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+261 silly registry.get     etag: '"DPRFYL5G6DABIDDSZZFTQADZI"',
+261 silly registry.get     'content-type': 'application/json',
+261 silly registry.get     'cache-control': 'max-age=60',
+261 silly registry.get     'content-length': '8473',
+261 silly registry.get     'accept-ranges': 'bytes',
+261 silly registry.get     via: '1.1 varnish',
+261 silly registry.get     age: '0',
+261 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+261 silly registry.get     'x-cache': 'HIT',
+261 silly registry.get     'x-cache-hits': '1',
+261 silly registry.get     'x-timer': 'S1417584722.168723,VS0,VE125',
+261 silly registry.get     vary: 'Accept',
+261 silly registry.get     'keep-alive': 'timeout=10, max=47',
+261 silly registry.get     connection: 'Keep-Alive' } ]
+262 http 200 https://registry.npmjs.org/karma-coverage
+263 silly registry.get cb [ 200,
+263 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+263 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+263 silly registry.get     etag: '"BCPU4AXBEC957C7F1QMPU1ZIK"',
+263 silly registry.get     'content-type': 'application/json',
+263 silly registry.get     'cache-control': 'max-age=60',
+263 silly registry.get     'content-length': '29282',
+263 silly registry.get     'accept-ranges': 'bytes',
+263 silly registry.get     via: '1.1 varnish',
+263 silly registry.get     age: '9',
+263 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+263 silly registry.get     'x-cache': 'HIT',
+263 silly registry.get     'x-cache-hits': '2',
+263 silly registry.get     'x-timer': 'S1417584722.301354,VS0,VE0',
+263 silly registry.get     vary: 'Accept',
+263 silly registry.get     'keep-alive': 'timeout=10, max=46',
+263 silly registry.get     connection: 'Keep-Alive' } ]
+264 http 200 https://registry.npmjs.org/fleck
+265 silly registry.get cb [ 200,
+265 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+265 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+265 silly registry.get     etag: '"8KRK6WR93169C2BHZABSW3FAW"',
+265 silly registry.get     'content-type': 'application/json',
+265 silly registry.get     'cache-control': 'max-age=60',
+265 silly registry.get     'content-length': '2476',
+265 silly registry.get     'accept-ranges': 'bytes',
+265 silly registry.get     via: '1.1 varnish',
+265 silly registry.get     age: '0',
+265 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+265 silly registry.get     'x-cache': 'MISS',
+265 silly registry.get     'x-cache-hits': '0',
+265 silly registry.get     'x-timer': 'S1417584721.624503,VS0,VE716',
+265 silly registry.get     vary: 'Accept',
+265 silly registry.get     'keep-alive': 'timeout=10, max=49',
+265 silly registry.get     connection: 'Keep-Alive' } ]
+266 http 200 https://registry.npmjs.org/testem
+267 silly registry.get cb [ 200,
+267 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+267 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+267 silly registry.get     etag: '"8A55HQ6U9PRFKCOV3RX0NETPU"',
+267 silly registry.get     'content-type': 'application/json',
+267 silly registry.get     'cache-control': 'max-age=60',
+267 silly registry.get     'content-length': '387859',
+267 silly registry.get     'accept-ranges': 'bytes',
+267 silly registry.get     via: '1.1 varnish',
+267 silly registry.get     age: '0',
+267 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+267 silly registry.get     'x-cache': 'HIT',
+267 silly registry.get     'x-cache-hits': '1',
+267 silly registry.get     'x-timer': 'S1417584721.662623,VS0,VE748',
+267 silly registry.get     vary: 'Accept',
+267 silly registry.get     'keep-alive': 'timeout=10, max=47',
+267 silly registry.get     connection: 'Keep-Alive' } ]
+268 http 200 https://registry.npmjs.org/karma-opera-launcher
+269 silly registry.get cb [ 200,
+269 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+269 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+269 silly registry.get     etag: '"7R1JFBACT3OZF42WV2PXQ3T3Q"',
+269 silly registry.get     'content-type': 'application/json',
+269 silly registry.get     'cache-control': 'max-age=60',
+269 silly registry.get     'content-length': '4143',
+269 silly registry.get     'accept-ranges': 'bytes',
+269 silly registry.get     via: '1.1 varnish',
+269 silly registry.get     age: '0',
+269 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+269 silly registry.get     'x-cache': 'MISS',
+269 silly registry.get     'x-cache-hits': '0',
+269 silly registry.get     'x-timer': 'S1417584722.242459,VS0,VE199',
+269 silly registry.get     vary: 'Accept',
+269 silly registry.get     'keep-alive': 'timeout=10, max=49',
+269 silly registry.get     connection: 'Keep-Alive' } ]
+270 http 200 https://registry.npmjs.org/karma-coffee-preprocessor
+271 silly registry.get cb [ 200,
+271 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+271 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+271 silly registry.get     etag: '"8RSG9LO6SZS4PEI4886ROV0MI"',
+271 silly registry.get     'content-type': 'application/json',
+271 silly registry.get     'cache-control': 'max-age=60',
+271 silly registry.get     'content-length': '14785',
+271 silly registry.get     'accept-ranges': 'bytes',
+271 silly registry.get     via: '1.1 varnish',
+271 silly registry.get     age: '0',
+271 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+271 silly registry.get     'x-cache': 'HIT',
+271 silly registry.get     'x-cache-hits': '1',
+271 silly registry.get     'x-timer': 'S1417584722.455871,VS0,VE121',
+271 silly registry.get     vary: 'Accept',
+271 silly registry.get     'keep-alive': 'timeout=10, max=48',
+271 silly registry.get     connection: 'Keep-Alive' } ]
+272 http 200 https://registry.npmjs.org/async
+273 silly registry.get cb [ 200,
+273 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+273 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+273 silly registry.get     etag: '"686ZBKHWPECYC8NZGRG9B7T27"',
+273 silly registry.get     'content-type': 'application/json',
+273 silly registry.get     'cache-control': 'max-age=60',
+273 silly registry.get     'content-length': '106437',
+273 silly registry.get     'accept-ranges': 'bytes',
+273 silly registry.get     via: '1.1 varnish',
+273 silly registry.get     age: '28',
+273 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+273 silly registry.get     'x-cache': 'HIT',
+273 silly registry.get     'x-cache-hits': '9',
+273 silly registry.get     'x-timer': 'S1417584722.588188,VS0,VE0',
+273 silly registry.get     vary: 'Accept',
+273 silly registry.get     'keep-alive': 'timeout=10, max=47',
+273 silly registry.get     connection: 'Keep-Alive' } ]
+274 http 200 https://registry.npmjs.org/source-map
+275 silly registry.get cb [ 200,
+275 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+275 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+275 silly registry.get     etag: '"9P1ON6ROD6YARE1NPRN6LCHQJ"',
+275 silly registry.get     'content-type': 'application/json',
+275 silly registry.get     'cache-control': 'max-age=60',
+275 silly registry.get     'content-length': '88983',
+275 silly registry.get     'accept-ranges': 'bytes',
+275 silly registry.get     via: '1.1 varnish',
+275 silly registry.get     age: '18',
+275 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+275 silly registry.get     'x-cache': 'HIT',
+275 silly registry.get     'x-cache-hits': '4',
+275 silly registry.get     'x-timer': 'S1417584722.610019,VS0,VE0',
+275 silly registry.get     vary: 'Accept',
+275 silly registry.get     'keep-alive': 'timeout=10, max=46',
+275 silly registry.get     connection: 'Keep-Alive' } ]
+276 http 200 https://registry.npmjs.org/optimist
+277 silly registry.get cb [ 200,
+277 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+277 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+277 silly registry.get     etag: '"CKA0UXENDQZNGQIU0H1IZGCT3"',
+277 silly registry.get     'content-type': 'application/json',
+277 silly registry.get     'cache-control': 'max-age=60',
+277 silly registry.get     'content-length': '48265',
+277 silly registry.get     'accept-ranges': 'bytes',
+277 silly registry.get     via: '1.1 varnish',
+277 silly registry.get     age: '16',
+277 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+277 silly registry.get     'x-cache': 'HIT',
+277 silly registry.get     'x-cache-hits': '2',
+277 silly registry.get     'x-timer': 'S1417584722.627347,VS0,VE0',
+277 silly registry.get     vary: 'Accept',
+277 silly registry.get     'keep-alive': 'timeout=10, max=45',
+277 silly registry.get     connection: 'Keep-Alive' } ]
+278 http 200 https://registry.npmjs.org/uglify-to-browserify
+279 silly registry.get cb [ 200,
+279 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+279 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+279 silly registry.get     etag: '"9RCOUAJVORG45Z8K8P701NYGC"',
+279 silly registry.get     'content-type': 'application/json',
+279 silly registry.get     'cache-control': 'max-age=60',
+279 silly registry.get     'content-length': '4887',
+279 silly registry.get     'accept-ranges': 'bytes',
+279 silly registry.get     via: '1.1 varnish',
+279 silly registry.get     age: '16',
+279 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+279 silly registry.get     'x-cache': 'HIT',
+279 silly registry.get     'x-cache-hits': '1',
+279 silly registry.get     'x-timer': 'S1417584722.638733,VS0,VE0',
+279 silly registry.get     vary: 'Accept',
+279 silly registry.get     'keep-alive': 'timeout=10, max=44',
+279 silly registry.get     connection: 'Keep-Alive' } ]
+280 http 200 https://registry.npmjs.org/karma-firework-reporter
+281 silly registry.get cb [ 200,
+281 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+281 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+281 silly registry.get     etag: '"2QFSOOZ2UUULZC34YFFQF05XG"',
+281 silly registry.get     'content-type': 'application/json',
+281 silly registry.get     'cache-control': 'max-age=60',
+281 silly registry.get     'content-length': '3485',
+281 silly registry.get     'accept-ranges': 'bytes',
+281 silly registry.get     via: '1.1 varnish',
+281 silly registry.get     age: '0',
+281 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+281 silly registry.get     'x-cache': 'MISS',
+281 silly registry.get     'x-cache-hits': '0',
+281 silly registry.get     'x-timer': 'S1417584722.452467,VS0,VE187',
+281 silly registry.get     vary: 'Accept',
+281 silly registry.get     'keep-alive': 'timeout=10, max=46',
+281 silly registry.get     connection: 'Keep-Alive' } ]
+282 http 200 https://registry.npmjs.org/argparse
+283 silly registry.get cb [ 200,
+283 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+283 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+283 silly registry.get     etag: '"DMP99XGX4D7WXTBO5CT2VL6XN"',
+283 silly registry.get     'content-type': 'application/json',
+283 silly registry.get     'cache-control': 'max-age=60',
+283 silly registry.get     'content-length': '28583',
+283 silly registry.get     'accept-ranges': 'bytes',
+283 silly registry.get     via: '1.1 varnish',
+283 silly registry.get     age: '39',
+283 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+283 silly registry.get     'x-cache': 'HIT',
+283 silly registry.get     'x-cache-hits': '3',
+283 silly registry.get     'x-timer': 'S1417584722.645186,VS0,VE0',
+283 silly registry.get     vary: 'Accept',
+283 silly registry.get     'keep-alive': 'timeout=10, max=43',
+283 silly registry.get     connection: 'Keep-Alive' } ]
+284 http 200 https://registry.npmjs.org/esprima
+285 silly registry.get cb [ 200,
+285 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+285 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+285 silly registry.get     etag: '"6MKDZZK7BDQ5469KNAIFS269O"',
+285 silly registry.get     'content-type': 'application/json',
+285 silly registry.get     'cache-control': 'max-age=60',
+285 silly registry.get     'content-length': '32170',
+285 silly registry.get     'accept-ranges': 'bytes',
+285 silly registry.get     via: '1.1 varnish',
+285 silly registry.get     age: '13',
+285 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+285 silly registry.get     'x-cache': 'HIT',
+285 silly registry.get     'x-cache-hits': '5',
+285 silly registry.get     'x-timer': 'S1417584722.646579,VS0,VE0',
+285 silly registry.get     vary: 'Accept',
+285 silly registry.get     'keep-alive': 'timeout=10, max=45',
+285 silly registry.get     connection: 'Keep-Alive' } ]
+286 http 200 https://registry.npmjs.org/minimist
+287 silly registry.get cb [ 200,
+287 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+287 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+287 silly registry.get     etag: '"2T8K3MNR3OAVPVUO7VFHNSAA5"',
+287 silly registry.get     'content-type': 'application/json',
+287 silly registry.get     'cache-control': 'max-age=60',
+287 silly registry.get     'content-length': '20769',
+287 silly registry.get     'accept-ranges': 'bytes',
+287 silly registry.get     via: '1.1 varnish',
+287 silly registry.get     age: '42',
+287 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+287 silly registry.get     'x-cache': 'HIT',
+287 silly registry.get     'x-cache-hits': '6',
+287 silly registry.get     'x-timer': 'S1417584722.652793,VS0,VE0',
+287 silly registry.get     vary: 'Accept',
+287 silly registry.get     'keep-alive': 'timeout=10, max=42',
+287 silly registry.get     connection: 'Keep-Alive' } ]
+288 verbose request where is /request
+289 verbose request registry https://registry.npmjs.org/
+290 verbose url raw /request
+291 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+292 verbose url resolved https://registry.npmjs.org/request
+293 verbose request where is https://registry.npmjs.org/request
+294 info trying registry request attempt 1 at 11:02:02
+295 http GET https://registry.npmjs.org/request
+296 verbose request where is /rsvp
+297 verbose request registry https://registry.npmjs.org/
+298 verbose url raw /rsvp
+299 verbose url resolving [ 'https://registry.npmjs.org/', './rsvp' ]
+300 verbose url resolved https://registry.npmjs.org/rsvp
+301 verbose request where is https://registry.npmjs.org/rsvp
+302 info trying registry request attempt 1 at 11:02:02
+303 http GET https://registry.npmjs.org/rsvp
+304 verbose request where is /qunit-parser
+305 verbose request registry https://registry.npmjs.org/
+306 verbose url raw /qunit-parser
+307 verbose url resolving [ 'https://registry.npmjs.org/', './qunit-parser' ]
+308 verbose url resolved https://registry.npmjs.org/qunit-parser
+309 verbose request where is https://registry.npmjs.org/qunit-parser
+310 info trying registry request attempt 1 at 11:02:02
+311 http GET https://registry.npmjs.org/qunit-parser
+312 verbose registry.get https://registry.npmjs.org/lodash not expired, no request
+313 http 200 https://registry.npmjs.org/request
+314 silly registry.get cb [ 200,
+314 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+314 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+314 silly registry.get     etag: '"D3D32OKHQKUV96KLFV6JSJBQZ"',
+314 silly registry.get     'content-type': 'application/json',
+314 silly registry.get     'cache-control': 'max-age=60',
+314 silly registry.get     'content-length': '128511',
+314 silly registry.get     'accept-ranges': 'bytes',
+314 silly registry.get     via: '1.1 varnish',
+314 silly registry.get     age: '48',
+314 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+314 silly registry.get     'x-cache': 'HIT',
+314 silly registry.get     'x-cache-hits': '3',
+314 silly registry.get     'x-timer': 'S1417584722.712207,VS0,VE0',
+314 silly registry.get     vary: 'Accept',
+314 silly registry.get     'keep-alive': 'timeout=10, max=50',
+314 silly registry.get     connection: 'Keep-Alive' } ]
+315 http 200 https://registry.npmjs.org/vows
+316 silly registry.get cb [ 200,
+316 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+316 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+316 silly registry.get     etag: '"CL2WEECQYGF7IMU75MXQE846V"',
+316 silly registry.get     'content-type': 'application/json',
+316 silly registry.get     'cache-control': 'max-age=60',
+316 silly registry.get     'content-length': '31342',
+316 silly registry.get     'accept-ranges': 'bytes',
+316 silly registry.get     via: '1.1 varnish',
+316 silly registry.get     age: '0',
+316 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+316 silly registry.get     'x-cache': 'MISS',
+316 silly registry.get     'x-cache-hits': '0',
+316 silly registry.get     'x-timer': 'S1417584722.654889,VS0,VE116',
+316 silly registry.get     vary: 'Accept',
+316 silly registry.get     'keep-alive': 'timeout=10, max=44',
+316 silly registry.get     connection: 'Keep-Alive' } ]
+317 http 200 https://registry.npmjs.org/loom
+318 silly registry.get cb [ 200,
+318 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+318 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+318 silly registry.get     etag: '"8VTRY3XBQFABFV6R4ENVQZYUJ"',
+318 silly registry.get     'content-type': 'application/json',
+318 silly registry.get     'cache-control': 'max-age=60',
+318 silly registry.get     'content-length': '144780',
+318 silly registry.get     'accept-ranges': 'bytes',
+318 silly registry.get     via: '1.1 varnish',
+318 silly registry.get     age: '1',
+318 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+318 silly registry.get     'x-cache': 'MISS',
+318 silly registry.get     'x-cache-hits': '0',
+318 silly registry.get     'x-timer': 'S1417584721.537340,VS0,VE1240',
+318 silly registry.get     vary: 'Accept',
+318 silly registry.get     'keep-alive': 'timeout=10, max=47',
+318 silly registry.get     connection: 'Keep-Alive' } ]
+319 http 200 https://registry.npmjs.org/karma-osx-reporter
+320 silly registry.get cb [ 200,
+320 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+320 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+320 silly registry.get     etag: '"E6Y7D84RSI23PNWK1RDAE6VBV"',
+320 silly registry.get     'content-type': 'application/json',
+320 silly registry.get     'cache-control': 'max-age=60',
+320 silly registry.get     'content-length': '8804',
+320 silly registry.get     'accept-ranges': 'bytes',
+320 silly registry.get     via: '1.1 varnish',
+320 silly registry.get     age: '0',
+320 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+320 silly registry.get     'x-cache': 'MISS',
+320 silly registry.get     'x-cache-hits': '0',
+320 silly registry.get     'x-timer': 'S1417584722.347151,VS0,VE501',
+320 silly registry.get     vary: 'Accept',
+320 silly registry.get     'keep-alive': 'timeout=10, max=48',
+320 silly registry.get     connection: 'Keep-Alive' } ]
+321 http 200 https://registry.npmjs.org/qunit-parser
+322 silly registry.get cb [ 200,
+322 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:02 GMT',
+322 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+322 silly registry.get     etag: '"38P8V0VYPZHFEV285MOM3H81L"',
+322 silly registry.get     'content-type': 'application/json',
+322 silly registry.get     'cache-control': 'max-age=60',
+322 silly registry.get     'content-length': '2285',
+322 silly registry.get     'accept-ranges': 'bytes',
+322 silly registry.get     via: '1.1 varnish',
+322 silly registry.get     age: '0',
+322 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+322 silly registry.get     'x-cache': 'MISS',
+322 silly registry.get     'x-cache-hits': '0',
+322 silly registry.get     'x-timer': 'S1417584722.778555,VS0,VE129',
+322 silly registry.get     vary: 'Accept',
+322 silly registry.get     'keep-alive': 'timeout=10, max=43',
+322 silly registry.get     connection: 'Keep-Alive' } ]
+323 http 200 https://registry.npmjs.org/karma-ie-launcher
+324 silly registry.get cb [ 200,
+324 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:03 GMT',
+324 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+324 silly registry.get     etag: '"2RFQJMUCRG7I60CIYU262W1JN"',
+324 silly registry.get     'content-type': 'application/json',
+324 silly registry.get     'cache-control': 'max-age=60',
+324 silly registry.get     'content-length': '9593',
+324 silly registry.get     'accept-ranges': 'bytes',
+324 silly registry.get     via: '1.1 varnish',
+324 silly registry.get     age: '0',
+324 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+324 silly registry.get     'x-cache': 'HIT',
+324 silly registry.get     'x-cache-hits': '1',
+324 silly registry.get     'x-timer': 'S1417584722.308421,VS0,VE694',
+324 silly registry.get     vary: 'Accept',
+324 silly registry.get     'keep-alive': 'timeout=10, max=45',
+324 silly registry.get     connection: 'Keep-Alive' } ]
+325 http 200 https://registry.npmjs.org/rsvp
+326 silly registry.get cb [ 200,
+326 silly registry.get   { date: 'Wed, 03 Dec 2014 05:32:03 GMT',
+326 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+326 silly registry.get     etag: '"4BFGFFNK9L2GXEVLH4DQLKH9U"',
+326 silly registry.get     'content-type': 'application/json',
+326 silly registry.get     'cache-control': 'max-age=60',
+326 silly registry.get     'content-length': '45784',
+326 silly registry.get     'accept-ranges': 'bytes',
+326 silly registry.get     via: '1.1 varnish',
+326 silly registry.get     age: '0',
+326 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+326 silly registry.get     'x-cache': 'HIT',
+326 silly registry.get     'x-cache-hits': '1',
+326 silly registry.get     'x-timer': 'S1417584722.738636,VS0,VE468',
+326 silly registry.get     vary: 'Accept',
+326 silly registry.get     'keep-alive': 'timeout=10, max=49',
+326 silly registry.get     connection: 'Keep-Alive' } ]
+327 info outdated updating [ [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'glob',
+327 info outdated     '3.2.11',
+327 info outdated     '3.2.11',
+327 info outdated     '4.3.1',
+327 info outdated     '~3.2.9' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'node-sass',
+327 info outdated     '0.9.3',
+327 info outdated     '0.9.3',
+327 info outdated     '1.2.3',
+327 info outdated     '0.9.3' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'karma',
+327 info outdated     '0.10.10',
+327 info outdated     '0.10.10',
+327 info outdated     '0.12.28',
+327 info outdated     '~0.10.9' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'autoprefixer',
+327 info outdated     '2.2.0',
+327 info outdated     '2.2.0',
+327 info outdated     '4.0.0',
+327 info outdated     '^2.2.0' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'karma-coverage',
+327 info outdated     '0.1.5',
+327 info outdated     '0.1.5',
+327 info outdated     '0.2.7',
+327 info outdated     '~0.1.4' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'testem',
+327 info outdated     '0.3.30',
+327 info outdated     '0.3.30',
+327 info outdated     '0.6.23',
+327 info outdated     '~0.3.30' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'karma-coffee-preprocessor',
+327 info outdated     '0.1.3',
+327 info outdated     '0.1.3',
+327 info outdated     '0.2.1',
+327 info outdated     '0.1.3' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+327 info outdated     'async',
+327 info outdated     '0.2.10',
+327 info outdated     '0.2.10',
+327 info outdated     '0.9.0',
+327 info outdated     '~0.2.6' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+327 info outdated     'source-map',
+327 info outdated     '0.1.34',
+327 info outdated     '0.1.34',
+327 info outdated     '0.1.40',
+327 info outdated     '0.1.34' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+327 info outdated     'optimist',
+327 info outdated     '0.3.7',
+327 info outdated     '0.3.7',
+327 info outdated     '0.6.1',
+327 info outdated     '~0.3.5' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/js-yaml',
+327 info outdated     'argparse',
+327 info outdated     '0.1.15',
+327 info outdated     '0.1.16',
+327 info outdated     '0.1.16',
+327 info outdated     '~ 0.1.11' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/js-yaml',
+327 info outdated     'esprima',
+327 info outdated     '1.0.4',
+327 info outdated     '1.0.4',
+327 info outdated     '1.2.2',
+327 info outdated     '~ 1.0.2' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/mkdirp',
+327 info outdated     'minimist',
+327 info outdated     '0.0.8',
+327 info outdated     '0.0.8',
+327 info outdated     '1.1.0',
+327 info outdated     '0.0.8' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/compute-cluster',
+327 info outdated     'vows',
+327 info outdated     '0.6.0',
+327 info outdated     '0.6.0',
+327 info outdated     '0.8.1',
+327 info outdated     '0.6.0' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'loom',
+327 info outdated     '2.0.0',
+327 info outdated     '2.0.0',
+327 info outdated     '3.1.2',
+327 info outdated     '~2.0.0' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040',
+327 info outdated     'karma-osx-reporter',
+327 info outdated     '0.0.4',
+327 info outdated     '0.0.4',
+327 info outdated     '0.1.0',
+327 info outdated     '0.0.4' ],
+327 info outdated   [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/karma-firework-reporter',
+327 info outdated     'request',
+327 info outdated     '2.33.0',
+327 info outdated     '2.33.0',
+327 info outdated     '2.49.0',
+327 info outdated     '~2.33.0' ] ]
+328 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+328 verbose install   [ 'glob@3.2.11' ] ]
+329 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+329 verbose install   [ 'node-sass@0.9.3' ] ]
+330 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+330 verbose install   [ 'karma@0.10.10' ] ]
+331 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+331 verbose install   [ 'autoprefixer@2.2.0' ] ]
+332 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+332 verbose install   [ 'karma-coverage@0.1.5' ] ]
+333 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+333 verbose install   [ 'testem@0.3.30' ] ]
+334 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+334 verbose install   [ 'karma-coffee-preprocessor@0.1.3' ] ]
+335 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+335 verbose install   [ 'async@0.2.10' ] ]
+336 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+336 verbose install   [ 'source-map@0.1.34' ] ]
+337 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/uglify-js',
+337 verbose install   [ 'optimist@0.3.7' ] ]
+338 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/js-yaml',
+338 verbose install   [ 'argparse@0.1.16' ] ]
+339 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/js-yaml',
+339 verbose install   [ 'esprima@1.0.4' ] ]
+340 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/mkdirp',
+340 verbose install   [ 'minimist@0.0.8' ] ]
+341 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/compute-cluster',
+341 verbose install   [ 'vows@0.6.0' ] ]
+342 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+342 verbose install   [ 'loom@2.0.0' ] ]
+343 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040',
+343 verbose install   [ 'karma-osx-reporter@0.0.4' ] ]
+344 verbose install where,what [ '/var/deploy/capistrano/canvas/releases/201412031040/node_modules/karma-firework-reporter',
+344 verbose install   [ 'request@2.33.0' ] ]
+345 verbose readDependencies using package.json deps
+346 verbose cache add [ 'glob@3.2.11', null ]
+347 verbose cache add name=undefined spec="glob@3.2.11" args=["glob@3.2.11",null]
+348 verbose parsed url { protocol: null,
+348 verbose parsed url   slashes: null,
+348 verbose parsed url   auth: null,
+348 verbose parsed url   host: null,
+348 verbose parsed url   port: null,
+348 verbose parsed url   hostname: null,
+348 verbose parsed url   hash: null,
+348 verbose parsed url   search: null,
+348 verbose parsed url   query: null,
+348 verbose parsed url   pathname: 'glob@3.2.11',
+348 verbose parsed url   path: 'glob@3.2.11',
+348 verbose parsed url   href: 'glob@3.2.11' }
+349 verbose readDependencies using package.json deps
+350 verbose cache add [ 'node-sass@0.9.3', null ]
+351 verbose cache add name=undefined spec="node-sass@0.9.3" args=["node-sass@0.9.3",null]
+352 verbose parsed url { protocol: null,
+352 verbose parsed url   slashes: null,
+352 verbose parsed url   auth: null,
+352 verbose parsed url   host: null,
+352 verbose parsed url   port: null,
+352 verbose parsed url   hostname: null,
+352 verbose parsed url   hash: null,
+352 verbose parsed url   search: null,
+352 verbose parsed url   query: null,
+352 verbose parsed url   pathname: 'node-sass@0.9.3',
+352 verbose parsed url   path: 'node-sass@0.9.3',
+352 verbose parsed url   href: 'node-sass@0.9.3' }
+353 verbose readDependencies using package.json deps
+354 verbose cache add [ 'karma@0.10.10', null ]
+355 verbose cache add name=undefined spec="karma@0.10.10" args=["karma@0.10.10",null]
+356 verbose parsed url { protocol: null,
+356 verbose parsed url   slashes: null,
+356 verbose parsed url   auth: null,
+356 verbose parsed url   host: null,
+356 verbose parsed url   port: null,
+356 verbose parsed url   hostname: null,
+356 verbose parsed url   hash: null,
+356 verbose parsed url   search: null,
+356 verbose parsed url   query: null,
+356 verbose parsed url   pathname: 'karma@0.10.10',
+356 verbose parsed url   path: 'karma@0.10.10',
+356 verbose parsed url   href: 'karma@0.10.10' }
+357 verbose readDependencies using package.json deps
+358 verbose cache add [ 'autoprefixer@2.2.0', null ]
+359 verbose cache add name=undefined spec="autoprefixer@2.2.0" args=["autoprefixer@2.2.0",null]
+360 verbose parsed url { protocol: null,
+360 verbose parsed url   slashes: null,
+360 verbose parsed url   auth: null,
+360 verbose parsed url   host: null,
+360 verbose parsed url   port: null,
+360 verbose parsed url   hostname: null,
+360 verbose parsed url   hash: null,
+360 verbose parsed url   search: null,
+360 verbose parsed url   query: null,
+360 verbose parsed url   pathname: 'autoprefixer@2.2.0',
+360 verbose parsed url   path: 'autoprefixer@2.2.0',
+360 verbose parsed url   href: 'autoprefixer@2.2.0' }
+361 verbose readDependencies using package.json deps
+362 verbose cache add [ 'karma-coverage@0.1.5', null ]
+363 verbose cache add name=undefined spec="karma-coverage@0.1.5" args=["karma-coverage@0.1.5",null]
+364 verbose parsed url { protocol: null,
+364 verbose parsed url   slashes: null,
+364 verbose parsed url   auth: null,
+364 verbose parsed url   host: null,
+364 verbose parsed url   port: null,
+364 verbose parsed url   hostname: null,
+364 verbose parsed url   hash: null,
+364 verbose parsed url   search: null,
+364 verbose parsed url   query: null,
+364 verbose parsed url   pathname: 'karma-coverage@0.1.5',
+364 verbose parsed url   path: 'karma-coverage@0.1.5',
+364 verbose parsed url   href: 'karma-coverage@0.1.5' }
+365 verbose readDependencies using package.json deps
+366 verbose cache add [ 'testem@0.3.30', null ]
+367 verbose cache add name=undefined spec="testem@0.3.30" args=["testem@0.3.30",null]
+368 verbose parsed url { protocol: null,
+368 verbose parsed url   slashes: null,
+368 verbose parsed url   auth: null,
+368 verbose parsed url   host: null,
+368 verbose parsed url   port: null,
+368 verbose parsed url   hostname: null,
+368 verbose parsed url   hash: null,
+368 verbose parsed url   search: null,
+368 verbose parsed url   query: null,
+368 verbose parsed url   pathname: 'testem@0.3.30',
+368 verbose parsed url   path: 'testem@0.3.30',
+368 verbose parsed url   href: 'testem@0.3.30' }
+369 verbose readDependencies using package.json deps
+370 verbose cache add [ 'karma-coffee-preprocessor@0.1.3', null ]
+371 verbose cache add name=undefined spec="karma-coffee-preprocessor@0.1.3" args=["karma-coffee-preprocessor@0.1.3",null]
+372 verbose parsed url { protocol: null,
+372 verbose parsed url   slashes: null,
+372 verbose parsed url   auth: null,
+372 verbose parsed url   host: null,
+372 verbose parsed url   port: null,
+372 verbose parsed url   hostname: null,
+372 verbose parsed url   hash: null,
+372 verbose parsed url   search: null,
+372 verbose parsed url   query: null,
+372 verbose parsed url   pathname: 'karma-coffee-preprocessor@0.1.3',
+372 verbose parsed url   path: 'karma-coffee-preprocessor@0.1.3',
+372 verbose parsed url   href: 'karma-coffee-preprocessor@0.1.3' }
+373 verbose readDependencies using package.json deps
+374 verbose cache add [ 'async@0.2.10', null ]
+375 verbose cache add name=undefined spec="async@0.2.10" args=["async@0.2.10",null]
+376 verbose parsed url { protocol: null,
+376 verbose parsed url   slashes: null,
+376 verbose parsed url   auth: null,
+376 verbose parsed url   host: null,
+376 verbose parsed url   port: null,
+376 verbose parsed url   hostname: null,
+376 verbose parsed url   hash: null,
+376 verbose parsed url   search: null,
+376 verbose parsed url   query: null,
+376 verbose parsed url   pathname: 'async@0.2.10',
+376 verbose parsed url   path: 'async@0.2.10',
+376 verbose parsed url   href: 'async@0.2.10' }
+377 verbose readDependencies using package.json deps
+378 verbose cache add [ 'source-map@0.1.34', null ]
+379 verbose cache add name=undefined spec="source-map@0.1.34" args=["source-map@0.1.34",null]
+380 verbose parsed url { protocol: null,
+380 verbose parsed url   slashes: null,
+380 verbose parsed url   auth: null,
+380 verbose parsed url   host: null,
+380 verbose parsed url   port: null,
+380 verbose parsed url   hostname: null,
+380 verbose parsed url   hash: null,
+380 verbose parsed url   search: null,
+380 verbose parsed url   query: null,
+380 verbose parsed url   pathname: 'source-map@0.1.34',
+380 verbose parsed url   path: 'source-map@0.1.34',
+380 verbose parsed url   href: 'source-map@0.1.34' }
+381 verbose readDependencies using package.json deps
+382 verbose cache add [ 'optimist@0.3.7', null ]
+383 verbose cache add name=undefined spec="optimist@0.3.7" args=["optimist@0.3.7",null]
+384 verbose parsed url { protocol: null,
+384 verbose parsed url   slashes: null,
+384 verbose parsed url   auth: null,
+384 verbose parsed url   host: null,
+384 verbose parsed url   port: null,
+384 verbose parsed url   hostname: null,
+384 verbose parsed url   hash: null,
+384 verbose parsed url   search: null,
+384 verbose parsed url   query: null,
+384 verbose parsed url   pathname: 'optimist@0.3.7',
+384 verbose parsed url   path: 'optimist@0.3.7',
+384 verbose parsed url   href: 'optimist@0.3.7' }
+385 verbose readDependencies using package.json deps
+386 verbose cache add [ 'argparse@0.1.16', null ]
+387 verbose cache add name=undefined spec="argparse@0.1.16" args=["argparse@0.1.16",null]
+388 verbose parsed url { protocol: null,
+388 verbose parsed url   slashes: null,
+388 verbose parsed url   auth: null,
+388 verbose parsed url   host: null,
+388 verbose parsed url   port: null,
+388 verbose parsed url   hostname: null,
+388 verbose parsed url   hash: null,
+388 verbose parsed url   search: null,
+388 verbose parsed url   query: null,
+388 verbose parsed url   pathname: 'argparse@0.1.16',
+388 verbose parsed url   path: 'argparse@0.1.16',
+388 verbose parsed url   href: 'argparse@0.1.16' }
+389 verbose readDependencies using package.json deps
+390 verbose cache add [ 'esprima@1.0.4', null ]
+391 verbose cache add name=undefined spec="esprima@1.0.4" args=["esprima@1.0.4",null]
+392 verbose parsed url { protocol: null,
+392 verbose parsed url   slashes: null,
+392 verbose parsed url   auth: null,
+392 verbose parsed url   host: null,
+392 verbose parsed url   port: null,
+392 verbose parsed url   hostname: null,
+392 verbose parsed url   hash: null,
+392 verbose parsed url   search: null,
+392 verbose parsed url   query: null,
+392 verbose parsed url   pathname: 'esprima@1.0.4',
+392 verbose parsed url   path: 'esprima@1.0.4',
+392 verbose parsed url   href: 'esprima@1.0.4' }
+393 verbose readDependencies using package.json deps
+394 verbose cache add [ 'minimist@0.0.8', null ]
+395 verbose cache add name=undefined spec="minimist@0.0.8" args=["minimist@0.0.8",null]
+396 verbose parsed url { protocol: null,
+396 verbose parsed url   slashes: null,
+396 verbose parsed url   auth: null,
+396 verbose parsed url   host: null,
+396 verbose parsed url   port: null,
+396 verbose parsed url   hostname: null,
+396 verbose parsed url   hash: null,
+396 verbose parsed url   search: null,
+396 verbose parsed url   query: null,
+396 verbose parsed url   pathname: 'minimist@0.0.8',
+396 verbose parsed url   path: 'minimist@0.0.8',
+396 verbose parsed url   href: 'minimist@0.0.8' }
+397 verbose readDependencies using package.json deps
+398 verbose cache add [ 'vows@0.6.0', null ]
+399 verbose cache add name=undefined spec="vows@0.6.0" args=["vows@0.6.0",null]
+400 verbose parsed url { protocol: null,
+400 verbose parsed url   slashes: null,
+400 verbose parsed url   auth: null,
+400 verbose parsed url   host: null,
+400 verbose parsed url   port: null,
+400 verbose parsed url   hostname: null,
+400 verbose parsed url   hash: null,
+400 verbose parsed url   search: null,
+400 verbose parsed url   query: null,
+400 verbose parsed url   pathname: 'vows@0.6.0',
+400 verbose parsed url   path: 'vows@0.6.0',
+400 verbose parsed url   href: 'vows@0.6.0' }
+401 verbose readDependencies using package.json deps
+402 verbose cache add [ 'loom@2.0.0', null ]
+403 verbose cache add name=undefined spec="loom@2.0.0" args=["loom@2.0.0",null]
+404 verbose parsed url { protocol: null,
+404 verbose parsed url   slashes: null,
+404 verbose parsed url   auth: null,
+404 verbose parsed url   host: null,
+404 verbose parsed url   port: null,
+404 verbose parsed url   hostname: null,
+404 verbose parsed url   hash: null,
+404 verbose parsed url   search: null,
+404 verbose parsed url   query: null,
+404 verbose parsed url   pathname: 'loom@2.0.0',
+404 verbose parsed url   path: 'loom@2.0.0',
+404 verbose parsed url   href: 'loom@2.0.0' }
+405 verbose readDependencies using package.json deps
+406 verbose cache add [ 'karma-osx-reporter@0.0.4', null ]
+407 verbose cache add name=undefined spec="karma-osx-reporter@0.0.4" args=["karma-osx-reporter@0.0.4",null]
+408 verbose parsed url { protocol: null,
+408 verbose parsed url   slashes: null,
+408 verbose parsed url   auth: null,
+408 verbose parsed url   host: null,
+408 verbose parsed url   port: null,
+408 verbose parsed url   hostname: null,
+408 verbose parsed url   hash: null,
+408 verbose parsed url   search: null,
+408 verbose parsed url   query: null,
+408 verbose parsed url   pathname: 'karma-osx-reporter@0.0.4',
+408 verbose parsed url   path: 'karma-osx-reporter@0.0.4',
+408 verbose parsed url   href: 'karma-osx-reporter@0.0.4' }
+409 verbose readDependencies using package.json deps
+410 verbose cache add [ 'request@2.33.0', null ]
+411 verbose cache add name=undefined spec="request@2.33.0" args=["request@2.33.0",null]
+412 verbose parsed url { protocol: null,
+412 verbose parsed url   slashes: null,
+412 verbose parsed url   auth: null,
+412 verbose parsed url   host: null,
+412 verbose parsed url   port: null,
+412 verbose parsed url   hostname: null,
+412 verbose parsed url   hash: null,
+412 verbose parsed url   search: null,
+412 verbose parsed url   query: null,
+412 verbose parsed url   pathname: 'request@2.33.0',
+412 verbose parsed url   path: 'request@2.33.0',
+412 verbose parsed url   href: 'request@2.33.0' }
+413 verbose cache add name="glob" spec="3.2.11" args=["glob","3.2.11"]
+414 verbose parsed url { protocol: null,
+414 verbose parsed url   slashes: null,
+414 verbose parsed url   auth: null,
+414 verbose parsed url   host: null,
+414 verbose parsed url   port: null,
+414 verbose parsed url   hostname: null,
+414 verbose parsed url   hash: null,
+414 verbose parsed url   search: null,
+414 verbose parsed url   query: null,
+414 verbose parsed url   pathname: '3.2.11',
+414 verbose parsed url   path: '3.2.11',
+414 verbose parsed url   href: '3.2.11' }
+415 verbose addNamed [ 'glob', '3.2.11' ]
+416 verbose addNamed [ '3.2.11', '3.2.11' ]
+417 verbose cache add name="node-sass" spec="0.9.3" args=["node-sass","0.9.3"]
+418 verbose parsed url { protocol: null,
+418 verbose parsed url   slashes: null,
+418 verbose parsed url   auth: null,
+418 verbose parsed url   host: null,
+418 verbose parsed url   port: null,
+418 verbose parsed url   hostname: null,
+418 verbose parsed url   hash: null,
+418 verbose parsed url   search: null,
+418 verbose parsed url   query: null,
+418 verbose parsed url   pathname: '0.9.3',
+418 verbose parsed url   path: '0.9.3',
+418 verbose parsed url   href: '0.9.3' }
+419 verbose addNamed [ 'node-sass', '0.9.3' ]
+420 verbose addNamed [ '0.9.3', '0.9.3' ]
+421 verbose cache add name="karma" spec="0.10.10" args=["karma","0.10.10"]
+422 verbose parsed url { protocol: null,
+422 verbose parsed url   slashes: null,
+422 verbose parsed url   auth: null,
+422 verbose parsed url   host: null,
+422 verbose parsed url   port: null,
+422 verbose parsed url   hostname: null,
+422 verbose parsed url   hash: null,
+422 verbose parsed url   search: null,
+422 verbose parsed url   query: null,
+422 verbose parsed url   pathname: '0.10.10',
+422 verbose parsed url   path: '0.10.10',
+422 verbose parsed url   href: '0.10.10' }
+423 verbose addNamed [ 'karma', '0.10.10' ]
+424 verbose addNamed [ '0.10.10', '0.10.10' ]
+425 verbose cache add name="autoprefixer" spec="2.2.0" args=["autoprefixer","2.2.0"]
+426 verbose parsed url { protocol: null,
+426 verbose parsed url   slashes: null,
+426 verbose parsed url   auth: null,
+426 verbose parsed url   host: null,
+426 verbose parsed url   port: null,
+426 verbose parsed url   hostname: null,
+426 verbose parsed url   hash: null,
+426 verbose parsed url   search: null,
+426 verbose parsed url   query: null,
+426 verbose parsed url   pathname: '2.2.0',
+426 verbose parsed url   path: '2.2.0',
+426 verbose parsed url   href: '2.2.0' }
+427 verbose addNamed [ 'autoprefixer', '2.2.0' ]
+428 verbose addNamed [ '2.2.0', '2.2.0' ]
+429 verbose cache add name="karma-coverage" spec="0.1.5" args=["karma-coverage","0.1.5"]
+430 verbose parsed url { protocol: null,
+430 verbose parsed url   slashes: null,
+430 verbose parsed url   auth: null,
+430 verbose parsed url   host: null,
+430 verbose parsed url   port: null,
+430 verbose parsed url   hostname: null,
+430 verbose parsed url   hash: null,
+430 verbose parsed url   search: null,
+430 verbose parsed url   query: null,
+430 verbose parsed url   pathname: '0.1.5',
+430 verbose parsed url   path: '0.1.5',
+430 verbose parsed url   href: '0.1.5' }
+431 verbose addNamed [ 'karma-coverage', '0.1.5' ]
+432 verbose addNamed [ '0.1.5', '0.1.5' ]
+433 verbose cache add name="testem" spec="0.3.30" args=["testem","0.3.30"]
+434 verbose parsed url { protocol: null,
+434 verbose parsed url   slashes: null,
+434 verbose parsed url   auth: null,
+434 verbose parsed url   host: null,
+434 verbose parsed url   port: null,
+434 verbose parsed url   hostname: null,
+434 verbose parsed url   hash: null,
+434 verbose parsed url   search: null,
+434 verbose parsed url   query: null,
+434 verbose parsed url   pathname: '0.3.30',
+434 verbose parsed url   path: '0.3.30',
+434 verbose parsed url   href: '0.3.30' }
+435 verbose addNamed [ 'testem', '0.3.30' ]
+436 verbose addNamed [ '0.3.30', '0.3.30' ]
+437 verbose cache add name="karma-coffee-preprocessor" spec="0.1.3" args=["karma-coffee-preprocessor","0.1.3"]
+438 verbose parsed url { protocol: null,
+438 verbose parsed url   slashes: null,
+438 verbose parsed url   auth: null,
+438 verbose parsed url   host: null,
+438 verbose parsed url   port: null,
+438 verbose parsed url   hostname: null,
+438 verbose parsed url   hash: null,
+438 verbose parsed url   search: null,
+438 verbose parsed url   query: null,
+438 verbose parsed url   pathname: '0.1.3',
+438 verbose parsed url   path: '0.1.3',
+438 verbose parsed url   href: '0.1.3' }
+439 verbose addNamed [ 'karma-coffee-preprocessor', '0.1.3' ]
+440 verbose addNamed [ '0.1.3', '0.1.3' ]
+441 verbose cache add name="async" spec="0.2.10" args=["async","0.2.10"]
+442 verbose parsed url { protocol: null,
+442 verbose parsed url   slashes: null,
+442 verbose parsed url   auth: null,
+442 verbose parsed url   host: null,
+442 verbose parsed url   port: null,
+442 verbose parsed url   hostname: null,
+442 verbose parsed url   hash: null,
+442 verbose parsed url   search: null,
+442 verbose parsed url   query: null,
+442 verbose parsed url   pathname: '0.2.10',
+442 verbose parsed url   path: '0.2.10',
+442 verbose parsed url   href: '0.2.10' }
+443 verbose addNamed [ 'async', '0.2.10' ]
+444 verbose addNamed [ '0.2.10', '0.2.10' ]
+445 verbose cache add name="source-map" spec="0.1.34" args=["source-map","0.1.34"]
+446 verbose parsed url { protocol: null,
+446 verbose parsed url   slashes: null,
+446 verbose parsed url   auth: null,
+446 verbose parsed url   host: null,
+446 verbose parsed url   port: null,
+446 verbose parsed url   hostname: null,
+446 verbose parsed url   hash: null,
+446 verbose parsed url   search: null,
+446 verbose parsed url   query: null,
+446 verbose parsed url   pathname: '0.1.34',
+446 verbose parsed url   path: '0.1.34',
+446 verbose parsed url   href: '0.1.34' }
+447 verbose addNamed [ 'source-map', '0.1.34' ]
+448 verbose addNamed [ '0.1.34', '0.1.34' ]
+449 verbose cache add name="optimist" spec="0.3.7" args=["optimist","0.3.7"]
+450 verbose parsed url { protocol: null,
+450 verbose parsed url   slashes: null,
+450 verbose parsed url   auth: null,
+450 verbose parsed url   host: null,
+450 verbose parsed url   port: null,
+450 verbose parsed url   hostname: null,
+450 verbose parsed url   hash: null,
+450 verbose parsed url   search: null,
+450 verbose parsed url   query: null,
+450 verbose parsed url   pathname: '0.3.7',
+450 verbose parsed url   path: '0.3.7',
+450 verbose parsed url   href: '0.3.7' }
+451 verbose addNamed [ 'optimist', '0.3.7' ]
+452 verbose addNamed [ '0.3.7', '0.3.7' ]
+453 verbose cache add name="argparse" spec="0.1.16" args=["argparse","0.1.16"]
+454 verbose parsed url { protocol: null,
+454 verbose parsed url   slashes: null,
+454 verbose parsed url   auth: null,
+454 verbose parsed url   host: null,
+454 verbose parsed url   port: null,
+454 verbose parsed url   hostname: null,
+454 verbose parsed url   hash: null,
+454 verbose parsed url   search: null,
+454 verbose parsed url   query: null,
+454 verbose parsed url   pathname: '0.1.16',
+454 verbose parsed url   path: '0.1.16',
+454 verbose parsed url   href: '0.1.16' }
+455 verbose addNamed [ 'argparse', '0.1.16' ]
+456 verbose addNamed [ '0.1.16', '0.1.16' ]
+457 verbose cache add name="esprima" spec="1.0.4" args=["esprima","1.0.4"]
+458 verbose parsed url { protocol: null,
+458 verbose parsed url   slashes: null,
+458 verbose parsed url   auth: null,
+458 verbose parsed url   host: null,
+458 verbose parsed url   port: null,
+458 verbose parsed url   hostname: null,
+458 verbose parsed url   hash: null,
+458 verbose parsed url   search: null,
+458 verbose parsed url   query: null,
+458 verbose parsed url   pathname: '1.0.4',
+458 verbose parsed url   path: '1.0.4',
+458 verbose parsed url   href: '1.0.4' }
+459 verbose addNamed [ 'esprima', '1.0.4' ]
+460 verbose addNamed [ '1.0.4', '1.0.4' ]
+461 verbose cache add name="minimist" spec="0.0.8" args=["minimist","0.0.8"]
+462 verbose parsed url { protocol: null,
+462 verbose parsed url   slashes: null,
+462 verbose parsed url   auth: null,
+462 verbose parsed url   host: null,
+462 verbose parsed url   port: null,
+462 verbose parsed url   hostname: null,
+462 verbose parsed url   hash: null,
+462 verbose parsed url   search: null,
+462 verbose parsed url   query: null,
+462 verbose parsed url   pathname: '0.0.8',
+462 verbose parsed url   path: '0.0.8',
+462 verbose parsed url   href: '0.0.8' }
+463 verbose addNamed [ 'minimist', '0.0.8' ]
+464 verbose addNamed [ '0.0.8', '0.0.8' ]
+465 verbose cache add name="vows" spec="0.6.0" args=["vows","0.6.0"]
+466 verbose parsed url { protocol: null,
+466 verbose parsed url   slashes: null,
+466 verbose parsed url   auth: null,
+466 verbose parsed url   host: null,
+466 verbose parsed url   port: null,
+466 verbose parsed url   hostname: null,
+466 verbose parsed url   hash: null,
+466 verbose parsed url   search: null,
+466 verbose parsed url   query: null,
+466 verbose parsed url   pathname: '0.6.0',
+466 verbose parsed url   path: '0.6.0',
+466 verbose parsed url   href: '0.6.0' }
+467 verbose addNamed [ 'vows', '0.6.0' ]
+468 verbose addNamed [ '0.6.0', '0.6.0' ]
+469 verbose cache add name="loom" spec="2.0.0" args=["loom","2.0.0"]
+470 verbose parsed url { protocol: null,
+470 verbose parsed url   slashes: null,
+470 verbose parsed url   auth: null,
+470 verbose parsed url   host: null,
+470 verbose parsed url   port: null,
+470 verbose parsed url   hostname: null,
+470 verbose parsed url   hash: null,
+470 verbose parsed url   search: null,
+470 verbose parsed url   query: null,
+470 verbose parsed url   pathname: '2.0.0',
+470 verbose parsed url   path: '2.0.0',
+470 verbose parsed url   href: '2.0.0' }
+471 verbose addNamed [ 'loom', '2.0.0' ]
+472 verbose addNamed [ '2.0.0', '2.0.0' ]
+473 verbose cache add name="karma-osx-reporter" spec="0.0.4" args=["karma-osx-reporter","0.0.4"]
+474 verbose parsed url { protocol: null,
+474 verbose parsed url   slashes: null,
+474 verbose parsed url   auth: null,
+474 verbose parsed url   host: null,
+474 verbose parsed url   port: null,
+474 verbose parsed url   hostname: null,
+474 verbose parsed url   hash: null,
+474 verbose parsed url   search: null,
+474 verbose parsed url   query: null,
+474 verbose parsed url   pathname: '0.0.4',
+474 verbose parsed url   path: '0.0.4',
+474 verbose parsed url   href: '0.0.4' }
+475 verbose addNamed [ 'karma-osx-reporter', '0.0.4' ]
+476 verbose addNamed [ '0.0.4', '0.0.4' ]
+477 verbose cache add name="request" spec="2.33.0" args=["request","2.33.0"]
+478 verbose parsed url { protocol: null,
+478 verbose parsed url   slashes: null,
+478 verbose parsed url   auth: null,
+478 verbose parsed url   host: null,
+478 verbose parsed url   port: null,
+478 verbose parsed url   hostname: null,
+478 verbose parsed url   hash: null,
+478 verbose parsed url   search: null,
+478 verbose parsed url   query: null,
+478 verbose parsed url   pathname: '2.33.0',
+478 verbose parsed url   path: '2.33.0',
+478 verbose parsed url   href: '2.33.0' }
+479 verbose addNamed [ 'request', '2.33.0' ]
+480 verbose addNamed [ '2.33.0', '2.33.0' ]
+481 silly lockFile 3fffafa6-glob-3-2-11 glob@3.2.11
+482 verbose lock glob@3.2.11 /home/sysadmin/.npm/3fffafa6-glob-3-2-11.lock
+483 silly lockFile 91255e78-node-sass-0-9-3 node-sass@0.9.3
+484 verbose lock node-sass@0.9.3 /home/sysadmin/.npm/91255e78-node-sass-0-9-3.lock
+485 silly lockFile f40119e0-karma-0-10-10 karma@0.10.10
+486 verbose lock karma@0.10.10 /home/sysadmin/.npm/f40119e0-karma-0-10-10.lock
+487 silly lockFile bceb9f0b-autoprefixer-2-2-0 autoprefixer@2.2.0
+488 verbose lock autoprefixer@2.2.0 /home/sysadmin/.npm/bceb9f0b-autoprefixer-2-2-0.lock
+489 silly lockFile f9aea0e5-karma-coverage-0-1-5 karma-coverage@0.1.5
+490 verbose lock karma-coverage@0.1.5 /home/sysadmin/.npm/f9aea0e5-karma-coverage-0-1-5.lock
+491 silly lockFile 8a65b2a9-testem-0-3-30 testem@0.3.30
+492 verbose lock testem@0.3.30 /home/sysadmin/.npm/8a65b2a9-testem-0-3-30.lock
+493 silly lockFile f8f9b051-karma-coffee-preprocessor-0-1-3 karma-coffee-preprocessor@0.1.3
+494 verbose lock karma-coffee-preprocessor@0.1.3 /home/sysadmin/.npm/f8f9b051-karma-coffee-preprocessor-0-1-3.lock
+495 silly lockFile 098b530d-async-0-2-10 async@0.2.10
+496 verbose lock async@0.2.10 /home/sysadmin/.npm/098b530d-async-0-2-10.lock
+497 silly lockFile 39026ad4-source-map-0-1-34 source-map@0.1.34
+498 verbose lock source-map@0.1.34 /home/sysadmin/.npm/39026ad4-source-map-0-1-34.lock
+499 silly lockFile 090e1d8d-optimist-0-3-7 optimist@0.3.7
+500 verbose lock optimist@0.3.7 /home/sysadmin/.npm/090e1d8d-optimist-0-3-7.lock
+501 silly lockFile b1e18399-argparse-0-1-16 argparse@0.1.16
+502 verbose lock argparse@0.1.16 /home/sysadmin/.npm/b1e18399-argparse-0-1-16.lock
+503 silly lockFile 758953aa-esprima-1-0-4 esprima@1.0.4
+504 verbose lock esprima@1.0.4 /home/sysadmin/.npm/758953aa-esprima-1-0-4.lock
+505 silly lockFile 22c6b485-minimist-0-0-8 minimist@0.0.8
+506 verbose lock minimist@0.0.8 /home/sysadmin/.npm/22c6b485-minimist-0-0-8.lock
+507 silly lockFile 09a972e5-vows-0-6-0 vows@0.6.0
+508 verbose lock vows@0.6.0 /home/sysadmin/.npm/09a972e5-vows-0-6-0.lock
+509 silly lockFile 1592285a-loom-2-0-0 loom@2.0.0
+510 verbose lock loom@2.0.0 /home/sysadmin/.npm/1592285a-loom-2-0-0.lock
+511 silly lockFile 9c77f0e0-karma-osx-reporter-0-0-4 karma-osx-reporter@0.0.4
+512 verbose lock karma-osx-reporter@0.0.4 /home/sysadmin/.npm/9c77f0e0-karma-osx-reporter-0-0-4.lock
+513 silly lockFile 6f7b4c4d-request-2-33-0 request@2.33.0
+514 verbose lock request@2.33.0 /home/sysadmin/.npm/6f7b4c4d-request-2-33-0.lock
+515 verbose registry.get https://registry.npmjs.org/glob not expired, no request
+516 verbose registry.get https://registry.npmjs.org/node-sass not expired, no request
+517 verbose registry.get https://registry.npmjs.org/autoprefixer not expired, no request
+518 verbose registry.get https://registry.npmjs.org/karma-coverage not expired, no request
+519 verbose registry.get https://registry.npmjs.org/karma-coffee-preprocessor not expired, no request
+520 verbose registry.get https://registry.npmjs.org/async not expired, no request
+521 verbose registry.get https://registry.npmjs.org/karma not expired, no request
+522 verbose registry.get https://registry.npmjs.org/source-map not expired, no request
+523 verbose registry.get https://registry.npmjs.org/testem not expired, no request
+524 verbose registry.get https://registry.npmjs.org/optimist not expired, no request
+525 verbose registry.get https://registry.npmjs.org/argparse not expired, no request
+526 verbose registry.get https://registry.npmjs.org/esprima not expired, no request
+527 verbose registry.get https://registry.npmjs.org/minimist not expired, no request
+528 verbose registry.get https://registry.npmjs.org/vows not expired, no request
+529 verbose registry.get https://registry.npmjs.org/karma-osx-reporter not expired, no request
+530 verbose registry.get https://registry.npmjs.org/loom not expired, no request
+531 silly lockFile 82bef4e1-y-npmjs-org-glob-glob-3-2-11-tgz https://registry.npmjs.org/glob/-/glob-3.2.11.tgz
+532 verbose lock https://registry.npmjs.org/glob/-/glob-3.2.11.tgz /home/sysadmin/.npm/82bef4e1-y-npmjs-org-glob-glob-3-2-11-tgz.lock
+533 silly lockFile afd2116e-rg-node-sass-node-sass-0-9-3-tgz https://registry.npmjs.org/node-sass/-/node-sass-0.9.3.tgz
+534 verbose lock https://registry.npmjs.org/node-sass/-/node-sass-0.9.3.tgz /home/sysadmin/.npm/afd2116e-rg-node-sass-node-sass-0-9-3-tgz.lock
+535 verbose registry.get https://registry.npmjs.org/request not expired, no request
+536 silly lockFile 1db1b7b4-oprefixer-autoprefixer-2-2-0-tgz https://registry.npmjs.org/autoprefixer/-/autoprefixer-2.2.0.tgz
+537 verbose lock https://registry.npmjs.org/autoprefixer/-/autoprefixer-2.2.0.tgz /home/sysadmin/.npm/1db1b7b4-oprefixer-autoprefixer-2-2-0-tgz.lock
+538 silly lockFile 0e88183d-overage-karma-coverage-0-1-5-tgz https://registry.npmjs.org/karma-coverage/-/karma-coverage-0.1.5.tgz
+539 verbose lock https://registry.npmjs.org/karma-coverage/-/karma-coverage-0.1.5.tgz /home/sysadmin/.npm/0e88183d-overage-karma-coverage-0-1-5-tgz.lock
+540 silly lockFile 4e37b133-ma-coffee-preprocessor-0-1-3-tgz https://registry.npmjs.org/karma-coffee-preprocessor/-/karma-coffee-preprocessor-0.1.3.tgz
+541 verbose lock https://registry.npmjs.org/karma-coffee-preprocessor/-/karma-coffee-preprocessor-0.1.3.tgz /home/sysadmin/.npm/4e37b133-ma-coffee-preprocessor-0-1-3-tgz.lock
+542 silly lockFile 172bae6c-npmjs-org-async-async-0-2-10-tgz https://registry.npmjs.org/async/-/async-0.2.10.tgz
+543 verbose lock https://registry.npmjs.org/async/-/async-0.2.10.tgz /home/sysadmin/.npm/172bae6c-npmjs-org-async-async-0-2-10-tgz.lock
+544 silly lockFile 75a3376e-pmjs-org-karma-karma-0-10-10-tgz https://registry.npmjs.org/karma/-/karma-0.10.10.tgz
+545 verbose lock https://registry.npmjs.org/karma/-/karma-0.10.10.tgz /home/sysadmin/.npm/75a3376e-pmjs-org-karma-karma-0-10-10-tgz.lock
+546 silly lockFile ea6a0561-source-map-source-map-0-1-34-tgz https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+547 verbose lock https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz /home/sysadmin/.npm/ea6a0561-source-map-source-map-0-1-34-tgz.lock
+548 silly lockFile 7b1cbc5c-mjs-org-testem-testem-0-3-30-tgz https://registry.npmjs.org/testem/-/testem-0.3.30.tgz
+549 verbose lock https://registry.npmjs.org/testem/-/testem-0.3.30.tgz /home/sysadmin/.npm/7b1cbc5c-mjs-org-testem-testem-0-3-30-tgz.lock
+550 silly lockFile 03b2dd13--org-optimist-optimist-0-3-7-tgz https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+551 verbose lock https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz /home/sysadmin/.npm/03b2dd13--org-optimist-optimist-0-3-7-tgz.lock
+552 silly lockFile 0a914e33-org-argparse-argparse-0-1-16-tgz https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz
+553 verbose lock https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz /home/sysadmin/.npm/0a914e33-org-argparse-argparse-0-1-16-tgz.lock
+554 silly lockFile da06523f-js-org-esprima-esprima-1-0-4-tgz https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz
+555 verbose lock https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz /home/sysadmin/.npm/da06523f-js-org-esprima-esprima-1-0-4-tgz.lock
+556 silly lockFile f7b98dc7--org-minimist-minimist-0-0-8-tgz https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+557 verbose lock https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz /home/sysadmin/.npm/f7b98dc7--org-minimist-minimist-0-0-8-tgz.lock
+558 silly lockFile 5ddca6d7-ry-npmjs-org-vows-vows-0-6-0-tgz https://registry.npmjs.org/vows/-/vows-0.6.0.tgz
+559 verbose lock https://registry.npmjs.org/vows/-/vows-0.6.0.tgz /home/sysadmin/.npm/5ddca6d7-ry-npmjs-org-vows-vows-0-6-0-tgz.lock
+560 silly lockFile 36a7b26a-ter-karma-osx-reporter-0-0-4-tgz https://registry.npmjs.org/karma-osx-reporter/-/karma-osx-reporter-0.0.4.tgz
+561 verbose lock https://registry.npmjs.org/karma-osx-reporter/-/karma-osx-reporter-0.0.4.tgz /home/sysadmin/.npm/36a7b26a-ter-karma-osx-reporter-0-0-4-tgz.lock
+562 silly lockFile 7213b30e-ry-npmjs-org-loom-loom-2-0-0-tgz https://registry.npmjs.org/loom/-/loom-2.0.0.tgz
+563 verbose lock https://registry.npmjs.org/loom/-/loom-2.0.0.tgz /home/sysadmin/.npm/7213b30e-ry-npmjs-org-loom-loom-2-0-0-tgz.lock
+564 silly lockFile 993530b0-s-org-request-request-2-33-0-tgz https://registry.npmjs.org/request/-/request-2.33.0.tgz
+565 verbose lock https://registry.npmjs.org/request/-/request-2.33.0.tgz /home/sysadmin/.npm/993530b0-s-org-request-request-2-33-0-tgz.lock
+566 verbose addRemoteTarball [ 'https://registry.npmjs.org/glob/-/glob-3.2.11.tgz',
+566 verbose addRemoteTarball   '4a973f635b9190f715d10987d5c00fd2815ebe3d' ]
+567 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-sass/-/node-sass-0.9.3.tgz',
+567 verbose addRemoteTarball   'f6d9c192aa77ac2a760541938d275cf157360fa9' ]
+568 verbose addRemoteTarball [ 'https://registry.npmjs.org/autoprefixer/-/autoprefixer-2.2.0.tgz',
+568 verbose addRemoteTarball   'c7c7936a280a64f8fa0e5f6108ba22f92c639633' ]
+569 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma-coverage/-/karma-coverage-0.1.5.tgz',
+569 verbose addRemoteTarball   'a4dcbe87d4a7765456ca64218b5f0601018e1371' ]
+570 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma-coffee-preprocessor/-/karma-coffee-preprocessor-0.1.3.tgz',
+570 verbose addRemoteTarball   '98137a9e4981b0c9084f8856ef7d4f83d8783152' ]
+571 verbose addRemoteTarball [ 'https://registry.npmjs.org/async/-/async-0.2.10.tgz',
+571 verbose addRemoteTarball   'b6bbe0b0674b9d719708ca38de8c237cb526c3d1' ]
+572 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma/-/karma-0.10.10.tgz',
+572 verbose addRemoteTarball   '137f4aad0fbe5854e73e8c1eb293c0e540825a49' ]
+573 verbose addRemoteTarball [ 'https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz',
+573 verbose addRemoteTarball   'a7cfe89aec7b1682c3b198d0acfb47d7d090566b' ]
+574 verbose addRemoteTarball [ 'https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz',
+574 verbose addRemoteTarball   'c90941ad59e4273328923074d2cf2e7cbc6ec0d9' ]
+575 verbose addRemoteTarball [ 'https://registry.npmjs.org/testem/-/testem-0.3.30.tgz',
+575 verbose addRemoteTarball   '21a6430ea401f4e77a0b02f05e7d78ac3ebfd523' ]
+576 verbose addRemoteTarball [ 'https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz',
+576 verbose addRemoteTarball   'cfd01e0fbba3d6caed049fbd758d40f65196f57c' ]
+577 verbose addRemoteTarball [ 'https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz',
+577 verbose addRemoteTarball   '9f557e08fc3b4d26ece9dd34f8fbf476b62585ad' ]
+578 verbose addRemoteTarball [ 'https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz',
+578 verbose addRemoteTarball   '857fcabfc3397d2625b8228262e86aa7a011b05d' ]
+579 verbose addRemoteTarball [ 'https://registry.npmjs.org/vows/-/vows-0.6.0.tgz',
+579 verbose addRemoteTarball   'be2f068009d39a37b37af85c29fa86d8573db431' ]
+580 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma-osx-reporter/-/karma-osx-reporter-0.0.4.tgz',
+580 verbose addRemoteTarball   '65ef7ed2af56b82e43b9bc9028c04b87ab93fd96' ]
+581 verbose addRemoteTarball [ 'https://registry.npmjs.org/loom/-/loom-2.0.0.tgz',
+581 verbose addRemoteTarball   '3405c6ad3371a5da72639a5d345af3b1c0c6563a' ]
+582 verbose addRemoteTarball [ 'https://registry.npmjs.org/request/-/request-2.33.0.tgz',
+582 verbose addRemoteTarball   '5167878131726070ec633752ea230a2379dc65ff' ]
+583 silly lockFile 82bef4e1-y-npmjs-org-glob-glob-3-2-11-tgz https://registry.npmjs.org/glob/-/glob-3.2.11.tgz
+584 silly lockFile 82bef4e1-y-npmjs-org-glob-glob-3-2-11-tgz https://registry.npmjs.org/glob/-/glob-3.2.11.tgz
+585 silly lockFile afd2116e-rg-node-sass-node-sass-0-9-3-tgz https://registry.npmjs.org/node-sass/-/node-sass-0.9.3.tgz
+586 silly lockFile afd2116e-rg-node-sass-node-sass-0-9-3-tgz https://registry.npmjs.org/node-sass/-/node-sass-0.9.3.tgz
+587 silly lockFile 1db1b7b4-oprefixer-autoprefixer-2-2-0-tgz https://registry.npmjs.org/autoprefixer/-/autoprefixer-2.2.0.tgz
+588 silly lockFile 1db1b7b4-oprefixer-autoprefixer-2-2-0-tgz https://registry.npmjs.org/autoprefixer/-/autoprefixer-2.2.0.tgz
+589 silly lockFile 0e88183d-overage-karma-coverage-0-1-5-tgz https://registry.npmjs.org/karma-coverage/-/karma-coverage-0.1.5.tgz
+590 silly lockFile 0e88183d-overage-karma-coverage-0-1-5-tgz https://registry.npmjs.org/karma-coverage/-/karma-coverage-0.1.5.tgz
+591 silly lockFile 4e37b133-ma-coffee-preprocessor-0-1-3-tgz https://registry.npmjs.org/karma-coffee-preprocessor/-/karma-coffee-preprocessor-0.1.3.tgz
+592 silly lockFile 4e37b133-ma-coffee-preprocessor-0-1-3-tgz https://registry.npmjs.org/karma-coffee-preprocessor/-/karma-coffee-preprocessor-0.1.3.tgz
+593 silly lockFile 172bae6c-npmjs-org-async-async-0-2-10-tgz https://registry.npmjs.org/async/-/async-0.2.10.tgz
+594 silly lockFile 172bae6c-npmjs-org-async-async-0-2-10-tgz https://registry.npmjs.org/async/-/async-0.2.10.tgz
+595 silly lockFile 75a3376e-pmjs-org-karma-karma-0-10-10-tgz https://registry.npmjs.org/karma/-/karma-0.10.10.tgz
+596 silly lockFile 75a3376e-pmjs-org-karma-karma-0-10-10-tgz https://registry.npmjs.org/karma/-/karma-0.10.10.tgz
+597 silly lockFile ea6a0561-source-map-source-map-0-1-34-tgz https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+598 silly lockFile ea6a0561-source-map-source-map-0-1-34-tgz https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+599 silly lockFile 03b2dd13--org-optimist-optimist-0-3-7-tgz https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+600 silly lockFile 03b2dd13--org-optimist-optimist-0-3-7-tgz https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+601 silly lockFile 7b1cbc5c-mjs-org-testem-testem-0-3-30-tgz https://registry.npmjs.org/testem/-/testem-0.3.30.tgz
+602 silly lockFile 7b1cbc5c-mjs-org-testem-testem-0-3-30-tgz https://registry.npmjs.org/testem/-/testem-0.3.30.tgz
+603 silly lockFile 0a914e33-org-argparse-argparse-0-1-16-tgz https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz
+604 silly lockFile 0a914e33-org-argparse-argparse-0-1-16-tgz https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz
+605 silly lockFile da06523f-js-org-esprima-esprima-1-0-4-tgz https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz
+606 silly lockFile da06523f-js-org-esprima-esprima-1-0-4-tgz https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz
+607 silly lockFile f7b98dc7--org-minimist-minimist-0-0-8-tgz https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+608 silly lockFile f7b98dc7--org-minimist-minimist-0-0-8-tgz https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+609 silly lockFile 5ddca6d7-ry-npmjs-org-vows-vows-0-6-0-tgz https://registry.npmjs.org/vows/-/vows-0.6.0.tgz
+610 silly lockFile 5ddca6d7-ry-npmjs-org-vows-vows-0-6-0-tgz https://registry.npmjs.org/vows/-/vows-0.6.0.tgz
+611 silly lockFile 36a7b26a-ter-karma-osx-reporter-0-0-4-tgz https://registry.npmjs.org/karma-osx-reporter/-/karma-osx-reporter-0.0.4.tgz
+612 silly lockFile 36a7b26a-ter-karma-osx-reporter-0-0-4-tgz https://registry.npmjs.org/karma-osx-reporter/-/karma-osx-reporter-0.0.4.tgz
+613 silly lockFile 7213b30e-ry-npmjs-org-loom-loom-2-0-0-tgz https://registry.npmjs.org/loom/-/loom-2.0.0.tgz
+614 silly lockFile 7213b30e-ry-npmjs-org-loom-loom-2-0-0-tgz https://registry.npmjs.org/loom/-/loom-2.0.0.tgz
+615 silly lockFile 3fffafa6-glob-3-2-11 glob@3.2.11
+616 silly lockFile 3fffafa6-glob-3-2-11 glob@3.2.11
+617 silly lockFile 91255e78-node-sass-0-9-3 node-sass@0.9.3
+618 silly lockFile 91255e78-node-sass-0-9-3 node-sass@0.9.3
+619 silly lockFile bceb9f0b-autoprefixer-2-2-0 autoprefixer@2.2.0
+620 silly lockFile bceb9f0b-autoprefixer-2-2-0 autoprefixer@2.2.0
+621 silly lockFile f9aea0e5-karma-coverage-0-1-5 karma-coverage@0.1.5
+622 silly lockFile f9aea0e5-karma-coverage-0-1-5 karma-coverage@0.1.5
+623 silly lockFile 993530b0-s-org-request-request-2-33-0-tgz https://registry.npmjs.org/request/-/request-2.33.0.tgz
+624 silly lockFile 993530b0-s-org-request-request-2-33-0-tgz https://registry.npmjs.org/request/-/request-2.33.0.tgz
+625 silly lockFile f8f9b051-karma-coffee-preprocessor-0-1-3 karma-coffee-preprocessor@0.1.3
+626 silly lockFile f8f9b051-karma-coffee-preprocessor-0-1-3 karma-coffee-preprocessor@0.1.3
+627 silly lockFile 098b530d-async-0-2-10 async@0.2.10
+628 silly lockFile 098b530d-async-0-2-10 async@0.2.10
+629 silly lockFile f40119e0-karma-0-10-10 karma@0.10.10
+630 silly lockFile f40119e0-karma-0-10-10 karma@0.10.10
+631 silly lockFile 39026ad4-source-map-0-1-34 source-map@0.1.34
+632 silly lockFile 39026ad4-source-map-0-1-34 source-map@0.1.34
+633 silly lockFile 090e1d8d-optimist-0-3-7 optimist@0.3.7
+634 silly lockFile 090e1d8d-optimist-0-3-7 optimist@0.3.7
+635 silly lockFile 8a65b2a9-testem-0-3-30 testem@0.3.30
+636 silly lockFile 8a65b2a9-testem-0-3-30 testem@0.3.30
+637 silly lockFile b1e18399-argparse-0-1-16 argparse@0.1.16
+638 silly lockFile b1e18399-argparse-0-1-16 argparse@0.1.16
+639 silly lockFile 758953aa-esprima-1-0-4 esprima@1.0.4
+640 silly lockFile 758953aa-esprima-1-0-4 esprima@1.0.4
+641 silly lockFile 22c6b485-minimist-0-0-8 minimist@0.0.8
+642 silly lockFile 22c6b485-minimist-0-0-8 minimist@0.0.8
+643 silly lockFile 09a972e5-vows-0-6-0 vows@0.6.0
+644 silly lockFile 09a972e5-vows-0-6-0 vows@0.6.0
+645 silly lockFile 9c77f0e0-karma-osx-reporter-0-0-4 karma-osx-reporter@0.0.4
+646 silly lockFile 9c77f0e0-karma-osx-reporter-0-0-4 karma-osx-reporter@0.0.4
+647 silly lockFile 1592285a-loom-2-0-0 loom@2.0.0
+648 silly lockFile 1592285a-loom-2-0-0 loom@2.0.0
+649 silly lockFile 6f7b4c4d-request-2-33-0 request@2.33.0
+650 silly lockFile 6f7b4c4d-request-2-33-0 request@2.33.0
+651 error Error: EACCES, mkdir '/tmp/npm-12999-ux1E3sJn'
+651 error  { [Error: EACCES, mkdir '/tmp/npm-12999-ux1E3sJn']
+651 error   errno: 3,
+651 error   code: 'EACCES',
+651 error   path: '/tmp/npm-12999-ux1E3sJn',
+651 error   parent: 'canvas-lms' }
+652 error Please try running this command again as root/Administrator.
+653 error System Linux 3.12.9-x86_64-linode37
+654 error command "/usr/bin/node" "/usr/bin/npm" "update"
+655 error cwd /var/deploy/capistrano/canvas/releases/201412031040
+656 error node -v v0.10.33
+657 error npm -v 1.4.28
+658 error path /tmp/npm-12999-ux1E3sJn
+659 error code EACCES
+660 error errno 3
+661 error stack Error: EACCES, mkdir '/tmp/npm-12999-ux1E3sJn'
+662 verbose exit [ 3, true ]

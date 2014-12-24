@@ -1,0 +1,1 @@
+(function(){define([],function(){var n,r;return n=Math.floor,r=function(n){return("00"+n).slice(-2)},function(t){var i,u,c;return t>3600?(i=n(t/3600),u=n((t-3600*i)/60),c=t%60,""+r(i)+":"+r(u)+":"+r(c)):""+r(n(t/60))+":"+r(n(t%60))}})}).call(this);

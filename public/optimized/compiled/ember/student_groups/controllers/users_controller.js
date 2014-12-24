@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){var r;return r=e.ArrayController.extend({usersPath:"/api/v1/courses/"+ENV.course_id+"/users",itemController:"user"})})}).call(this);

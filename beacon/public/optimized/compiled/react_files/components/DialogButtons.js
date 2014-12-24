@@ -1,0 +1,1 @@
+(function(){define(["react","compiled/react/shared/utils/withReactDOM"],function(e,r){var t;return t=e.createClass({render:r(function(){return div({},this.props.children)})})})}).call(this);

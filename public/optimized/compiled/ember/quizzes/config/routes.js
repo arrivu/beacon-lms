@@ -1,0 +1,1 @@
+(function(){define(function(){var t;return t=function(){return this.route("quizzes",{path:"/"},function(){return this.route("index",{path:"/"})}),this.resource("quiz",{path:"/:quiz_id"},function(){return this.route("show",{path:"/"}),this.route("preview",{path:"/preview"}),this.route("moderate",{path:"/moderate"}),this.route("statistics",{path:"/statistics"})})}})}).call(this);

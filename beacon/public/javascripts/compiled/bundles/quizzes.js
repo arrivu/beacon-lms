@@ -1,0 +1,1 @@
+require(['compiled/ember/quizzes/main'], function(App) { window.App = App.create(); });

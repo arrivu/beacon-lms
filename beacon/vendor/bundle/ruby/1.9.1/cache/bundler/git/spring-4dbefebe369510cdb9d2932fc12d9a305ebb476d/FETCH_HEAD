@@ -1,0 +1,22 @@
+d87f172a4ff4b4b14d29f1351063a42c13f6d3d0		branch 'ci' of https://github.com/ccutrer/spring
+96dce4ce28996e1ca36fbf6535bf6dbcd6d56200		branch 'fix_fd_not_passed' of https://github.com/ccutrer/spring
+5824649fbc7cbb8c4722599ae812c6e95dd6906d		branch 'fix_travis' of https://github.com/ccutrer/spring
+f6c7dafb1e8735a3107a6c3eeddf4fd2449bcd45		branch 'libedit_fix' of https://github.com/ccutrer/spring
+d843a8a429ae0f534e5f2221d21251678f317778		branch 'master' of https://github.com/ccutrer/spring
+a622f051501976cdbef452c9752c1af364c9ad26		branch 'preload_hang' of https://github.com/ccutrer/spring
+c83b4d77e434061d41de5b95cf0af4a79b653da3		branch 'termination' of https://github.com/ccutrer/spring
+862f3b6633337a15dc73ad7da9969da66e65ecfc	not-for-merge	tag 'v0.0.10' of https://github.com/ccutrer/spring
+5619e9179787ad8e856dfe3ff7bfce016d6446c7	not-for-merge	tag 'v0.0.11' of https://github.com/ccutrer/spring
+bbd8f7d5b0f420f9c336cdaebc7479445bc09bc2	not-for-merge	tag 'v0.0.9' of https://github.com/ccutrer/spring
+6ab47dc101287db7670a3dd66f1530f75f357e13	not-for-merge	tag 'v0.9.0' of https://github.com/ccutrer/spring
+a89f85d3f60e8e16143d072771170b907c393a40	not-for-merge	tag 'v0.9.1' of https://github.com/ccutrer/spring
+52e4a9100100ed4df2d8975cd49ef07735aaebe0	not-for-merge	tag 'v0.9.2' of https://github.com/ccutrer/spring
+2c313ee5b189adc8f3f9a92890ae65f6a79ac3cb	not-for-merge	tag 'v1.0.0' of https://github.com/ccutrer/spring
+057ffbfced2abae6dbaadd786cae9cce06d94323	not-for-merge	tag 'v1.1.0' of https://github.com/ccutrer/spring
+84dedde99791358dd5fdba6e058d5ea06bb760bf	not-for-merge	tag 'v1.1.0.beta1' of https://github.com/ccutrer/spring
+fecf455da440dc750d618f26a20808f7f8bda4f0	not-for-merge	tag 'v1.1.0.beta2' of https://github.com/ccutrer/spring
+c7e14bcff6f10b8676a18c730fd40b2032dfe17c	not-for-merge	tag 'v1.1.0.beta3' of https://github.com/ccutrer/spring
+188d50e03fcd77c84b4c84f6b94efe5462505006	not-for-merge	tag 'v1.1.0.beta4' of https://github.com/ccutrer/spring
+eb39e14adad72254275f84804972800711f7c315	not-for-merge	tag 'v1.1.1' of https://github.com/ccutrer/spring
+32b34bb6b7eaf5011a89adfd89efac88f2dec4e7	not-for-merge	tag 'v1.1.2' of https://github.com/ccutrer/spring
+d346468644c40d31207ec4eede4d22e8104699a6	not-for-merge	tag 'v1.1.3' of https://github.com/ccutrer/spring

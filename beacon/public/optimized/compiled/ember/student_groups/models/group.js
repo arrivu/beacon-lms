@@ -1,0 +1,1 @@
+(function(){define(["ember","ember-data"],function(e,n){var r,t;return t=n.attr,r=n.Model.extend({name:t(),join_level:t(),users:t()}),r.reopenClass({url:function(){return"/api/v1"}})})}).call(this);

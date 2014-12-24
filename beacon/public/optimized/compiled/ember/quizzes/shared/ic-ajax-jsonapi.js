@@ -1,0 +1,1 @@
+(function(){define(["ic-ajax","jquery"],function(e,n){var t;return t=function(t,a){var i,o;return o={dataType:"json",contentType:"application/json",headers:{Accepts:"application/vnd.api+json"}},i=1===arguments.length?"string"==typeof t?n.extend(!0,o,{url:t}):"object"==typeof t?n.extend(!0,o,t):void 0:n.extend(!0,o,{url:t},a),e.request(i)}})}).call(this);

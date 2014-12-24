@@ -1,0 +1,1 @@
+../../../client_apps/canvas_quiz_statistics/dist/canvas_quiz_statistics.js

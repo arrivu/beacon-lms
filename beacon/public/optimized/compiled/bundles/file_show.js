@@ -1,0 +1,1 @@
+(function(){require(["jquery","jquery.doc_previews","jquery.instructure_misc_plugins"],function(e){var i,r;return i={height:"100%",scribdParams:{auto_size:!0}},r=e("#doc_preview"),r.fillWindowWithMe(),r.loadDocPreview(e.merge(i,r.data()))})}).call(this),define("compiled/bundles/file_show",function(){});

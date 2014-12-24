@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="current" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Assignments API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing assignment information.</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="ExternalToolTagAttributes">An ExternalToolTagAttributes object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //URL to the external tool
+  &quot;url&quot;: &quot;http://instructure.com&quot;,
+  
+  //Whether or not there is a new tab for the external tool
+  &quot;new_tab&quot;: &quot;false&quot;,
+  
+  //the identifier for this tool_tag
+  &quot;resource_link_id&quot;: &quot;ab81173af98b8c33e66a&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="LockInfo">A LockInfo object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //Asset string for the object causing the lock
+  &quot;asset_string&quot;: &quot;assignment_4&quot;,
+  
+  //(Optional) Time at which this was/will be unlocked.
+  &quot;unlock_at&quot;: &quot;2013-01-01T00:00:00-06:00&quot;,
+  
+  //(Optional) Time at which this was/will be locked.
+  &quot;lock_at&quot;: &quot;2013-02-01T00:00:00-06:00&quot;,
+  
+  //(Optional) Context module causing the lock.
+  &quot;context_module&quot;: &quot;{}&quot;,
+  
+  &quot;manually_locked&quot;: &quot;true&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="RubricRating">A RubricRating object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  &quot;points&quot;: 10,
+  
+  &quot;id&quot;: &quot;rat1&quot;,
+  
+  &quot;description&quot;: &quot;Full marks&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="RubricCriteria">A RubricCriteria object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  &quot;points&quot;: 10,
+  
+  &quot;id&quot;: &quot;crit1&quot;,
+  
+  &quot;description&quot;: &quot;Criterion 1&quot;,
+  
+  &quot;ratings&quot;: &quot;&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="AssignmentDate">An AssignmentDate object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //(Optional, missing if 'base' is present) id of the assignment override this date
+  //represents
+  &quot;id&quot;: 1,
+  
+  //(Optional, present if 'id' is missing) whether this date represents the
+  //assignment's or quiz's default due date
+  &quot;base&quot;: &quot;true&quot;,
+  
+  &quot;title&quot;: &quot;Summer Session&quot;,
+  
+  &quot;due_at&quot;: &quot;2013-08-28T23:59:00-06:00&quot;,
+  
+  &quot;unlock_at&quot;: &quot;2013-08-01T00:00:00-06:00&quot;,
+  
+  &quot;lock_at&quot;: &quot;2013-08-31T23:59:00-06:00&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="TurnitinSettings">A TurnitinSettings object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  &quot;originality_report_visibility&quot;: &quot;after_grading&quot;,
+  
+  &quot;s_paper_check&quot;: &quot;false&quot;,
+  
+  &quot;internet_check&quot;: &quot;false&quot;,
+  
+  &quot;journal_check&quot;: &quot;false&quot;,
+  
+  &quot;exclude_biblio&quot;: &quot;false&quot;,
+  
+  &quot;exclude_quoted&quot;: &quot;false&quot;,
+  
+  &quot;exclude_small_matches_type&quot;: &quot;percent&quot;,
+  
+  &quot;exclude_small_matches_value&quot;: 50
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="NeedsGradingCount">A NeedsGradingCount object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The section ID
+  &quot;section_id&quot;: &quot;123456&quot;,
+  
+  //Number of submissions that need grading
+  &quot;needs_grading_count&quot;: 5
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="Assignment">An Assignment object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //the ID of the assignment
+  &quot;id&quot;: 4,
+  
+  //the name of the assignment
+  &quot;name&quot;: &quot;some assignment&quot;,
+  
+  //the assignment description, in an HTML fragment
+  &quot;description&quot;: &quot;&lt;p&gt;Do the following:&lt;/p&gt;...&quot;,
+  
+  //The time at which this assignment was originally created
+  &quot;created_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //The time at which this assignment was last modified in any way
+  &quot;updated_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //the due date for the assignment. returns null if not present. NOTE: If this
+  //assignment has assignment overrides, this field will be the due date as it
+  //applies to the user requesting information from the API.
+  &quot;due_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //the lock date (assignment is locked after this date). returns null if not
+  //present. NOTE: If this assignment has assignment overrides, this field will be
+  //the lock date as it applies to the user requesting information from the API.
+  &quot;lock_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //the unlock date (assignment is unlocked after this date) returns null if not
+  //present NOTE: If this assignment has assignment overrides, this field will be
+  //the unlock date as it applies to the user requesting information from the API.
+  &quot;unlock_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //(Optional) all dates associated with the assignment, if applicable
+  &quot;all_dates&quot;: &quot;&quot;,
+  
+  //the ID of the course the assignment belongs to
+  &quot;course_id&quot;: 123,
+  
+  //the URL to the assignment's web page
+  &quot;html_url&quot;: &quot;https://...&quot;,
+  
+  //the ID of the assignment's group
+  &quot;assignment_group_id&quot;: 2,
+  
+  //Allowed file extensions, which take effect if submission_types includes
+  //'online_upload'.
+  &quot;allowed_extensions&quot;: &quot;[&quot;docx&quot;, &quot;ppt&quot;]&quot;,
+  
+  //Boolean flag indicating whether or not Turnitin has been enabled for the
+  //assignment. NOTE: This flag will not appear unless your account has the Turnitin
+  //plugin available
+  &quot;turnitin_enabled&quot;: &quot;true&quot;,
+  
+  //Settings to pass along to turnitin to control what kinds of matches should be
+  //considered. originality_report_visibility can be 'immediate', 'after_grading',
+  //'after_due_date', or 'never' exclude_small_matches_type can be null, 'percent',
+  //'words' exclude_small_matches_value: - if type is null, this will be null also -
+  //if type is 'percent', this will be a number between 0 and 100 representing match
+  //size to exclude as a percentage of the document size. - if type is 'words', this
+  //will be number &gt; 0 representing how many words a match must contain for it to be
+  //considered NOTE: This flag will not appear unless your account has the Turnitin
+  //plugin available
+  &quot;turnitin_settings&quot;: &quot;&quot;,
+  
+  //If this is a group assignment, boolean flag indicating whether or not students
+  //will be graded individually.
+  &quot;grade_group_students_individually&quot;: &quot;false&quot;,
+  
+  //(Optional) assignment's settings for external tools if submission_types include
+  //'external_tool'. Only url and new_tab are included. Use the 'External Tools' API
+  //if you need more information about an external tool.
+  &quot;external_tool_tag_attributes&quot;: &quot;&quot;,
+  
+  //Boolean indicating if peer reviews are required for this assignment
+  &quot;peer_reviews&quot;: &quot;false&quot;,
+  
+  //Boolean indicating peer reviews are assigned automatically. If false, the
+  //teacher is expected to manually assign peer reviews.
+  &quot;automatic_peer_reviews&quot;: &quot;false&quot;,
+  
+  //Integer representing the amount of reviews each user is assigned. NOTE: This key
+  //is NOT present unless you have automatic_peer_reviews set to true.
+  &quot;peer_review_count&quot;: 0,
+  
+  //String representing a date the reviews are due by. Must be a date that occurs
+  //after the default due date. If blank, or date is not after the assignment's due
+  //date, the assignment's due date will be used. NOTE: This key is NOT present
+  //unless you have automatic_peer_reviews set to true.
+  &quot;peer_reviews_assign_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //The ID of the assignment’s group set, if this is a group assignment. For group
+  //discussions, set group_category_id on the discussion topic, not the linked
+  //assignment.
+  &quot;group_category_id&quot;: 1,
+  
+  //if the requesting user has grading rights, the number of submissions that need
+  //grading.
+  &quot;needs_grading_count&quot;: 17,
+  
+  //if the requesting user has grading rights and the
+  //'needs_grading_count_by_section' flag is specified, the number of submissions
+  //that need grading split out by section. NOTE: This key is NOT present unless you
+  //pass the 'needs_grading_count_by_section' argument as true.  ANOTHER NOTE: it's
+  //possible to be enrolled in multiple sections, and if a student is setup that way
+  //they will show an assignment that needs grading in multiple sections
+  //(effectively the count will be duplicated between sections)
+  &quot;needs_grading_count_by_section&quot;: &quot;[{&quot;section_id&quot;=&gt;&quot;123456&quot;, &quot;needs_grading_count&quot;=&gt;5}, {&quot;section_id&quot;=&gt;&quot;654321&quot;, &quot;needs_grading_count&quot;=&gt;0}]&quot;,
+  
+  //the sorting order of the assignment in the group
+  &quot;position&quot;: 1,
+  
+  //(optional, present if Post Grades to SIS feature is enabled)
+  &quot;post_to_sis&quot;: &quot;true&quot;,
+  
+  //(optional, Third Party unique identifier for Assignment)
+  &quot;integration_id&quot;: &quot;12341234&quot;,
+  
+  //(optional, Third Party integration data for assignment)
+  &quot;integration_data&quot;: &quot;12341234&quot;,
+  
+  //whether the assignment is muted
+  &quot;muted&quot;: &quot;&quot;,
+  
+  //the maximum points possible for the assignment
+  &quot;points_possible&quot;: 12,
+  
+  //the types of submissions allowed for this assignment list containing one or more
+  //of the following: 'discussion_topic', 'online_quiz', 'on_paper', 'none',
+  //'external_tool', 'online_text_entry', 'online_url', 'online_upload'
+  //'media_recording'
+  &quot;submission_types&quot;: &quot;[&quot;online_text_entry&quot;]&quot;,
+  
+  //The type of grading the assignment receives; one of 'pass_fail', 'percent',
+  //'letter_grade', 'gpa_scale', 'points'
+  &quot;grading_type&quot;: &quot;points&quot;,
+  
+  //The id of the grading standard being applied to this assignment. Valid if
+  //grading_type is 'letter_grade' or 'gpa_scale'.
+  &quot;grading_standard_id&quot;: ,
+  
+  //(Only visible if 'enable draft' account setting is on) whether the assignment is
+  //published
+  &quot;published&quot;: &quot;true&quot;,
+  
+  //(Only visible if 'enable draft' account setting is on) Whether the assignment's
+  //'published' state can be changed to false. Will be false if there are student
+  //submissions for the assignment.
+  &quot;unpublishable&quot;: &quot;false&quot;,
+  
+  //(Only visible if the Differentiated Assignments course feature is turned on)
+  //Whether the assignment is only visible to overrides.
+  &quot;only_visible_to_overrides&quot;: &quot;false&quot;,
+  
+  //Whether or not this is locked for the user.
+  &quot;locked_for_user&quot;: &quot;false&quot;,
+  
+  //(Optional) Information for the user about the lock. Present when locked_for_user
+  //is true.
+  &quot;lock_info&quot;: &quot;&quot;,
+  
+  //(Optional) An explanation of why this is locked for the user. Present when
+  //locked_for_user is true.
+  &quot;lock_explanation&quot;: &quot;This assignment is locked until September 1 at 12:00am&quot;,
+  
+  //(Optional) id of the associated quiz (applies only when submission_types is
+  //['online_quiz'])
+  &quot;quiz_id&quot;: 620,
+  
+  //(Optional) whether anonymous submissions are accepted (applies only to quiz
+  //assignments)
+  &quot;anonymous_submissions&quot;: &quot;false&quot;,
+  
+  //(Optional) the DiscussionTopic associated with the assignment, if applicable
+  &quot;discussion_topic&quot;: &quot;&quot;,
+  
+  //(Optional) Boolean indicating if assignment will be frozen when it is copied.
+  //NOTE: This field will only be present if the AssignmentFreezer plugin is
+  //available for your account.
+  &quot;freeze_on_copy&quot;: &quot;false&quot;,
+  
+  //(Optional) Boolean indicating if assignment is frozen for the calling user.
+  //NOTE: This field will only be present if the AssignmentFreezer plugin is
+  //available for your account.
+  &quot;frozen&quot;: &quot;false&quot;,
+  
+  //(Optional) Array of frozen attributes for the assignment. Only account
+  //administrators currently have permission to change an attribute in this list.
+  //Will be empty if no attributes are frozen for this assignment. Possible frozen
+  //attributes are: title, description, lock_at, points_possible, grading_type,
+  //submission_types, assignment_group_id, allowed_extensions, group_category_id,
+  //notify_of_update, peer_reviews NOTE: This field will only be present if the
+  //AssignmentFreezer plugin is available for your account.
+  &quot;frozen_attributes&quot;: &quot;[&quot;title&quot;]&quot;,
+  
+  //(Optional) If 'submission' is included in the 'include' parameter, includes a
+  //Submission object that represents the current user's (user who is requesting
+  //information from the api) current submission for the assignment. See the
+  //Submissions API for an example response. If the user does not have a submission,
+  //this key will be absent.
+  &quot;submission&quot;: &quot;{}&quot;,
+  
+  //(Optional) If true, the rubric is directly tied to grading the assignment.
+  //Otherwise, it is only advisory. Included if there is an associated rubric.
+  &quot;use_rubric_for_grading&quot;: &quot;true&quot;,
+  
+  //(Optional) An object describing the basic attributes of the rubric, including
+  //the point total. Included if there is an associated rubric.
+  &quot;rubric_settings&quot;: &quot;{&quot;points_possible&quot;=&gt;12}&quot;,
+  
+  //(Optional) A list of scoring criteria and ratings for each rubric criterion.
+  //Included if there is an associated rubric.
+  &quot;rubric&quot;: &quot;&quot;,
+  
+  //(Optional) If 'assignment_visibility' is included in the 'include' parameter,
+  //includes an array of student IDs who can see this assignment.
+  &quot;assignment_visibility&quot;: &quot;[137,381,572]&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="AssignmentOverride">An AssignmentOverride object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //the ID of the assignment override
+  &quot;id&quot;: 4,
+  
+  //the ID of the assignment the override applies to
+  &quot;assignment_id&quot;: 123,
+  
+  //the IDs of the override's target students (present if the override targets an
+  //ad-hoc set of students)
+  &quot;student_ids&quot;: &quot;[1, 2, 3]&quot;,
+  
+  //the ID of the override's target group (present if the override targets a group
+  //and the assignment is a group assignment)
+  &quot;group_id&quot;: 2,
+  
+  //the ID of the overrides's target section (present if the override targets a
+  //section)
+  &quot;course_section_id&quot;: 1,
+  
+  //the title of the override
+  &quot;title&quot;: &quot;an assignment override&quot;,
+  
+  //the overridden due at (present if due_at is overridden)
+  &quot;due_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //the overridden all day flag (present if due_at is overridden)
+  &quot;all_day&quot;: true,
+  
+  //the overridden all day date (present if due_at is overridden)
+  &quot;all_day_date&quot;: &quot;2012-07-01&quot;,
+  
+  //the overridden unlock at (present if unlock_at is overridden)
+  &quot;unlock_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;,
+  
+  //the overridden lock at, if any (present if lock_at is overridden)
+  &quot;lock_at&quot;: &quot;2012-07-01T23:59:00-06:00&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.assignments.destroy' data-subtopic='Assignments'>
+    <a name='method.assignments.destroy' href='#method.assignments.destroy'>
+      Delete an assignment
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignments_controller.rb">AssignmentsController#destroy</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/assignments/:id
+  </h3>
+
+
+<p>Delete the given assignment.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/assignments/&lt;assignment_id&gt; \
+     -X DELETE \
+     -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='assignments.html#Assignment'>Assignment</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignments_api.index' data-subtopic='Assignments'>
+    <a name='method.assignments_api.index' href='#method.assignments_api.index'>
+      List assignments
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignments_api_controller.rb">AssignmentsApiController#index</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments
+  </h3>
+
+
+<p>Returns the list of assignments for the current context.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "submission"|"assignment_visibility"
+<dd>
+<p>Associations to include with the assignment. The "assignment_visibility"
+option requires that the Differentiated Assignments course feature be
+turned on.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>search_term</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The partial title of the assignments to match and return.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>override_assignment_dates</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Apply assignment overrides for each assignment, defaults to true.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>needs_grading_count_by_section</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Split up "needs_grading_count" by sections into the
+"needs_grading_count_by_section" key, defaults to false</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a list of 
+
+<a href='assignments.html#Assignment'>Assignments</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignments_api.show' data-subtopic='Assignments'>
+    <a name='method.assignments_api.show' href='#method.assignments_api.show'>
+      Get a single assignment
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignments_api_controller.rb">AssignmentsApiController#show</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:id
+  </h3>
+
+
+<p>Returns the assignment with the given id.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "submission"|"assignment_visibility"
+<dd>
+<p>Associations to include with the assignment. The "assignment_visibility"
+option requires that the Differentiated Assignments course feature be
+turned on.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>override_assignment_dates</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Apply assignment overrides to the assignment, defaults to true.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>needs_grading_count_by_section</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Split up "needs_grading_count" by sections into the
+"needs_grading_count_by_section" key, defaults to false</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='assignments.html#Assignment'>Assignment</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignments_api.create' data-subtopic='Assignments'>
+    <a name='method.assignments_api.create' href='#method.assignments_api.create'>
+      Create an assignment
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignments_api_controller.rb">AssignmentsApiController#create</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/assignments
+  </h3>
+
+
+<p>Create a new assignment for this course. The assignment is created in the
+active state.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String
+<dd>
+<p>The assignment name.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[position]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The position of this assignment in the group when displaying assignment
+lists.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[submission_types][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "online_quiz"|"none"|"on_paper"|"online_quiz"|"discussion_topic"|"external_tool"|"online_upload"|"online_text_entry"|"online_url"|"media_recording"
+<dd>
+<p>List of supported submission types for the assignment. Unless the
+assignment is allowing online submissions, the array should only have one
+element.</p>
+
+<p>If not allowing online submissions, your options are:</p>
+
+<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>online_quiz</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>none</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on_paper</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>online_quiz</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>discussion_topic</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>external_tool</span><span class='tstring_end'>&quot;</span></span></code></pre>
+
+<p>If you are allowing online submissions, you can have one or many allowed
+submission types:</p>
+
+<pre class="code ruby"><code>&quot;online_upload&quot;
+&quot;online_text_entry&quot;
+&quot;online_url&quot;
+&quot;media_recording&quot; (Only valid when the Kaltura plugin is enabled)</code></pre>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[allowed_extensions][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Allowed extensions if submission_types includes "online_upload"</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code>allowed_extensions: [&quot;docx&quot;,&quot;ppt&quot;]</code></pre>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[turnitin_enabled]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Only applies when the Turnitin plugin is enabled for a course and the
+submission_types array includes "online_upload". Toggles Turnitin
+submissions for the assignment. Will be ignored if Turnitin is not
+available for the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[turnitin_settings]</span>
+      
+      
+        <div class='inline'>
+<p>Settings to send along to turnitin. See Assignment object definition for
+format.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[integration_data]</span>
+      
+      
+        <div class='inline'>
+<p>Data related to third party integrations, JSON string required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[integration_id]</span>
+      
+      
+        <div class='inline'>
+<p>Unique ID from third party integrations</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[peer_reviews]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If submission_types does not include external_tool,discussion_topic,
+online_quiz, or on_paper, determines whether or not peer reviews will be
+turned on for the assignment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[automatic_peer_reviews]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether peer reviews will be assigned automatically by Canvas or if
+teachers must manually assign peer reviews. Does not apply if peer reviews
+are not enabled.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[notify_of_update]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, Canvas will send a notification to students in the class notifying
+them that the content has changed.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[group_category_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>If present, the assignment will become a group assignment assigned to the
+group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grade_group_students_individually]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>If this is a group assignment, teachers have the options to grade students
+individually. If false, Canvas will apply the assignment's score to each
+member of the group. If true, the teacher can manually assign scores to
+each member of the group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[external_tool_tag_attributes]</span>
+      
+      
+        <div class='inline'>
+<p>Hash of attributes if submission_types is ["external_tool"] Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">external_tool_tag_attributes</span><span class="ruby-operator">:</span> {
+  <span class="ruby-regexp">%r/</span> <span class="ruby-identifier">url</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">external</span> <span class="ruby-identifier">tool</span>
+  <span class="ruby-identifier">url</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;http://instructure.com&quot;</span>,
+  <span class="ruby-regexp">%r/</span> <span class="ruby-identifier">create</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">new</span> <span class="ruby-identifier">tab</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-keyword">module</span>, <span class="ruby-identifier">defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-keyword">false</span>.
+  <span class="ruby-identifier">new_tab</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+}
+</pre>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[points_possible]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Float
+<dd>
+<p>The maximum points possible on the assignment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grading_type]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"pass_fail"|"percent"|"letter_grade"|"gpa_scale"|"points"
+<dd>
+<p>The strategy used for grading the assignment. The assignment is ungraded if
+this field is omitted.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[due_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is due. Accepts times in ISO 8601 format, e.g.
+2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[lock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is locked after. Accepts times in ISO 8601
+format, e.g. 2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[unlock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is unlocked. Accepts times in ISO 8601 format,
+e.g. 2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The assignment's description, supports HTML.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[assignment_group_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The assignment group id to put the assignment in. Defaults to the top
+assignment group in the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[muted]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is muted. A muted assignment does not send change
+notifications and hides grades from students. Defaults to false.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[assignment_overrides][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>AssignmentOverride
+<dd>
+<p>List of overrides for the assignment. NOTE: The assignment overrides
+feature is in beta.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[only_visible_to_overrides]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is only visible to overrides (Only useful if
+'differentiated assignments' account setting is on)</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[published]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is published. (Only useful if 'draft state' account
+setting is on) Unpublished assignments are not visible to students.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grading_standard_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The grading standard id to set for the course.  If no value is provided for
+this argument the current grading_standard will be un-set from this course.
+This will update the grading_type for the course to 'letter_grade' unless
+it is already 'gpa_scale'.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='assignments.html#Assignment'>Assignment</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignments_api.update' data-subtopic='Assignments'>
+    <a name='method.assignments_api.update' href='#method.assignments_api.update'>
+      Edit an assignment
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignments_api_controller.rb">AssignmentsApiController#update</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:id
+  </h3>
+
+
+<p>Modify an existing assignment.</p>
+
+<p>If the assignment [assignment_overrides] key is absent, any existing
+overrides are kept as is. If the assignment [assignment_overrides] key is
+present, existing overrides are updated or deleted (and new ones created,
+as necessary) to match the provided list.</p>
+
+<p>NOTE: The assignment overrides feature is in beta.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The assignment name.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[position]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The position of this assignment in the group when displaying assignment
+lists.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[submission_types][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "online_quiz"|"none"|"on_paper"|"online_quiz"|"discussion_topic"|"external_tool"|"online_upload"|"online_text_entry"|"online_url"|"media_recording"
+<dd>
+<p>List of supported submission types for the assignment. Unless the
+assignment is allowing online submissions, the array should only have one
+element.</p>
+
+<p>If not allowing online submissions, your options are:</p>
+
+<pre class="code ruby"><code><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>online_quiz</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>none</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on_paper</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>online_quiz</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>discussion_topic</span><span class='tstring_end'>&quot;</span></span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>external_tool</span><span class='tstring_end'>&quot;</span></span></code></pre>
+
+<p>If you are allowing online submissions, you can have one or many allowed
+submission types:</p>
+
+<pre class="code ruby"><code>&quot;online_upload&quot;
+&quot;online_text_entry&quot;
+&quot;online_url&quot;
+&quot;media_recording&quot; (Only valid when the Kaltura plugin is enabled)</code></pre>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[allowed_extensions][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Allowed extensions if submission_types includes "online_upload"</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code>allowed_extensions: [&quot;docx&quot;,&quot;ppt&quot;]</code></pre>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[turnitin_enabled]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Only applies when the Turnitin plugin is enabled for a course and the
+submission_types array includes "online_upload". Toggles Turnitin
+submissions for the assignment. Will be ignored if Turnitin is not
+available for the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[turnitin_settings]</span>
+      
+      
+        <div class='inline'>
+<p>Settings to send along to turnitin. See Assignment object definition for
+format.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[integration_data]</span>
+      
+      
+        <div class='inline'>
+<p>Data related to third party integrations, JSON string required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[integration_id]</span>
+      
+      
+        <div class='inline'>
+<p>Unique ID from third party integrations</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[peer_reviews]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If submission_types does not include external_tool,discussion_topic,
+online_quiz, or on_paper, determines whether or not peer reviews will be
+turned on for the assignment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[automatic_peer_reviews]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether peer reviews will be assigned automatically by Canvas or if
+teachers must manually assign peer reviews. Does not apply if peer reviews
+are not enabled.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[notify_of_update]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, Canvas will send a notification to students in the class notifying
+them that the content has changed.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[group_category_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>If present, the assignment will become a group assignment assigned to the
+group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grade_group_students_individually]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>If this is a group assignment, teachers have the options to grade students
+individually. If false, Canvas will apply the assignment's score to each
+member of the group. If true, the teacher can manually assign scores to
+each member of the group.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[external_tool_tag_attributes]</span>
+      
+      
+        <div class='inline'>
+<p>Hash of attributes if submission_types is ["external_tool"] Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">external_tool_tag_attributes</span><span class="ruby-operator">:</span> {
+  <span class="ruby-regexp">%r/</span> <span class="ruby-identifier">url</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">external</span> <span class="ruby-identifier">tool</span>
+  <span class="ruby-identifier">url</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;http://instructure.com&quot;</span>,
+  <span class="ruby-regexp">%r/</span> <span class="ruby-identifier">create</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">new</span> <span class="ruby-identifier">tab</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-keyword">module</span>, <span class="ruby-identifier">defaults</span> <span class="ruby-identifier">to</span> <span class="ruby-keyword">false</span>.
+  <span class="ruby-identifier">new_tab</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+}
+</pre>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[points_possible]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Float
+<dd>
+<p>The maximum points possible on the assignment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grading_type]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>"pass_fail"|"percent"|"letter_grade"|"gpa_scale"|"points"
+<dd>
+<p>The strategy used for grading the assignment. The assignment is ungraded if
+this field is omitted.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[due_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is due. Accepts times in ISO 8601 format, e.g.
+2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[lock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is locked after. Accepts times in ISO 8601
+format, e.g. 2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[unlock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time the assignment is unlocked. Accepts times in ISO 8601 format,
+e.g. 2014-10-21T18:48:00Z.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The assignment's description, supports HTML.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[assignment_group_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The assignment group id to put the assignment in. Defaults to the top
+assignment group in the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[muted]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is muted. A muted assignment does not send change
+notifications and hides grades from students. Defaults to false.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[assignment_overrides][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>AssignmentOverride
+<dd>
+<p>List of overrides for the assignment. NOTE: The assignment overrides
+feature is in beta.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[only_visible_to_overrides]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is only visible to overrides (Only useful if
+'differentiated assignments' account setting is on)</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[published]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether this assignment is published. (Only useful if 'draft state' account
+setting is on) Unpublished assignments are not visible to students.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment[grading_standard_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The grading standard id to set for the course.  If no value is provided for
+this argument the current grading_standard will be un-set from this course.
+This will update the grading_type for the course to 'letter_grade' unless
+it is already 'gpa_scale'.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='assignments.html#Assignment'>Assignment</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.index' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.index' href='#method.assignment_overrides.index'>
+      List assignment overrides
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#index</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/overrides
+  </h3>
+
+
+<p>Returns the list of overrides for this assignment that target
+sections/groups/students visible to the current user.</p>
+
+
+
+
+  Returns a list of 
+
+<a href='assignments.html#AssignmentOverride'>AssignmentOverrides</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.show' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.show' href='#method.assignment_overrides.show'>
+      Get a single assignment override
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#show</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id
+  </h3>
+
+
+<p>Returns details of the the override with the given id.</p>
+
+
+
+
+  Returns a 
+
+<a href='assignments.html#AssignmentOverride'>AssignmentOverride</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.group_alias' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.group_alias' href='#method.assignment_overrides.group_alias'>
+      Redirect to the assignment override for a group
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#group_alias</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/assignments/:assignment_id/override
+  </h3>
+
+
+<p>Responds with a redirect to the override for the given group, if any (404
+otherwise).</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.section_alias' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.section_alias' href='#method.assignment_overrides.section_alias'>
+      Redirect to the assignment override for a section
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#section_alias</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/sections/:course_section_id/assignments/:assignment_id/override
+  </h3>
+
+
+<p>Responds with a redirect to the override for the given section, if any (404
+otherwise).</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.create' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.create' href='#method.assignment_overrides.create'>
+      Create an assignment override
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#create</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/assignments/:assignment_id/overrides
+  </h3>
+
+
+<p>One of student_ids, group_id, or course_section_id must be present. At most
+one should be present; if multiple are present only the most specific
+(student_ids first, then group_id, then course_section_id) is used and any
+others are ignored.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[student_ids][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The IDs of</p>
+</dd></dl>
+
+<p>the override's target students. If present, the IDs must each identify a
+user with an active student enrollment in the course that is not already
+targetted by a different adhoc override.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[title]</span>
+      
+      
+        <div class='inline'>
+<p>The title of the adhoc assignment override. Required if student_ids is
+present, ignored otherwise (the title is set to the name of the targetted
+group or section instead).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[group_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The ID of the</p>
+</dd></dl>
+
+<p>override's target group. If present, the following conditions must be met
+for the override to be successful:</p>
+<ol><li>
+<p>the assignment MUST be a group assignment (a group_category_id is assigned
+to it)</p>
+</li><li>
+<p>the ID must identify an active group in the group set the assignment is in</p>
+</li><li>
+<p>the ID must not be targetted by a different override</p>
+</li></ol>
+
+<p>See <a href="assignments.html#Group+assignments-appendix" title="Appendix: Group assignments">Appendix: Group assignments</a> for more info.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[course_section_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The ID</p>
+</dd></dl>
+
+<p>of the override's target section. If present, must identify an active
+section of the assignment's course not already targetted by a different
+override.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[due_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment is due. Accepts times in ISO 8601 format, e.g.
+2014-10-21T18:48:00Z. If absent, this override will not affect due date.
+May be present but null to indicate the override removes any previous due
+date.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[unlock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment becomes unlocked. Accepts times in ISO 8601
+format, e.g. 2014-10-21T18:48:00Z. If absent, this override will not affect
+the unlock date. May be present but null to indicate the override removes
+any previous unlock date.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[lock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment becomes locked. Accepts times in ISO 8601 format,
+e.g. 2014-10-21T18:48:00Z. If absent, this override will not affect the
+lock date. May be present but null to indicate the override removes any
+previous lock date.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/courses/1/assignments/2/overrides.json' \
+     -X POST \ 
+     -F 'assignment_override[student_ids][]=8' \ 
+     -F 'assignment_override[title]=Fred Flinstone' \
+     -F 'assignment_override[due_at]=2012-10-08T21:00:00Z' \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='assignments.html#AssignmentOverride'>AssignmentOverride</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.update' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.update' href='#method.assignment_overrides.update'>
+      Update an assignment override
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#update</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id
+  </h3>
+
+
+<p>All current overridden values must be supplied if they are to be retained;
+e.g. if due_at was overridden, but this PUT omits a value for due_at,
+due_at will no longer be overridden. If the override is adhoc and
+student_ids is not supplied, the target override set is unchanged. Target
+override sets cannot be changed for group or section overrides.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[student_ids][]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The IDs of the</p>
+</dd></dl>
+
+<p>override's target students. If present, the IDs must each identify a user
+with an active student enrollment in the course that is not already
+targetted by a different adhoc override. Ignored unless the override being
+updated is adhoc.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[title]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The title of an adhoc</p>
+</dd></dl>
+
+<p>assignment override. Ignored unless the override being updated is adhoc.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[due_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment is due. Accepts times in ISO 8601 format, e.g.
+2014-10-21T18:48:00Z. If absent, this override will not affect due date.
+May be present but null to indicate the override removes any previous due
+date.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[unlock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment becomes unlocked. Accepts times in ISO 8601
+format, e.g. 2014-10-21T18:48:00Z. If absent, this override will not affect
+the unlock date. May be present but null to indicate the override removes
+any previous unlock date.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>assignment_override[lock_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Timestamp
+<dd>
+<p>The day/time</p>
+</dd></dl>
+
+<p>the overridden assignment becomes locked. Accepts times in ISO 8601 format,
+e.g. 2014-10-21T18:48:00Z. If absent, this override will not affect the
+lock date. May be present but null to indicate the override removes any
+previous lock date.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/courses/1/assignments/2/overrides/3.json' \
+     -X PUT \ 
+     -F 'assignment_override[title]=Fred Flinstone' \ 
+     -F 'assignment_override[due_at]=2012-10-08T21:00:00Z' \
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='assignments.html#AssignmentOverride'>AssignmentOverride</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.assignment_overrides.destroy' data-subtopic='Assignment Overrides'>
+    <a name='method.assignment_overrides.destroy' href='#method.assignment_overrides.destroy'>
+      Delete an assignment override
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/assignment_overrides_controller.rb">AssignmentOverridesController#destroy</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id
+  </h3>
+
+
+<p>Deletes an override and returns its former details.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/courses/1/assignments/2/overrides/3.json' \
+     -X DELETE \ 
+     -H &quot;Authorization: Bearer &lt;token&gt;&quot;</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='assignments.html#AssignmentOverride'>AssignmentOverride</a>
+
+</div>
+
+
+</div>
+
+</div>
+<div class="appendix">
+  <h2>Appendixes</h2>
+
+  
+    <div class="appendix_entry">
+      <h3 id="Group+assignments-appendix">Appendix: Group assignments</h3>
+
+<p><p>The following diagram provides an example to describe the structure
+of group assignments. It also shows the correspondence between the
+fields of an assignment override API request and the resources they
+map to.</p>
+
+<p><img src="./images/group_assignment.png" alt="Group assignments structure example"></p>
+
+<p>The components in <span style="background: #FFDD00;">yellow</span>
+are <em>group sets</em>. When creating or updating an assignment override,
+you will refer to the group set by the <code>group_category_id</code> field.</p>
+
+<p>The components in <span style="background: #C1E200;">green</span>
+are <em>groups</em>. An assignment can become a group assignment iff it
+has a <code>group_category_id</code> that maps to an active group set, as well
+as a <code>group_id</code> that maps to an active, valid group. In the API,
+you will be specifying the group by the <code>group_id</code> field of the
+<code>assignment_override</code> construct.</p>
+
+<p><strong>Important</strong>: an assignment must be assigned to a group set
+(the <code>group_category_id</code> field) on <strong>creation</strong> for an override
+with a <code>group_id</code> to be effective.</p>
+</p>
+
+
+
+
+  <p class="see_tag_title"><strong>See Also:</strong></p>
+  <ul class="see">
+    
+      <li><a href="assignments.html#method.assignment_overrides.create" title="Creating an assignment override">Creating an assignment override</a></li>
+    
+      <li><a href="assignments.html#method.assignments_api.create" title="Creating an assignment">Creating an assignment</a></li>
+    
+      <li><a href="assignments.html#Assignment" title="Assignment">Assignment</a></li>
+    
+  </ul>
+
+    </div>
+  
+  
+</div></div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:40 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

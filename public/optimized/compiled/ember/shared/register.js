@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(i){var n;return n=function(n,e,t){return i.Application.initializer({name:e,initialize:function(i){return i.register(""+n+":"+e,t)}}),t}})}).call(this);

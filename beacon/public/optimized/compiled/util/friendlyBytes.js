@@ -1,0 +1,1 @@
+(function(){define(function(){var t;return t=function(t){var o,n,a,e;return o=parseInt(t,10),"NaN"===o.toString()?"--":(e=["byte","bytes","KB","MB","GB"],0===o?n=a=0:(n=Math.floor(Math.log(o)/Math.log(1e3)),a=(o/Math.pow(1e3,Math.floor(n))).toFixed(2>n?0:1),1===o&&(n=-1)),a+" "+e[n+1])}})}).call(this);

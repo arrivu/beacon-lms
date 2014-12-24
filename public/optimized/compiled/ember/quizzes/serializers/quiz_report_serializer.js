@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(e){return e.ActiveModelSerializer})}).call(this);

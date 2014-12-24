@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="current" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Courses API</h1>
+  
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing course information.</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="Term">A Term object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  &quot;id&quot;: 1,
+  
+  &quot;name&quot;: &quot;Default Term&quot;,
+  
+  &quot;start_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  
+  &quot;end_at&quot;: &quot;&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="CourseProgress">A CourseProgress object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //total number of requirements from all modules
+  &quot;requirement_count&quot;: 10,
+  
+  //total number of requirements the user has completed from all modules
+  &quot;requirement_completed_count&quot;: 1,
+  
+  //url to next module item that has an unmet requirement. null if the user has
+  //completed the course or the current module does not require sequential progress
+  &quot;next_requirement_url&quot;: &quot;http://localhost/courses/1/modules/items/2&quot;,
+  
+  //date the course was completed. null if the course has not been completed by this
+  //user
+  &quot;completed_at&quot;: &quot;2013-06-01T00:00:00-06:00&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="Course">A Course object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //the unique identifier for the course
+  &quot;id&quot;: 370663,
+  
+  //the SIS identifier for the course, if defined. This field is only included if
+  //the user has permission to view SIS information.
+  &quot;sis_course_id&quot;: &quot;&quot;,
+  
+  //the integration identifier for the course, if defined. This field is only
+  //included if the user has permission to view SIS information.
+  &quot;integration_id&quot;: &quot;&quot;,
+  
+  //the full name of the course
+  &quot;name&quot;: &quot;InstructureCon 2012&quot;,
+  
+  //the course code
+  &quot;course_code&quot;: &quot;INSTCON12&quot;,
+  
+  //the current state of the course one of 'unpublished', 'available', 'completed',
+  //or 'deleted'
+  &quot;workflow_state&quot;: &quot;available&quot;,
+  
+  //the account associated with the course
+  &quot;account_id&quot;: 81259,
+  
+  //the root account associated with the course
+  &quot;root_account_id&quot;: 81259,
+  
+  //the enrollment term associated with the course
+  &quot;enrollment_term_id&quot;: 34,
+  
+  //the start date for the course, if applicable
+  &quot;start_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  
+  //the end date for the course, if applicable
+  &quot;end_at&quot;: &quot;2012-09-01T00:00:00-06:00&quot;,
+  
+  //A list of enrollments linking the current user to the course. for student
+  //enrollments, grading information may be included if include[]=total_scores
+  &quot;enrollments&quot;: &quot;&quot;,
+  
+  //course calendar
+  &quot;calendar&quot;: &quot;&quot;,
+  
+  //the type of page that users will see when they first visit the course - 'feed':
+  //Recent Activity Dashboard - 'wiki': Wiki Front Page - 'modules': Course
+  //Modules/Sections Page - 'assignments': Course Assignments List - 'syllabus':
+  //Course Syllabus Page other types may be added in the future
+  &quot;default_view&quot;: &quot;feed&quot;,
+  
+  //optional: user-generated HTML for the course syllabus
+  &quot;syllabus_body&quot;: &quot;&lt;p&gt;syllabus html goes here&lt;/p&gt;&quot;,
+  
+  //optional: the number of submissions needing grading returned only if the current
+  //user has grading rights and include[]=needs_grading_count
+  &quot;needs_grading_count&quot;: 17,
+  
+  //optional: the enrollment term object for the course returned only if
+  //include[]=term
+  &quot;term&quot;: &quot;&quot;,
+  
+  //optional (beta): information on progress through the course returned only if
+  //include[]=course_progress
+  &quot;course_progress&quot;: &quot;&quot;,
+  
+  //weight final grade based on assignment group percentages
+  &quot;apply_assignment_group_weights&quot;: &quot;true&quot;,
+  
+  //optional: the permissions the user has for the course. returned only for a
+  //single course and include[]=permissions
+  &quot;permissions&quot;: &quot;{&quot;create_discussion_topic&quot;=&gt;true}&quot;,
+  
+  &quot;is_public&quot;: &quot;true&quot;,
+  
+  &quot;public_syllabus&quot;: &quot;true&quot;,
+  
+  &quot;public_description&quot;: &quot;Come one, come all to InstructureCon 2012!&quot;,
+  
+  &quot;storage_quota_mb&quot;: 5,
+  
+  &quot;hide_final_grades&quot;: &quot;false&quot;,
+  
+  &quot;license&quot;: &quot;Creative Commons&quot;,
+  
+  &quot;allow_student_assignment_edits&quot;: &quot;false&quot;,
+  
+  &quot;allow_wiki_comments&quot;: &quot;false&quot;,
+  
+  &quot;allow_student_forum_attachments&quot;: &quot;false&quot;,
+  
+  &quot;open_enrollment&quot;: &quot;true&quot;,
+  
+  &quot;self_enrollment&quot;: &quot;false&quot;,
+  
+  &quot;restrict_enrollments_to_course_dates&quot;: &quot;false&quot;,
+  
+  &quot;course_format&quot;: &quot;online&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="CalendarLink">A CalendarLink object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The URL of the calendar in ICS format
+  &quot;ics&quot;: &quot;https://canvas.instructure.com/feeds/calendars/course_abcdef.ics&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.courses.index' data-subtopic='Courses'>
+    <a name='method.courses.index' href='#method.courses.index'>
+      List your courses
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#index</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses
+  </h3>
+
+
+<p>Returns the list of active courses for the current user.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>enrollment_type</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "teacher"|"student"|"ta"|"observer"|"designer"
+<dd>
+<p>When set, only return courses where the user is enrolled as this type. For
+example, set to "teacher" to return only courses where the user is enrolled
+as a Teacher.  This argument is ignored if enrollment_role is given.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>enrollment_role</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>When set, only return courses where the user is enrolled with the specified
+course-level role.  This can be a role created with the
+<a href="roles.html#method.role_overrides.add_role" title="Add Role API">Add Role API</a> or a base role type of
+'StudentEnrollment', 'TeacherEnrollment', 'TaEnrollment',
+'ObserverEnrollment', or 'DesignerEnrollment'.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "needs_grading_count"|"syllabus_body"|"total_scores"|"term"|"course_progress"|"sections"
+<dd></dd></dl>
+<ul><li>
+<p>"needs_grading_count": Optional information to include with each Course.
+When needs_grading_count is given, and the current user has grading rights,
+the total number of submissions needing grading for all assignments is
+returned.</p>
+</li><li>
+<p>"syllabus_body": Optional information to include with each Course. When
+syllabus_body is given the user-generated html for the course syllabus is
+returned.</p>
+</li><li>
+<p>"total_scores": Optional information to include with each Course. When
+total_scores is given, any enrollments with type 'student' will also
+include the fields 'calculated_current_score', 'calculated_final_score',
+'calculated_current_grade', and 'calculated_final_grade'.
+calculated_current_score is the student's score in the course, ignoring
+ungraded assignments. calculated_final_score is the student's score in the
+course including ungraded assignments with a score of 0.
+calculated_current_grade is the letter grade equivalent of
+calculated_current_score (if available). calculated_final_grade is the
+letter grade equivalent of calculated_final_score (if available). This
+argument is ignored if the course is configured to hide final grades.</p>
+</li><li>
+<p>"term": Optional information to include with each Course. When term is
+given, the information for the enrollment term for each course is returned.</p>
+</li><li>
+<p>"course_progress": Optional information to include with each Course. When
+course_progress is given, each course will include a 'course_progress'
+object with the fields: 'requirement_count', an integer specifying the
+total number of requirements in the course, 'requirement_completed_count',
+an integer specifying the total number of requirements in this course that
+have been completed, and 'next_requirement_url', a string url to the next
+requirement item, and 'completed_at', the date the course was completed
+(null if incomplete). 'next_requirement_url' will be null if all
+requirements have been completed or the current module does not require
+sequential progress. "course_progress" will return an error message if the
+course is not module based or the user is not enrolled as a student in the
+course.</p>
+</li><li>
+<p>"sections": Section enrollment information to include with each Course.
+Returns an array of hashes containing the section ID (id), section name
+(name), start and end dates (start_at, end_at), as well as the enrollment
+type (enrollment_role, e.g. 'StudentEnrollment').</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>state[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "unpublished"|"available"|"completed"|"deleted"
+<dd>
+<p>If set, only return courses that are in the given state(s). By default,
+"available" is returned for students and observers, and anything except
+"deleted", for all other enrollment types</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a list of 
+
+<a href='courses.html#Course'>Courses</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.create' data-subtopic='Courses'>
+    <a name='method.courses.create' href='#method.courses.create'>
+      Create a new course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#create</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/courses
+  </h3>
+
+
+<p>Create a new course</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>account_id</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, Integer
+<dd>
+<p>The unique ID of the account to create to course under.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The name of the course. If omitted, the course will be named "Unnamed
+Course."</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[course_code]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The course code for the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[start_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>DateTime
+<dd>
+<p>Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[end_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>DateTime
+<dd>
+<p>Course end date in ISO8601 format. e.g. 2011-01-01T01:00Z</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[license]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The name of the licensing. Should be one of the following abbreviations (a
+descriptive name is included in parenthesis for reference):</p>
+<ul><li>
+<p>'private' (Private Copyrighted)</p>
+</li><li>
+<p>'cc_by_nc_nd' (CC Attribution Non-Commercial No Derivatives)</p>
+</li><li>
+<p>'cc_by_nc_sa' (CC Attribution Non-Commercial Share Alike)</p>
+</li><li>
+<p>'cc_by_nc' (CC Attribution Non-Commercial)</p>
+</li><li>
+<p>'cc_by_nd' (CC Attribution No Derivatives)</p>
+</li><li>
+<p>'cc_by_sa' (CC Attribution Share Alike)</p>
+</li><li>
+<p>'cc_by' (CC Attribution)</p>
+</li><li>
+<p>'public_domain' (Public Domain).</p>
+</li></ul>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[is_public]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if course if public.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[public_syllabus]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to make the course syllabus public.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[public_description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>A publicly visible description of the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_student_wiki_edits]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, students will be able to modify the course wiki.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_wiki_comments]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, course members will be able to comment on wiki pages.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_student_forum_attachments]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, students can attach files to forum posts.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[open_enrollment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if the course is open enrollment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[self_enrollment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if the course is self enrollment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[restrict_enrollments_to_course_dates]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to restrict user enrollments to the start and end dates of the
+course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[term_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The unique ID of the term to create to course in.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[sis_course_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The unique SIS identifier.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[integration_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The unique Integration identifier.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[hide_final_grades]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If this option is set to true, the totals in student grades summary will be
+hidden.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[apply_assignment_group_weights]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to weight final grade based on assignment groups percentages.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>offer</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If this option is set to true, the course will be available to students
+immediately.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>enroll_me</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to enroll the current user as the teacher.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[syllabus_body]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The syllabus body for the course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[grading_standard_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The grading standard id to set for the course.  If no value is provided for
+this argument the current grading_standard will be un-set from this course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[course_format]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Optional. Specifies the format of the course. (Should be either 'on_campus'
+or 'online')</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='courses.html#Course'>Course</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.create_file' data-subtopic='Courses'>
+    <a name='method.courses.create_file' href='#method.courses.create_file'>
+      Upload a file
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#create_file</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/files
+  </h3>
+
+
+<p>Upload a file to the course.</p>
+
+<p>This API endpoint is the first step in uploading a file to a course. See
+the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the
+file upload workflow.</p>
+
+<p>Only those with the "Manage Files" permission on a course can upload files
+to the course. By default, this is Teachers, TAs and Designers.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.students' data-subtopic='Courses'>
+    <a name='method.courses.students' href='#method.courses.students'>
+      List students
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#students</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/students
+  </h3>
+
+
+<p>Returns the list of students enrolled in this course.</p>
+
+<p>DEPRECATED: Please use the <a href="courses.html#method.courses.users" title="course users">course users</a>
+endpoint and pass "student" as the enrollment_type.</p>
+
+
+
+
+  Returns a list of 
+
+<a href='users.html#User'>Users</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.users' data-subtopic='Courses'>
+    <a name='method.courses.users' href='#method.courses.users'>
+      List users in course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#users</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/users
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/search_users
+  </h3>
+
+
+<p>Returns the list of users in this course. And optionally the user's
+enrollments in the course.</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>search_term</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The partial name or full ID of the users to match and return in the results
+list.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>enrollment_type</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "teacher"|"student"|"ta"|"observer"|"designer"
+<dd>
+<p>When set, only return users where the user is enrolled as this type. This
+argument is ignored if enrollment_role is given.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>enrollment_role</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>When set, only return users enrolled with the specified course-level role. 
+This can be a role created with the <a href="roles.html#method.role_overrides.add_role" title="Add Role API">Add Role API</a> or a base role type of 'StudentEnrollment',
+'TeacherEnrollment', 'TaEnrollment', 'ObserverEnrollment', or
+'DesignerEnrollment'.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "email"|"enrollments"|"locked"|"avatar_url"|"test_student"
+<dd></dd></dl>
+<ul><li>
+<p>"email": Optional user email.</p>
+</li><li>
+<p>"enrollments":</p>
+</li></ul>
+
+<p>Optionally include with each Course the user's current and invited
+enrollments. If the user is enrolled as a student, and the account has
+permission to manage or view all grades, each enrollment will include a
+'grades' key with 'current_score', 'final_score', 'current_grade' and
+'final_grade' values.</p>
+<ul><li>
+<p>"locked": Optionally include whether an enrollment is locked.</p>
+</li><li>
+<p>"avatar_url": Optionally include avatar_url.</p>
+</li><li>
+<p>"test_student": Optionally include the course's Test Student,</p>
+</li></ul>
+
+<p>if present. Default is to not include Test Student.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>user_id</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>If included, the user will be queried and if the user is part of the users
+set, the page parameter will be modified so that the page containing
+user_id will be returned.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a list of 
+
+<a href='users.html#User'>Users</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.recent_students' data-subtopic='Courses'>
+    <a name='method.courses.recent_students' href='#method.courses.recent_students'>
+      List recently logged in students
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#recent_students</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/recent_students
+  </h3>
+
+
+<p>Returns the list of users in this course, ordered by how recently they have
+logged in. The records include the 'last_login' field which contains a
+timestamp of the last time that user logged into canvas.  The querying user
+must have the 'View usage reports' permission.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -H 'Authorization: Bearer &lt;token&gt;' \
+     https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/recent_users</pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='users.html#User'>Users</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.user' data-subtopic='Courses'>
+    <a name='method.courses.user' href='#method.courses.user'>
+      Get single user
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#user</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/users/:id
+  </h3>
+
+
+<p>Return information on a single user.</p>
+
+<p>Accepts the same include[] parameters as the :users: action, and returns a
+single user with the same fields as that action.</p>
+
+
+
+
+  Returns a 
+
+<a href='users.html#User'>User</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.preview_html' data-subtopic='Courses'>
+    <a name='method.courses.preview_html' href='#method.courses.preview_html'>
+      Preview processed html
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#preview_html</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/preview_html
+  </h3>
+
+
+<p>Preview html content processed for this course</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>html</span>
+      
+      
+        <div class='inline'>
+<p>The html content to process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/preview_html \
+     -F 'html=&lt;p&gt;&lt;badhtml&gt;&lt;/badhtml&gt;processed html&lt;/p&gt;' \
+     -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">{
+  &quot;html&quot;: &quot;&lt;p&gt;processed html&lt;/p&gt;&quot;
+}</pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.activity_stream' data-subtopic='Courses'>
+    <a name='method.courses.activity_stream' href='#method.courses.activity_stream'>
+      Course activity stream
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#activity_stream</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/activity_stream
+  </h3>
+
+
+<p>Returns the current user's course-specific activity stream, paginated.</p>
+
+<p>For full documentation, see the API documentation for the user activity
+stream, in the user api.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.activity_stream_summary' data-subtopic='Courses'>
+    <a name='method.courses.activity_stream_summary' href='#method.courses.activity_stream_summary'>
+      Course activity stream summary
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#activity_stream_summary</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/activity_stream/summary
+  </h3>
+
+
+<p>Returns a summary of the current user's course-specific activity stream.</p>
+
+<p>For full documentation, see the API documentation for the user activity
+stream summary, in the user api.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.todo_items' data-subtopic='Courses'>
+    <a name='method.courses.todo_items' href='#method.courses.todo_items'>
+      Course TODO items
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#todo_items</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/todo
+  </h3>
+
+
+<p>Returns the current user's course-specific todo items.</p>
+
+<p>For full documentation, see the API documentation for the user todo items,
+in the user api.</p>
+
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.destroy' data-subtopic='Courses'>
+    <a name='method.courses.destroy' href='#method.courses.destroy'>
+      Conclude a course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#destroy</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    DELETE /api/v1/courses/:id
+  </h3>
+
+
+<p>Delete or conclude an existing course</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>event</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String, "delete"|"conclude"
+<dd>
+<p>The action to take on the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.settings' data-subtopic='Courses'>
+    <a name='method.courses.settings' href='#method.courses.settings'>
+      Get course settings
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#settings</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/settings
+  </h3>
+
+
+<p>Returns some of a course's settings.</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/settings \
+  -X GET \
+  -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">{
+  &quot;allow_student_discussion_topics&quot;: true,
+  &quot;allow_student_forum_attachments&quot;: false,
+  &quot;allow_student_discussion_editing&quot;: true
+}</pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.update_settings' data-subtopic='Courses'>
+    <a name='method.courses.update_settings' href='#method.courses.update_settings'>
+      Update course settings
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#update_settings</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/settings
+  </h3>
+
+
+<p>Can update the following course settings:</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>allow_student_discussion_topics</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>allow_student_forum_attachments</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>allow_student_discussion_editing</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/settings \
+  -X PUT \
+  -H 'Authorization: Bearer &lt;token&gt;' \
+  -d 'allow_student_discussion_topics=false'</pre>
+    
+  </div>
+
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.show' data-subtopic='Courses'>
+    <a name='method.courses.show' href='#method.courses.show'>
+      Get a single course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#show</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/courses/:id
+  </h3>
+
+
+<p>Return information on a single course.</p>
+
+<p>Accepts the same include[] parameters as the list action plus:</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>include[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "all_courses"|"permissions"
+<dd></dd></dl>
+<ul><li>
+<p>"all_courses": Also search recently deleted courses.</p>
+</li><li>
+<p>"permissions": Include permissions the current user has for the course.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+  Returns a 
+
+<a href='courses.html#Course'>Course</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.update' data-subtopic='Courses'>
+    <a name='method.courses.update' href='#method.courses.update'>
+      Update a course
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#update</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:id
+  </h3>
+
+
+<p>Update an existing course.</p>
+
+<p>Arguments are the same as Courses#create, with a few exceptions
+(enroll_me).</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>account_id</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, Integer
+<dd>
+<p>The unique ID of the account to create to course under.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The name of the course. If omitted, the course will be named "Unnamed
+Course."</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[course_code]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The course code for the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[start_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>DateTime
+<dd>
+<p>Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[end_at]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>DateTime
+<dd>
+<p>Course end date in ISO8601 format. e.g. 2011-01-01T01:00Z</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[license]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The name of the licensing. Should be one of the following abbreviations (a
+descriptive name is included in parenthesis for reference):</p>
+<ul><li>
+<p>'private' (Private Copyrighted)</p>
+</li><li>
+<p>'cc_by_nc_nd' (CC Attribution Non-Commercial No Derivatives)</p>
+</li><li>
+<p>'cc_by_nc_sa' (CC Attribution Non-Commercial Share Alike)</p>
+</li><li>
+<p>'cc_by_nc' (CC Attribution Non-Commercial)</p>
+</li><li>
+<p>'cc_by_nd' (CC Attribution No Derivatives)</p>
+</li><li>
+<p>'cc_by_sa' (CC Attribution Share Alike)</p>
+</li><li>
+<p>'cc_by' (CC Attribution)</p>
+</li><li>
+<p>'public_domain' (Public Domain).</p>
+</li></ul>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[is_public]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if course if public.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[public_syllabus]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to make the course syllabus public.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[public_description]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>A publicly visible description of the course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_student_wiki_edits]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, students will be able to modify the course wiki.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_wiki_comments]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, course members will be able to comment on wiki pages.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[allow_student_forum_attachments]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If true, students can attach files to forum posts.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[open_enrollment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if the course is open enrollment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[self_enrollment]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true if the course is self enrollment.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[restrict_enrollments_to_course_dates]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to restrict user enrollments to the start and end dates of the
+course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[term_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The unique ID of the term to create to course in.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[sis_course_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The unique SIS identifier.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[integration_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The unique Integration identifier.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[hide_final_grades]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If this option is set to true, the totals in student grades summary will be
+hidden.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[apply_assignment_group_weights]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Set to true to weight final grade based on assignment groups percentages.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>offer</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>If this option is set to true, the course will be available to students
+immediately.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[syllabus_body]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The syllabus body for the course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[grading_standard_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The grading standard id to set for the course.  If no value is provided for
+this argument the current grading_standard will be un-set from this course.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course[course_format]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Optional. Specifies the format of the course. (Should be either 'on_campus'
+or 'online')</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt; \
+  -X PUT \
+  -H 'Authorization: Bearer &lt;token&gt;' \
+  -d 'course[name]=New course name' \
+  -d 'course[start_at]=2012-05-05T00:00:00Z'</pre>
+    
+  </div>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">{
+  &quot;name&quot;: &quot;New course name&quot;,
+  &quot;course_code&quot;: &quot;COURSE-001&quot;,
+  &quot;start_at&quot;: &quot;2012-05-05T00:00:00Z&quot;,
+  &quot;end_at&quot;: &quot;2012-08-05T23:59:59Z&quot;,
+  &quot;sis_course_id&quot;: &quot;12345&quot;
+}</pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.courses.batch_update' data-subtopic='Courses'>
+    <a name='method.courses.batch_update' href='#method.courses.batch_update'>
+      Update courses
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb">CoursesController#batch_update</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/courses
+  </h3>
+
+
+<p>Update multiple courses in an account.  Operates asynchronously; use the
+<a href="progress.html#method.progress.show" title="progress endpoint">progress endpoint</a> to query the status of an
+operation.</p>
+
+<p>The action to take on each course.  Must be one of 'offer', 'conclude',
+'delete', or 'undelete'.</p>
+
+<pre class="code ruby"><code>* 'offer' makes a course visible to students. This action is also called &quot;publish&quot; on the web site.
+* 'conclude' prevents future enrollments and makes a course read-only for all participants. The course still appears
+  in prior-enrollment lists.
+* 'delete' completely removes the course from the web site (including course menus and prior-enrollment lists).
+  All enrollments are deleted. Course content may be physically deleted at a future date.
+* 'undelete' attempts to recover a course that has been deleted. (Recovery is not guaranteed; please conclude
+  rather than delete a course if there is any possibility the course will be used again.) The recovered course
+  will be unpublished. Deleted enrollments will not be recovered.</code></pre>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>course_ids[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required
+<dd>
+<p>List of ids of courses to update. At most 500 courses may be updated in one
+call.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>event</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String, "offer"|"conclude"|"delete"|"undelete"
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/accounts/&lt;account_id&gt;/courses \
+  -X PUT \
+  -H 'Authorization: Bearer &lt;token&gt;' \
+  -d 'event=offer' \
+  -d 'course_ids[]=1' \
+  -d 'course_ids[]=2'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='progress.html#Progress'>Progress</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_imports.copy_course_status' data-subtopic='Courses'>
+    <a name='method.content_imports.copy_course_status' href='#method.content_imports.copy_course_status'>
+      Get course copy status
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_imports_controller.rb">ContentImportsController#copy_course_status</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/course_copy/:id
+  </h3>
+
+
+<p>DEPRECATED: Please use the <a href="content_migrations.html#method.content_migrations.create" title="Content Migrations API">Content Migrations API</a></p>
+
+<p>Retrieve the status of a course copy</p>
+
+<h4>API response field:</h4>
+<ul class="response_field">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>id</span>
+      
+      
+        <div class='inline'>
+<p>The unique identifier for the course copy.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>created_at</span>
+      
+      
+        <div class='inline'>
+<p>The time that the copy was initiated.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>progress</span>
+      
+      
+        <div class='inline'>
+<p>The progress of the copy as an integer. It is null before the copying
+starts, and 100 when finished.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>workflow_state</span>
+      
+      
+        <div class='inline'>
+<p>The current status of the course copy. Possible values: "created",
+"started", "completed", "failed"</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>status_url</span>
+      
+      
+        <div class='inline'>
+<p>The url for the course copy status API endpoint.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <div class="examples example_response">
+    <h4>Example Response:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code brush:js">{'progress':100, 'workflow_state':'completed', 'id':257, 'created_at':'2011-11-17T16:50:06Z', 'status_url':'/api/v1/courses/9457/course_copy/257'}</pre>
+    
+  </div>
+
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_imports.copy_course_content' data-subtopic='Courses'>
+    <a name='method.content_imports.copy_course_content' href='#method.content_imports.copy_course_content'>
+      Copy course content
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_imports_controller.rb">ContentImportsController#copy_course_content</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/course_copy
+  </h3>
+
+
+<p>DEPRECATED: Please use the <a href="content_migrations.html#method.content_migrations.create" title="Content Migrations API">Content Migrations API</a></p>
+
+<p>Copies content from one course into another. The default is to copy all
+course content. You can control specific types to copy by using either the
+'except' option or the 'only' option.</p>
+
+<p>The response is the same as the course copy status endpoint</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>source_course</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>ID or SIS-ID of the course to copy the content from</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>except[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "course_settings"|"assignments"|"external_tools"|"files"|"topics"|"calendar_events"|"quizzes"|"wiki_pages"|"modules"|"outcomes"
+<dd>
+<p>A list of the course content types to exclude, all areas not listed will be
+copied.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>only[]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String, "course_settings"|"assignments"|"external_tools"|"files"|"topics"|"calendar_events"|"quizzes"|"wiki_pages"|"modules"|"outcomes"
+<dd>
+<p>A list of the course content types to copy, all areas not listed will not
+be copied.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:43 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

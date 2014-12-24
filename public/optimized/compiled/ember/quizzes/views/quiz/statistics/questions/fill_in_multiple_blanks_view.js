@@ -1,0 +1,1 @@
+(function(){define(["../questions_view"],function(e){return e.extend({preselectAnswerSet:function(){var e;return!this.get("controller.activeAnswer")&&(e=this.get("controller.answerSets.firstObject.id"))?this.get("controller").send("activateAnswer",e):void 0}.on("didInsertElement")})})}).call(this);

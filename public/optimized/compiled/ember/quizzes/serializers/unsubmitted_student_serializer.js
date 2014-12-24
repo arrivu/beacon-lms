@@ -1,0 +1,1 @@
+(function(){define(["ember-data","./user_serializer"],function(e,t){var n;return n=t.extend({typeForRoot:function(){return this._super("unsubmitted_students")}})})}).call(this);

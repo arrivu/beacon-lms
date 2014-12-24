@@ -1,0 +1,1 @@
+(function(){require(["jquery","underscore","Backbone"],function(r,e,t){var n,u;return u=/^[#\/]/,n=function(r){return e.any(t.history.handlers,function(e){return e.route.test(r.replace(u,""))})},r(document).on("click","a[href]",function(e){var u;return u=r(this).attr("href"),n(u)?(t.history.navigate(u,{trigger:!0}),e.preventDefault()):void 0})})}).call(this);

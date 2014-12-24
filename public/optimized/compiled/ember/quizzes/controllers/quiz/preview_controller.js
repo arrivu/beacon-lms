@@ -1,0 +1,1 @@
+(function(){define(["ember","./show_controller","i18n!quiz_show"],function(e,n){return n.extend({isPreview:!0})})}).call(this);

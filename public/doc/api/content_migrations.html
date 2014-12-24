@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html;charset=UTF-8">
+<meta charset="UTF-8">
+<title>Canvas LMS REST API Documentation</title>
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/shAutoloader.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+  <a href="index.html">Canvas LMS - REST API and Extensions Documentation</a>
+</h1>
+
+    </div>
+
+    <div id="sidebar">
+      <nav>
+  <h2 class='first'>Basics</h2>
+  <a href="file.oauth.html" class="">OAuth</a>
+  <a href="file.object_ids.html" class="">SIS IDs</a>
+  <a href="file.pagination.html" class="">Pagination</a>
+  <a href="file.compound_documents.html" class="">Compound Documents</a>
+  <a href="file.file_uploads.html" class="">File Uploads</a>
+  <a href="file.endpoint_attributes.html" class="">API Endpoint Attributes</a>
+  <a href="file.masquerading.html" class="">Masquerading</a>
+  <h2>Resources</h2>
+  <a  href="all_resources.html">All Resources Reference</a>
+  
+    
+    <a class="" href="account_authentication_services.html">Account Authentication Services</a>
+  
+    
+    <a class="" href="account_notifications.html">Account Notifications</a>
+  
+    
+    <a class="" href="account_reports.html">Account Reports</a>
+  
+    
+    <a class="" href="accounts.html">Accounts</a>
+  
+    
+    <a class="" href="admins.html">Admins</a>
+  
+    
+    <a class="" href="announcement_external_feeds.html">Announcement External Feeds</a>
+  
+    
+    <a class="" href="appointment_groups.html">Appointment Groups</a>
+  
+    
+    <a class="" href="assignment_groups.html">Assignment Groups</a>
+  
+    
+    <a class="" href="assignments.html">Assignments</a>
+  
+    
+    <a class="" href="authentications_log.html">Authentications Log</a>
+  
+    
+    <a class="" href="calendar_events.html">Calendar Events</a>
+  
+    
+    <a class="" href="collaborations.html">Collaborations</a>
+  
+    
+    <a class="" href="comm_messages.html">CommMessages</a>
+  
+    
+    <a class="" href="communication_channels.html">Communication Channels</a>
+  
+    
+    <a class="" href="conferences.html">Conferences</a>
+  
+    
+    <a class="" href="content_exports.html">Content Exports</a>
+  
+    
+    <a class="current" href="content_migrations.html">Content Migrations</a>
+  
+    
+    <a class="" href="conversations.html">Conversations</a>
+  
+    
+    <a class="" href="course_audit_log.html">Course Audit log</a>
+  
+    
+    <a class="" href="course_quiz_extensions.html">Course Quiz Extensions</a>
+  
+    
+    <a class="" href="courses.html">Courses</a>
+  
+    
+    <a class="" href="custom_gradebook_columns.html">Custom Gradebook Columns</a>
+  
+    
+    <a class="" href="discussion_topics.html">Discussion Topics</a>
+  
+    
+    <a class="" href="document_previews.html">Document Previews</a>
+  
+    
+    <a class="" href="enrollment_terms.html">Enrollment Terms</a>
+  
+    
+    <a class="" href="enrollments.html">Enrollments</a>
+  
+    
+    <a class="" href="external_tools.html">External Tools</a>
+  
+    
+    <a class="" href="favorites.html">Favorites</a>
+  
+    
+    <a class="" href="feature_flags.html">Feature Flags</a>
+  
+    
+    <a class="" href="files.html">Files</a>
+  
+    
+    <a class="" href="grade_change_log.html">Grade Change Log</a>
+  
+    
+    <a class="" href="gradebook_history.html">Gradebook History</a>
+  
+    
+    <a class="" href="grading_standards.html">Grading Standards</a>
+  
+    
+    <a class="" href="group_categories.html">Group Categories</a>
+  
+    
+    <a class="" href="groups.html">Groups</a>
+  
+    
+    <a class="" href="live_assessments.html">LiveAssessments</a>
+  
+    
+    <a class="" href="logins.html">Logins</a>
+  
+    
+    <a class="" href="modules.html">Modules</a>
+  
+    
+    <a class="" href="notification_preferences.html">Notification Preferences</a>
+  
+    
+    <a class="" href="outcome_groups.html">Outcome Groups</a>
+  
+    
+    <a class="" href="outcome_results.html">Outcome Results</a>
+  
+    
+    <a class="" href="outcomes.html">Outcomes</a>
+  
+    
+    <a class="" href="pages.html">Pages</a>
+  
+    
+    <a class="" href="poll_sessions.html">Poll Sessions</a>
+  
+    
+    <a class="" href="poll_choices.html">PollChoices</a>
+  
+    
+    <a class="" href="poll_submissions.html">PollSubmissions</a>
+  
+    
+    <a class="" href="polls.html">Polls</a>
+  
+    
+    <a class="" href="progress.html">Progress</a>
+  
+    
+    <a class="" href="quiz_assignment_overrides.html">Quiz Assignment Overrides</a>
+  
+    
+    <a class="" href="quiz_extensions.html">Quiz Extensions</a>
+  
+    
+    <a class="" href="quiz_ip_filters.html">Quiz IP Filters</a>
+  
+    
+    <a class="" href="quiz_question_groups.html">Quiz Question Groups</a>
+  
+    
+    <a class="" href="quiz_reports.html">Quiz Reports</a>
+  
+    
+    <a class="" href="quiz_statistics.html">Quiz Statistics</a>
+  
+    
+    <a class="" href="quiz_submission_files.html">Quiz Submission Files</a>
+  
+    
+    <a class="" href="quiz_submission_questions.html">Quiz Submission Questions</a>
+  
+    
+    <a class="" href="quiz_submission_user_list.html">Quiz Submission User List</a>
+  
+    
+    <a class="" href="quiz_submissions.html">Quiz Submissions</a>
+  
+    
+    <a class="" href="quiz_questions.html">QuizQuestions</a>
+  
+    
+    <a class="" href="quizzes.html">Quizzes</a>
+  
+    
+    <a class="" href="roles.html">Roles</a>
+  
+    
+    <a class="" href="sis_imports.html">SIS Imports</a>
+  
+    
+    <a class="" href="search.html">Search</a>
+  
+    
+    <a class="" href="sections.html">Sections</a>
+  
+    
+    <a class="" href="services.html">Services</a>
+  
+    
+    <a class="" href="submission_comments.html">Submission Comments</a>
+  
+    
+    <a class="" href="submissions.html">Submissions</a>
+  
+    
+    <a class="" href="tabs.html">Tabs</a>
+  
+    
+    <a class="" href="user_observees.html">User Observees</a>
+  
+    
+    <a class="" href="users.html">Users</a>
+  
+  <h2>SIS</h2>
+  <a href="file.sis_csv.html" class="">SIS CSV Format</a>
+  <h2>External Tools</h2>
+  <a href="file.tools_intro.html" class="">Introduction</a>
+  <a href="file.assignment_tools.html" class="">Grading</a>
+  <a href="file.navigation_tools.html" class="">Navigation</a>
+  <a href="file.editor_button_tools.html" class="">Rich Editor</a>
+  <a href="file.link_selection_tools.html" class="">Link Selection</a>
+  <a href="file.homework_submission_tools.html" class="">Homework Submission</a>
+  <a href="file.xapi.html" class="">xAPI</a>
+  <a href="file.tools_xml.html" class="">Configuring</a>
+</nav>
+
+    </div>
+
+    <div id="content"><div class="service">
+  
+    <h1>Content Migrations API</h1>
+  
+  
+    <h3 class='beta'>BETA: This API resource is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  <table id='quicklinks'>
+  </table>
+  <p>API for accessing content migrations and migration issues</p>
+
+
+
+
+  <div class='object_definition'>
+  <h3><a name="MigrationIssue">A MigrationIssue object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //the unique identifier for the issue
+  &quot;id&quot;: 370663,
+  
+  //API url to the content migration
+  &quot;content_migration_url&quot;: &quot;https://example.com/api/v1/courses/1/content_migrations/1&quot;,
+  
+  //Description of the issue for the end-user
+  &quot;description&quot;: &quot;Questions in this quiz couldn't be converted&quot;,
+  
+  //Current state of the issue: active, resolved
+  &quot;workflow_state&quot;: &quot;active&quot;,
+  
+  //HTML Url to the Canvas page to investigate the issue
+  &quot;fix_issue_html_url&quot;: &quot;https://example.com/courses/1/quizzes/2&quot;,
+  
+  //Severity of the issue: todo, warning, error
+  &quot;issue_type&quot;: &quot;warning&quot;,
+  
+  //Link to a Canvas error report if present (If the requesting user has
+  //permissions)
+  &quot;error_report_html_url&quot;: &quot;https://example.com/error_reports/3&quot;,
+  
+  //Site administrator error message (If the requesting user has permissions)
+  &quot;error_message&quot;: &quot;admin only message&quot;,
+  
+  //timestamp
+  &quot;created_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  
+  //timestamp
+  &quot;updated_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="ContentMigration">A ContentMigration object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //the unique identifier for the migration
+  &quot;id&quot;: 370663,
+  
+  //the type of content migration
+  &quot;migration_type&quot;: &quot;common_cartridge_importer&quot;,
+  
+  //the name of the content migration type
+  &quot;migration_type_title&quot;: &quot;Canvas Cartridge Importer&quot;,
+  
+  //API url to the content migration's issues
+  &quot;migration_issues_url&quot;: &quot;https://example.com/api/v1/courses/1/content_migrations/1/migration_issues&quot;,
+  
+  //attachment api object for the uploaded file may not be present for all
+  //migrations
+  &quot;attachment&quot;: &quot;{&quot;url&quot;=&gt;&quot;https://example.com/api/v1/courses/1/content_migrations/1/download_archive&quot;}&quot;,
+  
+  //The api endpoint for polling the current progress
+  &quot;progress_url&quot;: &quot;https://example.com/api/v1/progress/4&quot;,
+  
+  //The user who started the migration
+  &quot;user_id&quot;: 4,
+  
+  //Current state of the content migration: pre_processing, pre_processed, running,
+  //waiting_for_select, completed, failed
+  &quot;workflow_state&quot;: &quot;running&quot;,
+  
+  //timestamp
+  &quot;started_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  
+  //timestamp
+  &quot;finished_at&quot;: &quot;2012-06-01T00:00:00-06:00&quot;,
+  
+  //file uploading data, see {file:file_uploads.html File Upload Documentation} for
+  //file upload workflow This works a little differently in that all the file data
+  //is in the pre_attachment hash if there is no upload_url then there was an
+  //attachment pre-processing error, the error message will be in the message key
+  //This data will only be here after a create or update call
+  &quot;pre_attachment&quot;: &quot;{&quot;upload_url&quot;=&gt;&quot;&quot;, &quot;message&quot;=&gt;&quot;file exceeded quota&quot;, &quot;upload_params&quot;=&gt;{}}&quot;
+}
+</pre>
+  </div>
+
+
+  <div class='object_definition'>
+  <h3><a name="Migrator">A Migrator object looks like:</a></h3>
+<pre class="example code brush:js">
+{
+  
+  //The value to pass to the create endpoint
+  &quot;type&quot;: &quot;common_cartridge_importer&quot;,
+  
+  //Whether this endpoint requires a file upload
+  &quot;requires_file_upload&quot;: &quot;true&quot;,
+  
+  //Description of the package type expected
+  &quot;name&quot;: &quot;Common Cartridge 1.0/1.1/1.2 Package&quot;,
+  
+  //A list of fields this system requires
+  &quot;required_settings&quot;: &quot;[]&quot;
+}
+</pre>
+  </div>
+
+<div id="Services" class="method_details_list">
+
+  <div class="method_details first">
+  <h2 class='api_method_name' name='method.migration_issues.index' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.index' href='#method.migration_issues.index'>
+      List migration issues
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#index</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues
+  </h3>
+
+
+<p>Returns paginated migration issues</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues \ 
+    -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssues</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.migration_issues.show' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.show' href='#method.migration_issues.show'>
+      Get a migration issue
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#show</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+
+<p>Returns data on an individual migration issue</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues/&lt;id&gt; \ 
+    -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssue</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.migration_issues.update' data-subtopic='Migration Issues'>
+    <a name='method.migration_issues.update' href='#method.migration_issues.update'>
+      Update a migration issue
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/migration_issues_controller.rb">MigrationIssuesController#update</a></span>
+    
+  </h2>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/users/:user_id/content_migrations/:content_migration_id/migration_issues/:id
+  </h3>
+
+
+<p>Update the workflow_state of a migration issue</p>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>workflow_state</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String, "active"|"resolved"
+<dd>
+<p>Set the workflow_state of the issue.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl -X PUT https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;content_migration_id&gt;/migration_issues/&lt;id&gt; \ 
+     -H 'Authorization: Bearer &lt;token&gt;' \ 
+     -F 'workflow_state=resolved'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#MigrationIssue'>MigrationIssue</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.index' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.index' href='#method.content_migrations.index'>
+      List content migrations
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#index</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations
+  </h3>
+
+
+<p>Returns paginated content migrations</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations \
+    -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigrations</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.show' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.show' href='#method.content_migrations.show'>
+      Get a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#show</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/:id
+  </h3>
+
+
+<p>Returns data on an individual content migration</p>
+
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations/&lt;id&gt; \
+    -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.create' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.create' href='#method.content_migrations.create'>
+      Create a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#create</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    POST /api/v1/accounts/:account_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/courses/:course_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/groups/:group_id/content_migrations
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    POST /api/v1/users/:user_id/content_migrations
+  </h3>
+
+
+<p>Create a content migration. If the migration requires a file to be uploaded
+the actual processing of the file will start once the file upload process
+is completed. File uploading works as described in the
+<a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> except that the values
+are set on a <strong>pre_attachment</strong> sub-hash.</p>
+
+<p>For migrations that don't require a file to be uploaded, like course copy,
+the processing will begin as soon as the migration is created.</p>
+
+<p>You can use the <a href="progress.html#method.progress.show" title="Progress API">Progress API</a> to track the
+progress of the migration. The migration's progress is linked to with the
+<em>progress_url</em> value.</p>
+
+<p>The two general workflows are:</p>
+
+<p>If no file upload is needed:</p>
+<ol><li>
+<p>POST to create</p>
+</li><li>
+<p>Use the <a href="progress.html#method.progress.show" title="Progress">Progress</a> specified in
+<em>progress_url</em> to monitor progress</p>
+</li></ol>
+
+<p>For file uploading:</p>
+<ol><li>
+<p>POST to create with file info in <strong>pre_attachment</strong></p>
+</li><li>
+<p>Do <a href="file_uploads.html" title="file upload processing">file upload processing</a> using the data in the
+<strong>pre_attachment</strong> data</p>
+</li><li>
+<p><a href="content_migrations.html#method.content_migrations.show" title="GET">GET</a> the ContentMigration</p>
+</li><li>
+<p>Use the <a href="progress.html#method.progress.show" title="Progress">Progress</a> specified in
+<em>progress_url</em> to monitor progress</p>
+</li></ol>
+
+<pre class="code ruby"><code><span class='lparen'>(</span><span class='id identifier rubyid_required'>required</span> <span class='kw'>if</span> <span class='id identifier rubyid_doing'>doing</span> <span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span> <span class='id identifier rubyid_file'>file</span> <span class='id identifier rubyid_upload'>upload</span><span class='rparen'>)</span></code></pre>
+
+<h4>Request Parameters:</h4>
+<ul class="argument">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>migration_type</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Required, String
+<dd>
+<p>The type of the migration. Use the
+<a href="content_migrations.html#method.content_migrations.available_migrators" title="Migrator">Migrator</a> endpoint to
+see all available migrators. Default allowed values:
+canvas_cartridge_importer, common_cartridge_importer, course_copy_importer,
+zip_file_importer, qti_converter, moodle_converter</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>pre_attachment[name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>Required if uploading a file. This is the first step in uploading a file to
+the content migration. See the <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a> for details on the file upload workflow.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>pre_attachment[*]</span>
+      
+      
+        <div class='inline'>
+<p>Other file upload properties, See <a href="file_uploads.html" title="File Upload Documentation">File Upload Documentation</a></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[file_url]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>string
+<dd>
+<p>A URL to download the file from. Must not require authentication.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[source_course_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The course to copy from for a course copy migration. (required if doing
+course copy)</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[folder_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The folder to unzip the .zip file into for a zip_file_import.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[overwrite_quizzes]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether to overwrite quizzes with the same identifiers between content
+packages.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[question_bank_id]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>The existing question bank ID to import questions into if not specified in
+the content package.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>settings[question_bank_name]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>String
+<dd>
+<p>The question bank to import questions into if not specified in the content
+package, if both bank id and name are set, id will take precedence.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[shift_dates]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether to shift dates in the copied course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[old_start_date]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Date
+<dd>
+<p>The original start date of the source content/course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[old_end_date]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Date
+<dd>
+<p>The original end date of the source content/course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[new_start_date]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Date
+<dd>
+<p>The new start date for the content/course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[new_end_date]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Date
+<dd>
+<p>The new end date for the source content/course</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[day_substitutions][X]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Integer
+<dd>
+<p>Move anything scheduled for day 'X' to the specified day. (0-Sunday,
+1-Monday, 2-Tuesday, 3-Wednesday, 4-Thursday, 5-Friday, 6-Saturday)</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+        <span class='name'>date_shift_options[remove_dates]</span>
+      
+      
+        <div class='inline'><dl class="rdoc-list label-list"><dt>Boolean
+<dd>
+<p>Whether to remove dates in the copied course. Cannot be used in conjunction
+with <strong>shift_dates</strong>.</p>
+</dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <div class="examples">
+    <h4>Example Request:</h4>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">curl 'https://&lt;canvas&gt;/api/v1/courses/&lt;course_id&gt;/content_migrations' \
+     -F 'migration_type=common_cartridge_importer' \
+     -F 'settings[question_bank_name]=importquestions' \
+     -F 'date_shift_options[old_start_date]=1999-01-01' \
+     -F 'date_shift_options[new_start_date]=2013-09-01' \
+     -F 'date_shift_options[old_end_date]=1999-04-15' \
+     -F 'date_shift_options[new_end_date]=2013-12-15' \
+     -F 'date_shift_options[day_substitutions][1]=2' \
+     -F 'date_shift_options[day_substitutions][2]=3' \
+     -F 'date_shift_options[shift_dates]=true' \
+     -F 'pre_attachment[name]=mycourse.imscc' \
+     -F 'pre_attachment[size]=12345' \
+     -H 'Authorization: Bearer &lt;token&gt;'</pre>
+    
+  </div>
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.update' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.update' href='#method.content_migrations.update'>
+      Update a content migration
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#update</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/accounts/:account_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/courses/:course_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/groups/:group_id/content_migrations/:id
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    PUT /api/v1/users/:user_id/content_migrations/:id
+  </h3>
+
+
+<p>Update a content migration. Takes same arguments as create except that you
+can't change the migration type. However, changing most settings after the
+migration process has started will not do anything. Generally updating the
+content migration will be used when there is a file upload problem. If the
+first upload has a problem you can supply new <em>pre_attachment</em>
+values to start the process again.</p>
+
+
+
+
+  Returns a 
+
+<a href='content_migrations.html#ContentMigration'>ContentMigration</a>
+
+</div>
+
+
+  <div class="method_details ">
+  <h2 class='api_method_name' name='method.content_migrations.available_migrators' data-subtopic='Content Migrations'>
+    <a name='method.content_migrations.available_migrators' href='#method.content_migrations.available_migrators'>
+      List Migration Systems
+    </a>
+    
+      <span class='defined-in'><a href="https://github.com/instructure/canvas-lms/blob/master/app/controllers/content_migrations_controller.rb">ContentMigrationsController#available_migrators</a></span>
+    
+  </h2>
+  
+    <h3 class='beta'>BETA: This API endpoint is not finalized, and there could be breaking changes before its final release.</h3>
+  
+  
+  
+  <h3 class='endpoint'>
+    GET /api/v1/accounts/:account_id/content_migrations/migrators
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/courses/:course_id/content_migrations/migrators
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/groups/:group_id/content_migrations/migrators
+  </h3>
+
+  
+  <h3 class='endpoint'>
+    GET /api/v1/users/:user_id/content_migrations/migrators
+  </h3>
+
+
+<p>Lists the currently available migration types. These values may change.</p>
+
+
+
+
+  Returns a list of 
+
+<a href='content_migrations.html#Migrator'>Migrators</a>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+    <script type="text/javascript">
+  $('h2.api_method_name').each(function(i, el) {
+    var subtopic = $(el).data('subtopic');
+    var $a = $(el).find('a');
+    if ($.trim($a[0].innerHTML) == '')
+      return;
+    var $row = $('table#quicklinks tr').filter(function() { return $(this).data('subtopic') == subtopic; });
+    if ($row.length == 0) {
+      $row = $('<tr/>').appendTo($('table#quicklinks'));
+      $row.data('subtopic', subtopic);
+      $('<th/>').append(subtopic).appendTo($row);
+      $('<td/>').appendTo($row);
+    }
+    var link = $('<a/>').attr('href', '#'+$(el).attr('name')).append($.trim($a[0].innerHTML));
+    $row.find('td').append(link);
+  });
+
+  SyntaxHighlighter.defaults['gutter'] = false;
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.defaults['auto-links'] = false;
+  $('#content pre.code.javascript code').each(function(i, el) {
+    $(el).parent().addClass('brush: js');
+    $(el).replaceWith(el.innerHTML);
+  });
+  SyntaxHighlighter.all();
+</script>
+<div id="footer">
+  &copy; Instructure, Inc. Generated on Wed Dec  3 11:51:41 2014<br>
+  This documentation is generated directly from the Canvas LMS source code, available <a href="https://github.com/instructure/canvas-lms">on Github</a>.
+</div>
+
+  </body>
+</html>

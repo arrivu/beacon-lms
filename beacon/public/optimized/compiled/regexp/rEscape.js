@@ -1,0 +1,1 @@
+(function(){define(function(){var n;return n=function(n){return n.replace(/[\\\^\$\*\+\?\.\(\)\|\{\}\[\]]/g,"\\$&")}})}).call(this);

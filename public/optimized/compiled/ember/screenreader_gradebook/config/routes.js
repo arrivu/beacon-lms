@@ -1,0 +1,1 @@
+(function(){define(function(){var e;return e=function(){return this.resource("screenreader_gradebook",{path:"/"})}})}).call(this);

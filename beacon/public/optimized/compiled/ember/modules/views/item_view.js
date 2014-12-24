@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){var t;return t=e.View.extend({tagName:"li",animateOnDestroy:function(){return this.get("controller.isDeleting")?this.$().slideToggle(350):void 0}.observes("controller.isDeleting")})})}).call(this);

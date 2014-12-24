@@ -1,0 +1,1 @@
+(function(){define([],function(){return{strings:function(n,t){return n.localeCompare(t,window.I18n.locale,{sensitivity:"accent",ignorePunctuation:!0,numeric:!0})},by:function(n){var t=this;return function(i,r){return t.strings(n(i),n(r))}},byKey:function(n){return this.by(function(t){return t[n]})},byGet:function(n){return this.by(function(t){return t.get(n)})}}})}).call(this);

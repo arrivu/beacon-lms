@@ -1,0 +1,15 @@
+# system crap
+.DS_Store
+.*.swp
+
+# files created by running the specs
+tmp
+
+# built gems
+pkg
+*.gem
+Gemfile.lock
+
+# documentation
+.yardoc
+doc

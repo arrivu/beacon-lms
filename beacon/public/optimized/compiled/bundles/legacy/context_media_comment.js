@@ -1,0 +1,1 @@
+(function(){require(["jquery","media_comments"],function(n){return n(document).ready(function(){return n.mediaComment.init()})})}).call(this);

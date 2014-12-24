@@ -1,0 +1,1 @@
+(function(){define(["ember","../../mixins/legacy_submission_html","i18n!quiz_show"],function(i,t,e){return Ember.ObjectController.extend(t,{timeLimitWithMinutes:function(){return e.t("time_limit_minutes","%{limit} minutes",{limit:this.get("timeLimit")})}.property("timeLimit")})})}).call(this);

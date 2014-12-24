@@ -1,0 +1,1 @@
+(function(){define(function(){var n;return n=function(l,r,t,u){var e,f,i;null==r&&(r={}),null==t&&(t={});for(f in l)i=l[f],f=u?""+u+"["+f+"]":f,e="object"==typeof i,null!=i.length&&r.arrays===!1&&(e=!1),e?n(i,r,t,f):t[f]=i;return t}})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(t){var e,n,a,d;return n=t.attr,d=t.hasMany,a=t.belongsTo,e=t.Model.extend({dueAt:n("date"),lockAt:n("date"),sectionID:n(),unlockAt:n("date"),title:n()})})}).call(this);

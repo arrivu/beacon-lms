@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){return e.Route.extend({model:function(){return this.modelFor("quiz")}})})}).call(this);

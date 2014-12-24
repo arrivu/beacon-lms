@@ -1,0 +1,1 @@
+(function(){define(["ember","i18n!quiz_overview_route","../shared/title_builder"],function(e,t,i){return e.Route.extend({model:function(){return this.modelFor("quiz")},afterModel:function(e){var r,n;return n=e.get("title"),r=t.t("overview","Overview"),i([n,r])}})})}).call(this);

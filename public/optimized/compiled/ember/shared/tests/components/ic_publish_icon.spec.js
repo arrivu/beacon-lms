@@ -1,0 +1,1 @@
+(function(){define(["ember","underscore","../../components/ic_publish_icon_component","../shared_ajax_fixtures"],function(e,n,t,r){var c,u;return u=e.run,r.create(),c=function(e){return e=n.extend(e,{}),t.create(e)},module("status")})}).call(this);

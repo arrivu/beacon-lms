@@ -1,0 +1,1 @@
+(function(){define(["ember","../../shared/components/form_dialog_component","ic-lazy-list"],function(n,e){return n.onLoad("Ember.Application",function(n){return n.initializer({name:"SharedComponents",initialize:function(n){return n.register("component:form-dialog",e)}})}),n.Application.extend({rootElement:"#content"})})}).call(this);

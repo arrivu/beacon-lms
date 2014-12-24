@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(e){var n;return n=e.Route.extend()})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["jquery"],function(e){return e(".question select").bind("mousewheel",function(e){return e.preventDefault()})})}).call(this);

@@ -1,0 +1,1 @@
+(function(){define(["str/pluralize"],function(n){return function(t){var i;return(i=t.match(/(.*)_(\d+)$/))?[n(i[1]),i[2]]:void 0}})}).call(this);

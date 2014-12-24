@@ -1,0 +1,1 @@
+(function(){define(["ic-ajax"],function(n){return n})}).call(this);

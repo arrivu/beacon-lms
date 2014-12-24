@@ -1,0 +1,1 @@
+(function(){define(["ember-data"],function(i){var n;return n=i.ActiveModelSerializer.extend({extractArray:function(i,n,e){var r;return null!=(r=e.users)&&r.forEach(function(i){return i.links?(i.quiz_submission_id=i.links.quiz_submission,delete i.links.quiz_submission):void 0}),this._super(i,n,e)}})})}).call(this);

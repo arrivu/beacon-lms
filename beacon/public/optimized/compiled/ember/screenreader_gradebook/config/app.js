@@ -1,0 +1,1 @@
+(function(){define(["ember","compiled/handlebars_helpers"],function(e){return e.Application.extend({rootElement:"#content"})})}).call(this);

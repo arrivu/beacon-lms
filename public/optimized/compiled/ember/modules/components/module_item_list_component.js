@@ -1,0 +1,1 @@
+(function(){define(["ember","ic-lazy-list","../models/item"],function(e,n,t){var r;return r=n.IcLazyListComponent.extend({normalize:function(e){var n,r,i,o,c;for(r=e.response,c=[],i=0,o=r.length;o>i;i++)n=r[i],c.push(t.createRecord(n));return c}})})}).call(this);

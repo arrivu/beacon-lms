@@ -1,0 +1,1 @@
+(function(){define(["./essay_controller"],function(n){return n})}).call(this);

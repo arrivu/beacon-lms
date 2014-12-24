@@ -1,0 +1,1 @@
+(function(){define(["ember","i18nObj","jquery","jquery.instructure_date_and_time"],function(e,t,n){return e.Handlebars.helper("tDateToString",function(e,n){var r;return e?(r="date.formats."+n,t.l(r,e)):""}),e.Handlebars.helper("friendlyDatetime",function(e){return e?n.friendlyDatetime(e):""})})}).call(this);

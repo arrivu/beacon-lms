@@ -1,0 +1,1 @@
+(function(){define(["./application_adapter"],function(e){var i;return i=e.extend({_jsonapiSerialize:function(e,i,t,a){var r,n;return n=t.typeKey,r=this.pathForType(n),e[r]=[i.serializerFor(n).serialize(a)]},updateRecord:function(e,i,t){var a,r,n;return n=i.typeKey,a={},r=t.get("id"),this._jsonapiSerialize(a,e,i,t),this.ajax(this.buildURL(n,r),"PUT",{data:a})}})})}).call(this);

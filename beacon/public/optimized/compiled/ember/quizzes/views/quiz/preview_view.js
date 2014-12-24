@@ -1,0 +1,1 @@
+(function(){define(["ember","./show_view"],function(e,n){return n.extend()})}).call(this);

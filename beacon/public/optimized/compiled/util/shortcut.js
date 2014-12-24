@@ -1,0 +1,1 @@
+(function(){var n=[].slice;define(function(){return function(){var t,r,e,u,a,i,s;for(t=arguments[0],u=arguments[1],e=3<=arguments.length?n.call(arguments,2):[],s=[],a=0,i=e.length;i>a;a++)r=e[a],s.push(function(n){return t.prototype[n]=function(){return this[u][n].apply(this[u],arguments)}}(r));return s}})}).call(this);

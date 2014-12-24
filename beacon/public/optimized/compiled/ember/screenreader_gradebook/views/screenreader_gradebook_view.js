@@ -1,0 +1,1 @@
+(function(){define(["ember","ic-tabs"],function(e){var n;return n=e.View.extend({didInsertElement:function(){return this.$("button:disabled").prop("disabled",!0)}})})}).call(this);

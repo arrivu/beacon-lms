@@ -1,0 +1,1 @@
+(function(){define(["compiled/models/Folder"],function(e){return e.FoldersCollection})}).call(this);

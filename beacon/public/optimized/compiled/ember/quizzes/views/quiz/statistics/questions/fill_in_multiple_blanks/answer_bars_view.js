@@ -1,0 +1,1 @@
+(function(){define(["ember","../multiple_choice/answer_bars_view"],function(e,t){return t.extend({templateName:"quiz/statistics/questions/multiple_choice/answer_bars",updateChart:function(){return e.run.schedule("actions",this,function(){return this.rerender(),this.removeInspector()})}.observes("controller.chartData")})})}).call(this);

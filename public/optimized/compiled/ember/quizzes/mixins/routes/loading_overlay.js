@@ -1,0 +1,1 @@
+(function(){define(["ember"],function(n){return n.Mixin.create({actions:{loading:function(e){var r;return r=e.router.currentHandlerInfos.some(function(n){return"loading"===n.name}),r||(n.$("body").addClass("ember-loading-overlay"),e.promise["finally"](function(){return n.$("body").removeClass("ember-loading-overlay")})),!0}}})})}).call(this);

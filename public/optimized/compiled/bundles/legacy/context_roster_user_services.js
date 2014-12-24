@@ -1,0 +1,1 @@
+(function(){require(["jquery","jquery.ajaxJSON"],function(e){return e(document).ready(function(){return e(".show_user_services_checkbox").change(function(){return e.ajaxJSON(e(".profile_url").attr("href"),"PUT",{"user[show_user_services]":e(this).prop("checked")},function(){},function(){})})})})}).call(this);

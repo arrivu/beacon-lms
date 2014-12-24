@@ -1,0 +1,108 @@
+(function() {
+  var __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  define(['jquery', 'underscore', 'Backbone', 'compiled/str/splitAssetString'], function($, _, Backbone, splitAssetString) {
+    var CalendarEvent, _ref;
+
+    return CalendarEvent = (function(_super) {
+      __extends(CalendarEvent, _super);
+
+      function CalendarEvent() {
+        _ref = CalendarEvent.__super__.constructor.apply(this, arguments);
+        return _ref;
+      }
+
+      CalendarEvent.prototype.urlRoot = '/api/v1/calendar_events/';
+
+      CalendarEvent.prototype.dateAttributes = ['created_at', 'end_at', 'start_at', 'updated_at'];
+
+      CalendarEvent.prototype._filterAttributes = function(obj) {
+        var filtered;
+
+        filtered = _(obj).pick('start_at', 'end_at', 'title', 'description', 'context_code', 'remove_child_events', 'location_name', 'location_address');
+        if (obj.use_section_dates && obj.child_event_data) {
+          filtered.child_event_data = _.chain(obj.child_event_data).compact().filter(this._hasValidInputs).map(this._filterAttributes).value();
+        }
+        return filtered;
+      };
+
+      CalendarEvent.prototype._hasValidInputs = function(o) {
+        return (!!o.start_at) || (o.start_date && (!!o.start_time === !!o.end_time));
+      };
+
+      CalendarEvent.prototype.toJSON = function() {
+        return {
+          calendar_event: this._filterAttributes(CalendarEvent.__super__.toJSON.apply(this, arguments))
+        };
+      };
+
+      CalendarEvent.prototype.present = function() {
+        return Backbone.Model.prototype.toJSON.call(this);
+      };
+
+      CalendarEvent.prototype.fetch = function(options) {
+        var combinedSuccess, error, model, sectionsDfd, success, syncDfd, _ref1;
+
+        if (options == null) {
+          options = {};
+        }
+        options = _.clone(options);
+        model = this;
+        success = options.success;
+        delete options.success;
+        error = (_ref1 = options.error) != null ? _ref1 : function() {};
+        delete options.error;
+        if (this.get('id')) {
+          syncDfd = (this.sync || Backbone.sync).call(this, 'read', this, options);
+        }
+        if (this.get('sections_url')) {
+          sectionsDfd = $.getJSON(this.get('sections_url'));
+        }
+        combinedSuccess = function(syncArgs, sectionArgs) {
+          var calEventData, sectionsResp, syncResp, syncStatus, syncXhr;
+
+          if (syncArgs == null) {
+            syncArgs = [];
+          }
+          if (sectionArgs == null) {
+            sectionArgs = [];
+          }
+          syncResp = syncArgs[0], syncStatus = syncArgs[1], syncXhr = syncArgs[2];
+          sectionsResp = sectionArgs[0];
+          calEventData = CalendarEvent.mergeSectionsIntoCalendarEvent(syncResp, _.sortBy(sectionsResp, 'id'));
+          if (!model.set(model.parse(calEventData), options)) {
+            return false;
+          }
+          return typeof success === "function" ? success(model, calEventData) : void 0;
+        };
+        return $.when(syncDfd, sectionsDfd).fail(error).done(combinedSuccess);
+      };
+
+      CalendarEvent.mergeSectionsIntoCalendarEvent = function(eventData, sections) {
+        var _ref1;
+
+        if (eventData == null) {
+          eventData = {};
+        }
+        eventData.course_sections = sections;
+        eventData.use_section_dates = !!((_ref1 = eventData.child_events) != null ? _ref1.length : void 0);
+        _(eventData.child_events).each(function(child, index) {
+          var section, sectionId;
+
+          child = eventData.child_events[index] = CalendarEvent.prototype.parse(child);
+          sectionId = splitAssetString(child.context_code)[1];
+          section = _(sections).find(function(section) {
+            return section.id === sectionId;
+          });
+          return section.event = child;
+        });
+        return eventData;
+      };
+
+      return CalendarEvent;
+
+    })(Backbone.Model);
+  });
+
+}).call(this);

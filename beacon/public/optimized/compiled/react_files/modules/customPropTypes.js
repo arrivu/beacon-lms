@@ -1,0 +1,1 @@
+(function(){define(["react","compiled/models/Folder","compiled/models/FilesystemObject"],function(e,s,o){var n;return n={contextType:e.PropTypes.oneOf(["users","groups","accounts","courses"]),contextId:e.PropTypes.oneOfType([e.PropTypes.string,e.PropTypes.number]),folder:e.PropTypes.instanceOf(s),filesystemObject:e.PropTypes.instanceOf(o)}})}).call(this);
