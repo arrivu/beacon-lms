@@ -28,3 +28,15 @@ body.modal #modal-box h2:after, body.modal #modal-box .h2:after {
     border-bottom: 0px solid white;
     height: 0;
 }
+#f1_container {
+    position: relative;
+    margin: 0 auto;
+    padding: 110px 0;
+    width: 300px;
+    height: 198px;
+    z-index: 1;
+    background-image: url(/images/canvas/Greatlearning_Logo.png);
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: 270px 91px;
+}
